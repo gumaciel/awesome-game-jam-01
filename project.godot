@@ -21,6 +21,10 @@ window/size/viewport_width=540
 window/size/viewport_height=270
 window/stretch/mode="viewport"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [layer_names]
 
 2d_physics/layer_1="main_character"
