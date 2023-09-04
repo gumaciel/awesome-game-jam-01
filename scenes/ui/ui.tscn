@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=8 format=3 uid="uid://brttmwofxttak"]
 
 [ext_resource type="Texture2D" uid="uid://c22pj17u3obqe" path="res://ui/ui_arrow_up.tres" id="1_wt4m1"]
 [ext_resource type="Texture2D" uid="uid://cx3f4jgx25vbw" path="res://ui/ui_arrow_down.tres" id="2_ol0ws"]
 [ext_resource type="Texture2D" uid="uid://dcaunsljhoooe" path="res://ui/ui_arrow_right.tres" id="3_r7tyq"]
 [ext_resource type="Texture2D" uid="uid://d4kjstyows8u0" path="res://ui/ui_arrow_left.tres" id="4_cyh2k"]
+[ext_resource type="Texture2D" uid="uid://d2a76qo6041ua" path="res://assets/hud/placeholder_interaction.png" id="5_h4xm8"]
+[ext_resource type="Texture2D" uid="uid://cp1fo532lwoom" path="res://assets/hud/placeholder_char_button.png" id="6_acikg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wy615"]
 atlas = ExtResource("1_wt4m1")
@@ -32,3 +34,16 @@ action = "touch_right"
 position = Vector2(-28, 28)
 texture_normal = ExtResource("4_cyh2k")
 action = "touch_left"
+
+[node name="Interaction" type="Node2D" parent="."]
+position = Vector2(491, 206)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Interaction"]
+position = Vector2(-33, -20)
+texture_normal = ExtResource("5_h4xm8")
+
+[node name="Change_char" type="Node2D" parent="."]
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Change_char"]
+position = Vector2(414, 28)
+texture_normal = ExtResource("6_acikg")
