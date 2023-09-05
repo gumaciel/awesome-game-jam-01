@@ -35,7 +35,7 @@ texture_normal = ExtResource("4_cyh2k")
 action = "touch_left"
 
 [node name="Interaction" type="Node2D" parent="."]
-position = Vector2(491, 206)
+position = Vector2(424, 217)
 
 [node name="interaction_button" type="TouchScreenButton" parent="Interaction"]
 position = Vector2(-33, -20)
@@ -43,7 +43,7 @@ texture_normal = ExtResource("5_h4xm8")
 action = "interaction"
 
 [node name="ChangeChar" type="Node2D" parent="."]
-position = Vector2(449, 18)
+position = Vector2(378, 25)
 
 [node name="AlternateButton1" type="TouchScreenButton" parent="ChangeChar"]
 texture_normal = ExtResource("7_viu5p")
