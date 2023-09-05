@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=9 format=3 uid="uid://brttmwofxttak"]
 
 [ext_resource type="Texture2D" uid="uid://c22pj17u3obqe" path="res://ui/ui_arrow_up.tres" id="1_wt4m1"]
 [ext_resource type="Texture2D" uid="uid://cx3f4jgx25vbw" path="res://ui/ui_arrow_down.tres" id="2_ol0ws"]
 [ext_resource type="Texture2D" uid="uid://dcaunsljhoooe" path="res://ui/ui_arrow_right.tres" id="3_r7tyq"]
 [ext_resource type="Texture2D" uid="uid://d4kjstyows8u0" path="res://ui/ui_arrow_left.tres" id="4_cyh2k"]
 [ext_resource type="Texture2D" uid="uid://d2a76qo6041ua" path="res://assets/hud/placeholder_interaction.png" id="5_h4xm8"]
-[ext_resource type="Texture2D" uid="uid://cp1fo532lwoom" path="res://assets/hud/placeholder_char_button.png" id="6_acikg"]
+[ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder_char_button1.png" id="6_cf3wm"]
 [ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder_reload_button.png" id="7_tg6ia"]
+[ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder_char_button2.png" id="7_viu5p"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -34,19 +35,23 @@ texture_normal = ExtResource("4_cyh2k")
 action = "touch_left"
 
 [node name="Interaction" type="Node2D" parent="."]
-position = Vector2(491, 206)
+position = Vector2(424, 217)
 
 [node name="interaction_button" type="TouchScreenButton" parent="Interaction"]
 position = Vector2(-33, -20)
 texture_normal = ExtResource("5_h4xm8")
 action = "interaction"
 
-[node name="Change_char" type="Node2D" parent="."]
-position = Vector2(449, 18)
+[node name="ChangeChar" type="Node2D" parent="."]
+position = Vector2(378, 25)
 
-[node name="alternate_button" type="TouchScreenButton" parent="Change_char"]
-texture_normal = ExtResource("6_acikg")
+[node name="AlternateButton1" type="TouchScreenButton" parent="ChangeChar"]
+texture_normal = ExtResource("7_viu5p")
 action = "alternate"
+
+[node name="AlternateButton2" type="TouchScreenButton" parent="ChangeChar"]
+position = Vector2(14, -1)
+texture_normal = ExtResource("6_cf3wm")
 
 [node name="Reload" type="Node2D" parent="."]
 position = Vector2(47, 38)
