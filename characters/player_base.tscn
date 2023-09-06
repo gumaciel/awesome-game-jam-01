@@ -6,9 +6,11 @@
 [node name="PlayerBase" type="CharacterBody2D"]
 script = ExtResource("1_fqhkc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(1, 0.5)
 scale = Vector2(0.21875, 0.210938)
 texture = ExtResource("1_xqc8x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

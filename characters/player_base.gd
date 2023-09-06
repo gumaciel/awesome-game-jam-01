@@ -1,5 +1,5 @@
 class_name PlayerBase
-extends CharacterBody2D
+extends "res://characters/templates/player_template_3.gd"
 
 var direction : Vector2
 var SPEED : float = 200
@@ -13,12 +13,3 @@ var SPEED : float = 200
 
 func _ready():
 	self.active = active
-
-func _physics_process(delta: float) -> void:
-	direction.x = Input.get_axis("ui_left","ui_right")
-	direction.y = Input.get_axis("ui_up","ui_down")
-	_movement(SPEED)
-
-func _movement(speed):
-	velocity = direction * speed
-	move_and_slide()
