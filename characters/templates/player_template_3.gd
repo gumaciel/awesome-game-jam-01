@@ -12,6 +12,7 @@ func _unhandled_input(event) -> void:
 			move(dir)
 
 func move(dir) -> void:
-	#var move_tween = create_tween()
-	position += inputs[dir] * 16
-	#move_tween.tween_property(self, "position",position , 0.5 )
+	var move_tween = create_tween()
+	var tile_position = position + inputs[dir] * 16
+	move_tween.tween_property(self, "position",tile_position , 0.5 )
+	
