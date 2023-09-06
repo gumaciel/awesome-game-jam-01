@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://ui/ui_controller.gd" id="3_hqebl"]
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="3_yilba"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
 
 [node name="TestScene" type="Node2D"]
 
