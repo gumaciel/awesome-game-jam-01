@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @export var player_1 : PlayerBase 
 @export var player_2 : PlayerBase

@@ -6,7 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="3_yilba"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
 
-[node name="TestScene" type="Node2D"]
+[node name="TestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_njrg8")

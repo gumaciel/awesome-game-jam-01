@@ -9,33 +9,35 @@
 [ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder_reload_button.png" id="7_tg6ia"]
 [ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder_char_button2.png" id="7_viu5p"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Arrows" type="Node2D" parent="."]
-position = Vector2(66, 147)
+position = Vector2(33, 187)
 
 [node name="UP" type="TouchScreenButton" parent="Arrows"]
 position = Vector2(0, 5)
 texture_normal = ExtResource("1_wt4m1")
-action = "touch_up"
+action = "ui_up"
 
 [node name="DOWN" type="TouchScreenButton" parent="Arrows"]
 position = Vector2(0, 51)
 texture_normal = ExtResource("2_ol0ws")
-action = "touch_down"
+action = "ui_down"
 
 [node name="RIGHT" type="TouchScreenButton" parent="Arrows"]
 position = Vector2(28, 28)
 texture_normal = ExtResource("3_r7tyq")
-action = "touch_right"
+action = "ui_right"
 
 [node name="LEFT" type="TouchScreenButton" parent="Arrows"]
 position = Vector2(-28, 28)
 texture_normal = ExtResource("4_cyh2k")
-action = "touch_left"
+action = "ui_left"
 
 [node name="Interaction" type="Node2D" parent="."]
-position = Vector2(424, 217)
+position = Vector2(456, 235)
 
 [node name="interaction_button" type="TouchScreenButton" parent="Interaction"]
 position = Vector2(-33, -20)
@@ -43,7 +45,7 @@ texture_normal = ExtResource("5_h4xm8")
 action = "interaction"
 
 [node name="ChangeChar" type="Node2D" parent="."]
-position = Vector2(378, 25)
+position = Vector2(416, 7)
 
 [node name="AlternateButton1" type="TouchScreenButton" parent="ChangeChar"]
 texture_normal = ExtResource("7_viu5p")
@@ -54,7 +56,6 @@ position = Vector2(14, -1)
 texture_normal = ExtResource("6_cf3wm")
 
 [node name="Reload" type="Node2D" parent="."]
-position = Vector2(47, 38)
 
 [node name="reload_button" type="TouchScreenButton" parent="Reload"]
 texture_normal = ExtResource("7_tg6ia")
