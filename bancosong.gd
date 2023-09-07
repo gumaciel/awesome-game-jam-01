@@ -1,4 +1,4 @@
-extends Node3D
+extends Node2D
 
 @export var bank_asset: BankAsset
 var bank: Bank
