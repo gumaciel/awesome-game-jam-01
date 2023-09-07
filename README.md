@@ -26,10 +26,10 @@ Neste jogo, os jogadores assumem os papéis de um nobre cavaleiro e seu fiel esc
 Para celular, existem botões para se mover, atacar e trocar de personagem
 
 # Créditos:
-- Gustavo Maciel (@gumaciel) - Product Manager, Desenvolvedor
+- Gustavo Maciel ([@gumaciel](https://github.com/gumaciel)) - Product Manager, Desenvolvedor
 - Hallsey Sepulveda - Game Designer, Ilustrador
-- Fallen (@FallenAngelDev) - Game Designer, Ilustrador, Desenvolvedor
-- Marcos Sousa (@YakumaKuramy) - Desenvolvedor
-- Apenasumprogramador - Ilustrador
+- Fallen ([@FallenAngelDev](https://github.com/FallenAngelDev)) - Game Designer, Ilustrador, Desenvolvedor
+- Marcos Sousa ([@YakumaKuramy](https://github.com/YakumaKuramy)) - Desenvolvedor
+- Bolachudo404 - Ilustrador
 - Lucas Santiago - Ilustrador
 - Matheus Felipe - Sound Designer
