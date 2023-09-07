@@ -26,10 +26,22 @@ Neste jogo, os jogadores assumem os papéis de um nobre cavaleiro e seu fiel esc
 Para celular, existem botões para se mover, atacar e trocar de personagem
 
 # Créditos:
-- Gustavo Maciel ([@gumaciel](https://github.com/gumaciel)) - Product Manager, Desenvolvedor
-- Hallsey Sepulveda - Game Designer, Ilustrador
-- Fallen ([@FallenAngelDev](https://github.com/FallenAngelDev)) - Game Designer, Ilustrador, Desenvolvedor
-- Marcos Sousa ([@YakumaKuramy](https://github.com/YakumaKuramy)) - Desenvolvedor
-- Bolachudo404 - Ilustrador
-- Lucas Santiago - Ilustrador
-- Matheus Felipe - Sound Designer
+## Gustavo Maciel - Product Manager, Desenvolvedor
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-<COLOR>?style=for-the-badge&logo=github)](https://github.com/gumaciel)
+
+## Flavio Sepulveda - Game Designer, Ilustrador
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-<COLOR>?style=for-the-badge&logo=github)](https://github.com/FlavioSepulveda)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-<COLOR>?style=for-the-badge&logo=twitter)](https://twitter.com/hallseydev_)
+
+## Fallen - Game Designer, Ilustrador, Desenvolvedor
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-<COLOR>?style=for-the-badge&logo=github)](https://github.com/FallenAngelDev)
+
+## Marcos Sousa - Desenvolvedor
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-<COLOR>?style=for-the-badge&logo=github)](https://github.com/YakumaKuramy)
+
+## Bolachudo404 - Ilustrador
+[![Itch.io](https://img.shields.io/badge/Itch.io-Follow-<COLOR>?style=for-the-badge&logo=itch.io)](https://bolachudohey.itch.io/)
+[![Instagram](https://img.shields.io/badge/Instagram-Follow-<COLOR>?style=for-the-badge&logo=instagram)](https://www.instagram.com/web_souxs)
+
+## Lucas Santiago - Ilustrador
+## Matheus Felipe - Sound Designer
