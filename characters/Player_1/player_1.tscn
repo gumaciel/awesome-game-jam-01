@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl4hgrkdmdu8f"]
+[gd_scene load_steps=3 format=3 uid="uid://dl4hgrkdmdu8f"]
 
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="1_rcrqd"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fa0w4"]
+load_path = "res://.godot/imported/knight_char_Sheet.png-7bbea591d2ceb34e65bce4561ccc816b.ctex"
+
 [node name="Player1" instance=ExtResource("1_rcrqd")]
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(1, -3)
+scale = Vector2(1, 1)
+texture = SubResource("CompressedTexture2D_fa0w4")
+hframes = 4
+vframes = 3
+frame = 1
