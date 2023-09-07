@@ -4,3 +4,5 @@
 
 [node name="bancosong" type="Node2D"]
 script = ExtResource("1_5k0kt")
+
+[node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
