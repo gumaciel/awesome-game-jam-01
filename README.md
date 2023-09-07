@@ -43,5 +43,10 @@ Para celular, existem botões para se mover, atacar e trocar de personagem
 [![Itch.io](https://img.shields.io/badge/Itch.io-Follow-<COLOR>?style=for-the-badge&logo=itch.io)](https://bolachudohey.itch.io/)
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-<COLOR>?style=for-the-badge&logo=instagram)](https://www.instagram.com/web_souxs)
 
+## Karla Corrêa - Desenvolvedora
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gamerkarla/)
+[![Instagram](https://img.shields.io/badge/Instagram-Follow-<COLOR>?style=for-the-badge&logo=instagram)](https://www.instagram.com/karlacorrea.oficial/)
+
 ## Lucas Santiago - Ilustrador
 ## Matheus Felipe - Sound Designer
+
