@@ -14,7 +14,7 @@ config/name="Awesome-game-jam-01"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
-run/main_scene.debug="res://scenes/levels/test_scene.tscn"
+run/main_scene.debug="res://scenes/fmod/banco_song.tscn"
 
 [autoload]
 
@@ -40,7 +40,7 @@ import/blender/enabled=false
 
 [fmod]
 
-settings/banks_path="res://banks/Desktop"
+settings/banks_path="res://addons/FMOD/editor/resources/banks"
 settings/fmod_output_type=0
 settings/fmod_debug_flags=0
 settings/fmod_debug_mode=1

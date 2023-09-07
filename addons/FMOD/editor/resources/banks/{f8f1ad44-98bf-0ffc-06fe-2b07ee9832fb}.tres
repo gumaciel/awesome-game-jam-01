@@ -1,0 +1,8 @@
+[gd_resource type="BankAsset" format=3 uid="uid://2d2chketuie5"]
+
+[resource]
+file_path = "res://addons/FMOD/editor/resources/banks/Master.strings.bank"
+modified_time = 1694126027
+path = "bank:/Master.strings"
+guid = "{f8f1ad44-98bf-0ffc-06fe-2b07ee9832fb}"
+name = "Master.strings"

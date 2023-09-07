@@ -1,3 +1,65 @@
-[gd_resource type="ProjectCache" format=3 uid="uid://5cayaea8nxht"]
+[gd_resource type="ProjectCache" load_steps=6 format=3 uid="uid://5cayaea8nxht"]
+
+[ext_resource type="BusAsset" uid="uid://c3kb86eg8x5j" path="res://addons/FMOD/editor/resources/busses/{e493eb99-041b-45ae-a904-9354ee8d81ec}.tres" id="1_csp7p"]
+[ext_resource type="BusAsset" uid="uid://b6lfwvtu0q6bu" path="res://addons/FMOD/editor/resources/busses/{c92b2997-c35b-4c1a-af83-427c2006cd94}.tres" id="2_rqrps"]
+[ext_resource type="EventAsset" uid="uid://dfrcf6d8wyag7" path="res://addons/FMOD/editor/resources/events/{7ed49c6d-fbd8-4f93-988c-b9c6e532329f}.tres" id="3_xt5gl"]
+
+[sub_resource type="BankAsset" id="BankAsset_lgcmy"]
+file_path = "res://addons/FMOD/editor/resources/banks/Master.bank"
+modified_time = 1694126027
+path = "bank:/Master"
+guid = "{60ec8d90-e9c4-43be-80b7-a1f91f6b3463}"
+name = "Master"
+
+[sub_resource type="BankAsset" id="BankAsset_qy208"]
+file_path = "res://addons/FMOD/editor/resources/banks/Master.strings.bank"
+modified_time = 1694126027
+path = "bank:/Master.strings"
+guid = "{f8f1ad44-98bf-0ffc-06fe-2b07ee9832fb}"
+name = "Master.strings"
 
 [resource]
+banks = {
+"{60ec8d90-e9c4-43be-80b7-a1f91f6b3463}": SubResource("BankAsset_lgcmy"),
+"{f8f1ad44-98bf-0ffc-06fe-2b07ee9832fb}": SubResource("BankAsset_qy208")
+}
+events = {
+"{7ed49c6d-fbd8-4f93-988c-b9c6e532329f}": ExtResource("3_xt5gl")
+}
+busses = {
+"{c92b2997-c35b-4c1a-af83-427c2006cd94}": ExtResource("2_rqrps"),
+"{e493eb99-041b-45ae-a904-9354ee8d81ec}": ExtResource("1_csp7p")
+}
+bank_tree = [{
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
+"resource": SubResource("BankAsset_lgcmy")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
+"resource": SubResource("BankAsset_qy208")
+}]
+event_tree = [{
+"children": [],
+"item_type": 1,
+"node_name": "Test",
+"path": "event:/Test",
+"resource": ExtResource("3_xt5gl")
+}]
+bus_tree = [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "Reverb",
+"path": "bus:/Reverb",
+"resource": ExtResource("2_rqrps")
+}],
+"item_type": 4,
+"node_name": "bus:",
+"path": "bus:/",
+"resource": ExtResource("1_csp7p")
+}]

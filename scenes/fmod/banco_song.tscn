@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbvqtcq4t6c8y"]
+
+[ext_resource type="Script" path="res://scenes/fmod/banco_song.gd" id="1_0ut5h"]
+[ext_resource type="EventAsset" uid="uid://dfrcf6d8wyag7" path="res://addons/FMOD/editor/resources/events/{7ed49c6d-fbd8-4f93-988c-b9c6e532329f}.tres" id="2_0g5s4"]
+[ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="3_j027e"]
+
+[sub_resource type="BankAsset" id="BankAsset_lgcmy"]
+file_path = "res://addons/FMOD/editor/resources/banks/Master.bank"
+modified_time = 1694126027
+path = "bank:/Master"
+guid = "{60ec8d90-e9c4-43be-80b7-a1f91f6b3463}"
+name = "Master"
+
+[node name="BancoSong" type="Node2D"]
+script = ExtResource("1_0ut5h")
+bank_asset = SubResource("BankAsset_lgcmy")
+event = ExtResource("2_0g5s4")
+
+[node name="StudioEventEmitter2D" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("2_0g5s4")
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(187, 155)
+texture = ExtResource("3_j027e")
