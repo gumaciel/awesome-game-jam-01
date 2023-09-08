@@ -20,6 +20,7 @@ run/main_scene.debug="res://scenes/main/main.tscn"
 [autoload]
 
 SceneTransition="*res://globals/scene_transition.tscn"
+PlayerManagger="*res://globals/player_managger.gd"
 
 [display]
 
@@ -44,6 +45,7 @@ pointing/handheld/orientation=4
 
 2d_physics/layer_1="main_character"
 2d_physics/layer_2="solid"
+2d_physics/layer_3="damage"
 
 [rendering]
 

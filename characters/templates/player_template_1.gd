@@ -2,6 +2,7 @@ extends Node2D
 
 @export var ID_Player: int 
 @export var Moving_Mode: int
+var move_time = 0.1
 var raycasts : Node2D
 var animation_player : AnimationPlayer
 
@@ -33,9 +34,10 @@ func _physics_process(_delta: float) -> void:
 			self, 
 			"position", 
 			position + direction * GRID_SIZE, 
-			0.1
+			move_time
 		)
 		await move_tween.finished
+		PlayerManagger.player_position = self.position
 #		await get_tree().create_timer(.5).timeout
 		is_moving = false
 	if get_direction() == Vector2.ZERO:
