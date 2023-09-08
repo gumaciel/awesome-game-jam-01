@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://brp6rwitih73k"]
 
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="1_x5led"]
-[ext_resource type="Texture2D" uid="uid://dkwnlk4pa3urq" path="res://assets/players/squire_char_Sheet.png" id="2_ay1i3"]
+[ext_resource type="Texture2D" uid="uid://ckf6k24k24xxp" path="res://assets/players/knight_char_Sheet.png" id="2_myep5"]
 
 [node name="Player2" instance=ExtResource("1_x5led")]
 
 [node name="Texture" parent="." index="0"]
-position = Vector2(0, 2.38419e-07)
+position = Vector2(0, -3)
 scale = Vector2(1, 1)
-texture = ExtResource("2_ay1i3")
+texture = ExtResource("2_myep5")
 hframes = 4
 vframes = 3
 frame = 1

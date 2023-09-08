@@ -3,19 +3,41 @@
 [ext_resource type="Script" path="res://characters/player_base.gd" id="1_fqhkc"]
 [ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_xqc8x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mw85"]
-size = Vector2(13, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v28ut"]
+size = Vector2(18, 19)
 
-[node name="PlayerBase" type="CharacterBody2D"]
+[node name="PlayerBase" type="Node2D"]
 script = ExtResource("1_fqhkc")
 
 [node name="Texture" type="Sprite2D" parent="."]
-position = Vector2(1, 0.5)
+position = Vector2(0, -7.49997)
 scale = Vector2(0.21875, 0.210938)
 texture = ExtResource("1_xqc8x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("RectangleShape2D_6mw85")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 3.24249e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_v28ut")
+
+[node name="Raycasts" type="Node2D" parent="."]
+
+[node name="Up" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(0, -25)
+collision_mask = 2
+
+[node name="Down" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(0, 25)
+collision_mask = 2
+
+[node name="Left" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(-25, 0)
+collision_mask = 2
+
+[node name="Right" type="RayCast2D" parent="Raycasts"]
+target_position = Vector2(25, 0)
+collision_mask = 2
