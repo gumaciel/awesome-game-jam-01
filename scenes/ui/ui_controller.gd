@@ -5,6 +5,10 @@ extends Control
 
 @onready var alternate_ui = $ChangeChar/AlternateButton1
 
+func _ready():
+	if not (player_1 && player_2):
+		push_error("Player must be setted") 
+
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		_switch_char()

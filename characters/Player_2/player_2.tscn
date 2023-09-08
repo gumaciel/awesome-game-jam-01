@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="1_x5led"]
 [ext_resource type="Texture2D" uid="uid://ckf6k24k24xxp" path="res://assets/players/knight_char_Sheet.png" id="2_myep5"]
 
-[node name="Player2" instance=ExtResource("1_x5led")]
+[node name="Knight(Player2)" instance=ExtResource("1_x5led")]
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -11)
