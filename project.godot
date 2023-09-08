@@ -20,6 +20,7 @@ run/main_scene.debug="res://scenes/main/main.tscn"
 [autoload]
 
 SceneTransition="*res://globals/scene_transition.tscn"
+PlayerManagger="*res://globals/player_managger.gd"
 
 [display]
 

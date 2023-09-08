@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 			0.1
 		)
 		await move_tween.finished
+		PlayerManagger.player_position = self.position
 #		await get_tree().create_timer(.5).timeout
 		is_moving = false
 	if get_direction() == Vector2.ZERO:
