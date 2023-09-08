@@ -32,9 +32,9 @@ player_2 = NodePath("../Player2")
 
 [node name="Player2" parent="." instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true
-position = Vector2(200, 205)
+position = Vector2(232, 157)
 active = false
 
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
-position = Vector2(152, 205)
+position = Vector2(152, 198)
