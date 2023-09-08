@@ -37,4 +37,4 @@ active = false
 
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
-position = Vector2(151, 176)
+position = Vector2(152, 198)
