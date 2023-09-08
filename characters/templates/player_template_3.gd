@@ -15,13 +15,9 @@ func _unhandled_input(event) -> void:
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir):
 				move(dir)
-				
 		
 
-
-
 func move(dir) -> void:
-	is_walking = true
 	var colliders : Array = []
 	for ray in raycasts.get_children():
 		if ray.is_colliding():
