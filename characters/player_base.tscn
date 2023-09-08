@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d316k4en4222v"]
+[gd_scene load_steps=11 format=3 uid="uid://d316k4en4222v"]
 
 [ext_resource type="Script" path="res://characters/player_base.gd" id="1_fqhkc"]
 [ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_xqc8x"]
@@ -126,12 +126,16 @@ tracks/0/keys = {
 "values": [8, 9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_xvyri"]
+resource_name = "stoped"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxyko"]
 _data = {
 "RESET": SubResource("Animation_5bx3v"),
 "down": SubResource("Animation_bgel3"),
 "left": SubResource("Animation_akc7u"),
 "right": SubResource("Animation_7ugm0"),
+"stoped": SubResource("Animation_xvyri"),
 "up": SubResource("Animation_d0tnl")
 }
 

@@ -16,4 +16,4 @@ var SPEED : float = 200
 func _ready():
 	self.active = active
 	raycasts = base_raycasts
-	anim = animations
+	animation_player = animations
