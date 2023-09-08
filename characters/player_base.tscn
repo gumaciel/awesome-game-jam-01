@@ -108,6 +108,9 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_xvyri"]
+resource_name = "stoped"
+
 [sub_resource type="Animation" id="Animation_d0tnl"]
 resource_name = "up"
 length = 0.8
@@ -125,9 +128,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [8, 9, 10, 11]
 }
-
-[sub_resource type="Animation" id="Animation_xvyri"]
-resource_name = "stoped"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxyko"]
 _data = {
