@@ -2,6 +2,7 @@ extends Node2D
 
 var is_walking = false
 var raycasts : Node2D
+var animation_player : AnimationPlayer
 var inputs = {  "ui_up"    : Vector2.UP,
 				"ui_down"  : Vector2.DOWN,
 				"ui_left"  : Vector2.LEFT,
@@ -11,11 +12,12 @@ var inputs = {  "ui_up"    : Vector2.UP,
 
 func _unhandled_input(event) -> void:
 
-	if is_walking == false:
-		for dir in inputs.keys():
-			if event.is_action_pressed(dir):
-				move(dir)
-		
+	for dir in inputs.keys():
+		if event.is_action_pressed(dir):
+			animation_player.play(dir)
+			move(dir)
+			
+
 
 func move(dir) -> void:
 	var colliders : Array = []
@@ -27,7 +29,8 @@ func move(dir) -> void:
 		return
 	var move_tween = create_tween()
 	var tile_position = position + inputs[dir] * 16
-	move_tween.tween_property(self, "position",tile_position , 0.5 )
-	is_walking = false
+	move_tween.tween_property(self, "position",tile_position , 0.2 )
+	await move_tween.finished
+	animation_player.pause()
 
 

@@ -6,9 +6,6 @@
 [node name="Player2" instance=ExtResource("1_x5led")]
 
 [node name="Texture" parent="." index="0"]
-position = Vector2(0, -3)
+position = Vector2(0, -11)
 scale = Vector2(1, 1)
 texture = ExtResource("2_myep5")
-hframes = 4
-vframes = 3
-frame = 1

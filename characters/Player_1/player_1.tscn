@@ -6,8 +6,6 @@
 [node name="Player1" instance=ExtResource("1_rcrqd")]
 
 [node name="Texture" parent="." index="0"]
+position = Vector2(0, -8)
 scale = Vector2(1, 1)
 texture = ExtResource("2_svx0r")
-hframes = 4
-vframes = 3
-frame = 1
