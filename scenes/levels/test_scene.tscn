@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=7 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
-[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="5_eeddq"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
+[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="5_eeddq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8l7u"]
+size = Vector2(14, 14)
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -27,6 +30,14 @@ layer_0/tile_data = PackedInt32Array(131078, 131074, 0, 196614, 131074, 0, 26215
 script = ExtResource("2_y04gh")
 player1 = NodePath("../Player1")
 player2 = NodePath("../Player2")
+
+[node name="Area2D" type="Area2D" parent="TileMap"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
+position = Vector2(152, 72)
+shape = SubResource("RectangleShape2D_l8l7u")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("2_62sbp")]
 player_1 = NodePath("../Player1")
