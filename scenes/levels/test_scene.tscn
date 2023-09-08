@@ -27,8 +27,8 @@ layer_0/tile_data = PackedInt32Array(131078, 131074, 0, 196614, 131074, 0, 26215
 script = ExtResource("2_y04gh")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("2_62sbp")]
-player_1 = NodePath("../Player1")
-player_2 = NodePath("../Player2")
+player_1 = NodePath("../Squire(Player1)")
+player_2 = NodePath("../Knight(Player2)")
 
 [node name="Player2" parent="." instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true
