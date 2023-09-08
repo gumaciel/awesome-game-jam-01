@@ -10,11 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Awesome-game-jam-01"
-run/main_scene="res://scenes/main.tscn"
+config/name="Journey to the Holy Grail"
+run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
-run/main_scene.debug="res://scenes/levels/test_scene.tscn"
+config/icon="res://icon.png"
+run/main_scene.debug="res://scenes/main/main.tscn"
+
+[autoload]
+
+SceneTransition="*res://globals/SceneTransition.tscn"
 
 [display]
 
