@@ -19,7 +19,7 @@ run/main_scene.debug="res://scenes/main/main.tscn"
 
 [autoload]
 
-SceneTransition="*res://globals/SceneTransition.tscn"
+SceneTransition="*res://globals/scene_transition.tscn"
 
 [display]
 
