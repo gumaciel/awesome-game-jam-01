@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=11 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="7_7678i"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
 [ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="9_5akqn"]
+[ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="10_fnev7"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -53,17 +54,21 @@ unique_name_in_owner = true
 position = Vector2(199, 198)
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
-position = Vector2(392, 55)
+position = Vector2(61, 30)
 rotation = 1.5708
 
 [node name="Door" parent="." instance=ExtResource("7_7678i")]
-position = Vector2(352, 144)
+position = Vector2(352, 150)
 
 [node name="Chest" parent="." instance=ExtResource("8_uqrte")]
 position = Vector2(135, 38)
 
 [node name="Button" parent="." instance=ExtResource("9_5akqn")]
 position = Vector2(360, 88)
+
+[node name="ArrowCanon" parent="." instance=ExtResource("10_fnev7")]
+position = Vector2(392, 56)
+rotation = 1.5708
 
 [connection signal="call_scenario" from="Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Player1" to="Scenario" method="_on_player_1_call_scenario"]

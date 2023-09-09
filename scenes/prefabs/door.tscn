@@ -1,19 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://brjiawffrb0mt"]
+[gd_scene load_steps=7 format=3 uid="uid://brjiawffrb0mt"]
 
-[ext_resource type="Texture2D" uid="uid://dfg5apwxslren" path="res://assets/objects/door_base.tres" id="1_gmpjs"]
 [ext_resource type="Script" path="res://world/object_scripts/door.gd" id="1_il01q"]
+[ext_resource type="Texture2D" uid="uid://qydr30bhjbsh" path="res://assets/objects/gate_base.tres" id="2_2ats6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wryko"]
-size = Vector2(32, 32)
+size = Vector2(32, 20)
+
+[sub_resource type="Animation" id="Animation_odpok"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_lia3n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0syqo"]
+_data = {
+"RESET": SubResource("Animation_lia3n"),
+"open": SubResource("Animation_odpok")
+}
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_il01q")
 
 [node name="DoorSprite" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("1_gmpjs")
-hframes = 2
-frame = 1
+texture = ExtResource("2_2ats6")
+vframes = 4
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -21,3 +56,8 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_wryko")
+
+[node name="GateAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0syqo")
+}
