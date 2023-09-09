@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=8 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
 [ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="5_eeddq"]
+[ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="6_shbqr"]
+[ext_resource type="PackedScene" uid="uid://wpk7t03tm3gn" path="res://scenes/prefabs/fire_ball.tscn" id="8_qm1f2"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -38,6 +40,10 @@ active = false
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
 position = Vector2(152, 198)
+
+[node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
+
+[node name="FireBall" parent="." instance=ExtResource("8_qm1f2")]
 
 [connection signal="call_scenario" from="Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Player1" to="Scenario" method="_on_player_1_call_scenario"]
