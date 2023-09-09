@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1vpo374p7liy"]
 
 [ext_resource type="Script" path="res://world/object_scripts/button.gd" id="1_c147f"]
-[ext_resource type="Texture2D" uid="uid://cdkubbi22o2id" path="res://assets/objects/button_base.tres" id="1_peoxn"]
+[ext_resource type="Texture2D" uid="uid://c5uanvxjyc2as" path="res://assets/objects/button.png" id="2_pwlxk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5l181"]
 size = Vector2(16, 16)
@@ -15,7 +15,7 @@ shape = SubResource("RectangleShape2D_5l181")
 
 [node name="ButtonSprite" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("1_peoxn")
+texture = ExtResource("2_pwlxk")
 hframes = 2
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
