@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2a76qo6041ua"
-path="res://.godot/imported/placeholder_interaction.png-3bcc6980b4dfc1b751af3cf12a018b10.ctex"
+uid="uid://vpljj7p5aoqk"
+path="res://.godot/imported/arrows_left.png-81966eba49ce026bd6765f18a677a006.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/placeholder_interaction.png"
-dest_files=["res://.godot/imported/placeholder_interaction.png-3bcc6980b4dfc1b751af3cf12a018b10.ctex"]
+source_file="res://assets/hud/joystick/arrows_left.png"
+dest_files=["res://.godot/imported/arrows_left.png-81966eba49ce026bd6765f18a677a006.ctex"]
 
 [params]
 

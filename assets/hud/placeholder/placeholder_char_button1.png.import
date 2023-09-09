@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ogmeqjtq6br"
-path="res://.godot/imported/placeholder_reload_button.png-af91c0443438f90352178a8c1f519d6b.ctex"
+uid="uid://baj8duhi6ok3i"
+path="res://.godot/imported/placeholder_char_button1.png-6cd40616e3f0b8a692a75dac4a190556.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/placeholder_reload_button.png"
-dest_files=["res://.godot/imported/placeholder_reload_button.png-af91c0443438f90352178a8c1f519d6b.ctex"]
+source_file="res://assets/hud/placeholder/placeholder_char_button1.png"
+dest_files=["res://.godot/imported/placeholder_char_button1.png-6cd40616e3f0b8a692a75dac4a190556.ctex"]
 
 [params]
 

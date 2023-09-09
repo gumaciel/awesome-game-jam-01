@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w17ckinb4eh6"
-path="res://.godot/imported/placeholder_char_button2.png-c33aed0e56b50d8b8d903a828c97e250.ctex"
+uid="uid://1pd3t31o1ga6"
+path="res://.godot/imported/arrows_base.png-f3932a6791b51cf1d77385dcb41f89b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/placeholder_char_button2.png"
-dest_files=["res://.godot/imported/placeholder_char_button2.png-c33aed0e56b50d8b8d903a828c97e250.ctex"]
+source_file="res://assets/hud/joystick/arrows_base.png"
+dest_files=["res://.godot/imported/arrows_base.png-f3932a6791b51cf1d77385dcb41f89b2.ctex"]
 
 [params]
 

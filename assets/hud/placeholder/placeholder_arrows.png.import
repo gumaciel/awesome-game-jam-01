@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baj8duhi6ok3i"
-path="res://.godot/imported/placeholder_char_button1.png-35bfb4fda6e0720db852d2054f2447d1.ctex"
+uid="uid://cp2swj03mxcl4"
+path="res://.godot/imported/placeholder_arrows.png-7125a10785e49efd2be70706e8e17edd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/placeholder_char_button1.png"
-dest_files=["res://.godot/imported/placeholder_char_button1.png-35bfb4fda6e0720db852d2054f2447d1.ctex"]
+source_file="res://assets/hud/placeholder/placeholder_arrows.png"
+dest_files=["res://.godot/imported/placeholder_arrows.png-7125a10785e49efd2be70706e8e17edd.ctex"]
 
 [params]
 
