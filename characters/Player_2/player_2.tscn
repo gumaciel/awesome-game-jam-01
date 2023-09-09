@@ -10,6 +10,3 @@ speed_time = 0.2
 position = Vector2(0, -11)
 scale = Vector2(1, 1)
 texture = ExtResource("2_myep5")
-
-[node name="Area2D" parent="." index="2"]
-collision_layer = 1

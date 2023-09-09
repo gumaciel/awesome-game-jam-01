@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dkwnlk4pa3urq" path="res://assets/players/squire_char_Sheet.png" id="2_svx0r"]
 
 [node name="Squire(Player1)" instance=ExtResource("1_rcrqd")]
-speed_time = 0.6
-is_heavy = true
+speed_time = 0.4
+heavy = true
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -8)
