@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://ckf6k24k24xxp" path="res://assets/players/knight_char_Sheet.png" id="2_myep5"]
 
 [node name="Knight(Player2)" instance=ExtResource("1_x5led")]
+speed_time = 0.2
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -11)
 scale = Vector2(1, 1)
 texture = ExtResource("2_myep5")
+
+[node name="Area2D" parent="." index="2"]
+collision_layer = 1
