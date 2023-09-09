@@ -29,6 +29,7 @@ func _spikes(tile_pos) -> void:
 func _bridge(tile_pos,is_heavy) -> void:
 	if is_heavy:
 		self.set_cell(0,tile_pos,2,hole)
+		print("game over")
 		return
 	if _verify_tile(1,tile_pos) == crack_tile:
 		self.set_cell(0,tile_pos,2,hole)

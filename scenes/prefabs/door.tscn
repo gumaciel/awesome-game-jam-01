@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://brjiawffrb0mt"]
+
+[ext_resource type="Texture2D" uid="uid://dfg5apwxslren" path="res://assets/objects/door_base.tres" id="1_gmpjs"]
+[ext_resource type="Script" path="res://world/object_scripts/door.gd" id="1_il01q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wryko"]
+size = Vector2(32, 32)
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_il01q")
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_gmpjs")
+hframes = 2
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_wryko")
