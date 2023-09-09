@@ -2,10 +2,11 @@ extends Node2D
 
 @export var ID_Player: int 
 @export var Moving_Mode: int
+@export var is_heavy : bool
 var move_time = 0.1
 var raycasts : Node2D
 var animation_player : AnimationPlayer
-
+signal call_scenario(current_pos : Vector2, is_heavy : bool)
 const GRID_SIZE: float = 16.0
 
 var is_moving: bool = false
@@ -37,8 +38,7 @@ func _physics_process(_delta: float) -> void:
 			move_time
 		)
 		await move_tween.finished
-		PlayerManagger.player_position = self.position
-#		await get_tree().create_timer(.5).timeout
+		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
 	if get_direction() == Vector2.ZERO:
 		animation_player.stop()
