@@ -38,7 +38,6 @@ func _physics_process(_delta: float) -> void:
 			move_time
 		)
 		await move_tween.finished
-		PlayerManagger._player_properties(self.position, is_heavy)
 		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
 	if get_direction() == Vector2.ZERO:
