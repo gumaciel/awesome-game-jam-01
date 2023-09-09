@@ -1,42 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=7 format=3 uid="uid://brttmwofxttak"]
 
-[ext_resource type="Texture2D" uid="uid://c22pj17u3obqe" path="res://ui/ui_arrow_up.tres" id="1_wt4m1"]
 [ext_resource type="Script" path="res://scenes/ui/ui_controller.gd" id="1_y5268"]
-[ext_resource type="Texture2D" uid="uid://cx3f4jgx25vbw" path="res://ui/ui_arrow_down.tres" id="2_ol0ws"]
-[ext_resource type="Texture2D" uid="uid://dcaunsljhoooe" path="res://ui/ui_arrow_right.tres" id="3_r7tyq"]
-[ext_resource type="Texture2D" uid="uid://d4kjstyows8u0" path="res://ui/ui_arrow_left.tres" id="4_cyh2k"]
-[ext_resource type="Texture2D" uid="uid://d2a76qo6041ua" path="res://assets/hud/placeholder_interaction.png" id="5_h4xm8"]
-[ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder_char_button1.png" id="6_cf3wm"]
-[ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder_reload_button.png" id="7_tg6ia"]
-[ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder_char_button2.png" id="7_viu5p"]
+[ext_resource type="Texture2D" uid="uid://d2a76qo6041ua" path="res://assets/hud/placeholder/placeholder_interaction.png" id="5_h4xm8"]
+[ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder/placeholder_char_button1.png" id="6_cf3wm"]
+[ext_resource type="PackedScene" uid="uid://b85u4ijqujao4" path="res://scenes/joystick/joystick.tscn" id="6_qyci7"]
+[ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder/placeholder_reload_button.png" id="7_tg6ia"]
+[ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder/placeholder_char_button2.png" id="7_viu5p"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_y5268")
-
-[node name="Arrows" type="Node2D" parent="."]
-position = Vector2(33, 187)
-
-[node name="UP" type="TouchScreenButton" parent="Arrows"]
-position = Vector2(0, 5)
-texture_normal = ExtResource("1_wt4m1")
-action = "ui_up"
-
-[node name="DOWN" type="TouchScreenButton" parent="Arrows"]
-position = Vector2(0, 51)
-texture_normal = ExtResource("2_ol0ws")
-action = "ui_down"
-
-[node name="RIGHT" type="TouchScreenButton" parent="Arrows"]
-position = Vector2(28, 28)
-texture_normal = ExtResource("3_r7tyq")
-action = "ui_right"
-
-[node name="LEFT" type="TouchScreenButton" parent="Arrows"]
-position = Vector2(-28, 28)
-texture_normal = ExtResource("4_cyh2k")
-action = "ui_left"
 
 [node name="Interaction" type="Node2D" parent="."]
 position = Vector2(456, 235)
@@ -62,3 +36,9 @@ texture_normal = ExtResource("6_cf3wm")
 [node name="reload_button" type="TouchScreenButton" parent="Reload"]
 texture_normal = ExtResource("7_tg6ia")
 action = "reload"
+
+[node name="Joystick" parent="." instance=ExtResource("6_qyci7")]
+offset_left = 40.0
+offset_top = 215.0
+offset_right = 40.0
+offset_bottom = 215.0
