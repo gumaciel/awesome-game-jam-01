@@ -5,6 +5,7 @@
 
 [node name="Squire(Player1)" instance=ExtResource("1_rcrqd")]
 speed_time = 0.6
+is_heavy = true
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -8)

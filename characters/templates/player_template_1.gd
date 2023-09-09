@@ -2,6 +2,7 @@ extends Node2D
 
 @export var ID_Player: int 
 @export var Moving_Mode: int
+@export var is_heavy : bool
 var move_time = 0.1
 var raycasts : Node2D
 var animation_player : AnimationPlayer
@@ -37,8 +38,7 @@ func _physics_process(_delta: float) -> void:
 			move_time
 		)
 		await move_tween.finished
-		PlayerManagger.player_position = self.position
-#		await get_tree().create_timer(.5).timeout
+		PlayerManagger._player_properties(self.position, is_heavy)
 		is_moving = false
 	if get_direction() == Vector2.ZERO:
 		animation_player.stop()
