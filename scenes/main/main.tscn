@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://breammdqa7tjk"]
+[gd_scene load_steps=7 format=3 uid="uid://breammdqa7tjk"]
 
 [ext_resource type="Texture2D" uid="uid://vfjwwvyleggy" path="res://scenes/main/assets/clouds.jpeg" id="1_5dpi3"]
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nkfih"]
 [ext_resource type="PackedScene" uid="uid://bykqtdbrsla4w" path="res://scenes/levels/test_scene.tscn" id="2_whuka"]
 [ext_resource type="Texture2D" uid="uid://cq02ymcxwelxi" path="res://scenes/main/assets/grail.png" id="3_fe45p"]
 [ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nkfih")
 
 [node name="Objects" type="Control" parent="."]
 layout_mode = 1

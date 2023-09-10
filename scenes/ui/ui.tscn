@@ -11,29 +11,35 @@
 [ext_resource type="Texture2D" uid="uid://c8epf72ln4di5" path="res://scenes/ui/assets/spr_swap_button_pressed.png" id="8_quc2u"]
 
 [node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_y5268")
 
-[node name="InteractionButton" type="TouchScreenButton" parent="."]
+[node name="MobileButtons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InteractionButton" type="TouchScreenButton" parent="MobileButtons"]
 position = Vector2(428, 218)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_ksa3p")
 texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
-[node name="SettingsButton" type="TouchScreenButton" parent="."]
+[node name="SettingsButton" type="TouchScreenButton" parent="MobileButtons"]
 position = Vector2(410, 2)
 texture_normal = ExtResource("7_tg6ia")
 
-[node name="Joystick" parent="." instance=ExtResource("6_qyci7")]
+[node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]
 layout_mode = 1
-offset_left = 40.0
-offset_top = 215.0
-offset_right = 40.0
-offset_bottom = 215.0
+offset_left = 20.0
+offset_top = 195.0
+offset_right = 20.0
+offset_bottom = 195.0
 
-[node name="ChangeChar" type="TouchScreenButton" parent="."]
+[node name="ChangeChar" type="TouchScreenButton" parent="MobileButtons"]
 z_index = 5
 position = Vector2(4, 51)
 scale = Vector2(2, 2)
@@ -41,17 +47,17 @@ texture_normal = ExtResource("7_yyelt")
 texture_pressed = ExtResource("8_quc2u")
 action = "alternate"
 
-[node name="Players" type="Node2D" parent="ChangeChar"]
+[node name="Players" type="Node2D" parent="MobileButtons/ChangeChar"]
 z_index = -1
 position = Vector2(4, -23)
 scale = Vector2(0.5, 0.5)
 
-[node name="Player1" type="Sprite2D" parent="ChangeChar/Players"]
+[node name="Player1" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
 unique_name_in_owner = true
 position = Vector2(32, 30)
 texture = ExtResource("6_cf3wm")
 
-[node name="Player2" type="Sprite2D" parent="ChangeChar/Players"]
+[node name="Player2" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
 unique_name_in_owner = true
 position = Vector2(46, 29)
 texture = ExtResource("7_viu5p")
