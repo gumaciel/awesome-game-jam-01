@@ -14,7 +14,6 @@ script = ExtResource("1_c147f")
 shape = SubResource("RectangleShape2D_5l181")
 
 [node name="ButtonSprite" type="Sprite2D" parent="."]
-z_index = -1
 texture = ExtResource("2_pwlxk")
 hframes = 2
 

@@ -32,7 +32,6 @@ offset_left = 0.0
 offset_right = 0.0
 
 [node name="Scenario" type="TileMap" parent="."]
-z_index = -2
 tile_set = ExtResource("1_njrg8")
 collision_animatable = true
 format = 2
