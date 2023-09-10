@@ -1,44 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=10 format=3 uid="uid://brttmwofxttak"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui_controller.gd" id="1_y5268"]
-[ext_resource type="Texture2D" uid="uid://d2a76qo6041ua" path="res://assets/hud/placeholder/placeholder_interaction.png" id="5_h4xm8"]
+[ext_resource type="Texture2D" uid="uid://ctn16cgedk32c" path="res://scenes/ui/assets/spr_swap_skill_normal.png" id="2_ksa3p"]
+[ext_resource type="Texture2D" uid="uid://dhy3i16vneqnu" path="res://scenes/ui/assets/spr_swap_skill_pressed.png" id="3_helaa"]
 [ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder/placeholder_char_button1.png" id="6_cf3wm"]
 [ext_resource type="PackedScene" uid="uid://b85u4ijqujao4" path="res://scenes/joystick/joystick.tscn" id="6_qyci7"]
 [ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder/placeholder_reload_button.png" id="7_tg6ia"]
 [ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder/placeholder_char_button2.png" id="7_viu5p"]
+[ext_resource type="Texture2D" uid="uid://s8jq7jduiy6k" path="res://scenes/ui/assets/spr_swap_button_normal.png" id="7_yyelt"]
+[ext_resource type="Texture2D" uid="uid://c8epf72ln4di5" path="res://scenes/ui/assets/spr_swap_button_pressed.png" id="8_quc2u"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_y5268")
 
-[node name="Interaction" type="Node2D" parent="."]
-position = Vector2(456, 235)
-
-[node name="interaction_button" type="TouchScreenButton" parent="Interaction"]
-position = Vector2(-33, -20)
-texture_normal = ExtResource("5_h4xm8")
+[node name="InteractionButton" type="TouchScreenButton" parent="."]
+position = Vector2(428, 218)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("2_ksa3p")
+texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
-[node name="ChangeChar" type="Node2D" parent="."]
-position = Vector2(416, 7)
-
-[node name="AlternateButton1" type="TouchScreenButton" parent="ChangeChar"]
-texture_normal = ExtResource("7_viu5p")
-action = "alternate"
-
-[node name="AlternateButton2" type="TouchScreenButton" parent="ChangeChar"]
-position = Vector2(14, -1)
-texture_normal = ExtResource("6_cf3wm")
-
-[node name="Reload" type="Node2D" parent="."]
-
-[node name="reload_button" type="TouchScreenButton" parent="Reload"]
+[node name="SettingsButton" type="TouchScreenButton" parent="."]
+position = Vector2(410, 2)
 texture_normal = ExtResource("7_tg6ia")
-action = "reload"
 
 [node name="Joystick" parent="." instance=ExtResource("6_qyci7")]
+layout_mode = 1
 offset_left = 40.0
 offset_top = 215.0
 offset_right = 40.0
 offset_bottom = 215.0
+
+[node name="ChangeChar" type="TouchScreenButton" parent="."]
+z_index = 5
+position = Vector2(4, 51)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_yyelt")
+texture_pressed = ExtResource("8_quc2u")
+action = "alternate"
+
+[node name="Players" type="Node2D" parent="ChangeChar"]
+z_index = -1
+position = Vector2(4, -23)
+scale = Vector2(0.5, 0.5)
+
+[node name="Player1" type="Sprite2D" parent="ChangeChar/Players"]
+unique_name_in_owner = true
+position = Vector2(32, 30)
+texture = ExtResource("6_cf3wm")
+
+[node name="Player2" type="Sprite2D" parent="ChangeChar/Players"]
+unique_name_in_owner = true
+position = Vector2(46, 29)
+texture = ExtResource("7_viu5p")

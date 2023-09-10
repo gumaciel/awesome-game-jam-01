@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
-[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="5_eeddq"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
+[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="5_eeddq"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="6_shbqr"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="7_7678i"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
@@ -51,12 +51,12 @@ player_2 = NodePath("../Player2")
 
 [node name="Player2" parent="." instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true
-position = Vector2(282, 199)
+position = Vector2(280, 197)
 active = false
 
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
-position = Vector2(199, 198)
+position = Vector2(200, 197)
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
 position = Vector2(89, 38)
