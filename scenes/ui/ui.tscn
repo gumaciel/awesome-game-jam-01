@@ -29,8 +29,9 @@ texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
 [node name="SettingsButton" type="TouchScreenButton" parent="MobileButtons"]
-position = Vector2(410, 2)
+position = Vector2(6, 2)
 texture_normal = ExtResource("7_tg6ia")
+action = "configuration"
 
 [node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]
 layout_mode = 1
@@ -41,7 +42,7 @@ offset_bottom = 195.0
 
 [node name="ChangeChar" type="TouchScreenButton" parent="MobileButtons"]
 z_index = 5
-position = Vector2(4, 51)
+position = Vector2(409, 48)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("7_yyelt")
 texture_pressed = ExtResource("8_quc2u")
