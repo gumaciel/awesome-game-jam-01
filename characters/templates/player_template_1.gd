@@ -44,8 +44,8 @@ func _physics_process(_delta: float) -> void:
 		animation_player.stop()
 func get_direction() -> Vector2:
 	var direction = Vector2(
-		Input.get_axis("ui_left", "ui_right"),
-		Input.get_axis("ui_up","ui_down")
+		Input.get_axis("move_left", "move_right"),
+		Input.get_axis("move_up","move_down")
 		)
 	if !animation_direction.has(direction):
 		return Vector2.ZERO

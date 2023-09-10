@@ -19,16 +19,16 @@ func _process(delta):
 		var actual_action_pressing : String
 		
 		if delta_pos.y < -10:
-			actual_action_pressing = "ui_up"
+			actual_action_pressing = "move_up"
 			texture.texture = arrow_textures.UP
 		elif delta_pos.y > 10:
-			actual_action_pressing = "ui_down"
+			actual_action_pressing = "move_down"
 			texture.texture = arrow_textures.DOWN
 		elif delta_pos.x < -10:
-			actual_action_pressing = "ui_left"
+			actual_action_pressing = "move_left"
 			texture.texture = arrow_textures.LEFT
 		elif delta_pos.x > 10:
-			actual_action_pressing = "ui_right"
+			actual_action_pressing = "move_right"
 			texture.texture = arrow_textures.RIGHT
 		else:
 			return
