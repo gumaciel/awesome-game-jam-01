@@ -47,6 +47,9 @@ Para celular, existem botões para se mover, atacar e trocar de personagem
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/gamerkarla/)
 [![Instagram](https://img.shields.io/badge/Instagram-Follow-<COLOR>?style=for-the-badge&logo=instagram)](https://www.instagram.com/karlacorrea.oficial/)
 
-## Lucas Santiago - Ilustrador
 ## Matheus Felipe - Sound Designer
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.instagram.com/matheusfelipe.art/)
+[![Instagram](https://img.shields.io/badge/Instagram-Follow-<COLOR>?style=for-the-badge&logo=instagram)](https://www.linkedin.com/in/matheus-felipe-3b9870211/)
+[![Portfólio](https://img.shields.io/badge/Portf%C3%B3lio-red?style=for-the-badge)](https://www.matheusfelipe.art.br)
 
+## Lucas Santiago - Ilustrador
