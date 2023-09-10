@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp1fo532lwoom"
-path="res://.godot/imported/placeholder_char_button.png-5fcd58e5efe2ddc89e3836448700de19.ctex"
+uid="uid://vfjwwvyleggy"
+path="res://.godot/imported/clouds.jpeg-3c5dcbbb42c481bb7b35177ba5730f53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/placeholder_char_button.png"
-dest_files=["res://.godot/imported/placeholder_char_button.png-5fcd58e5efe2ddc89e3836448700de19.ctex"]
+source_file="res://scenes/main/assets/clouds.jpeg"
+dest_files=["res://.godot/imported/clouds.jpeg-3c5dcbbb42c481bb7b35177ba5730f53.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

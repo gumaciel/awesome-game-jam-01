@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://breammdqa7tjk"]
+[gd_scene load_steps=6 format=3 uid="uid://breammdqa7tjk"]
 
+[ext_resource type="Texture2D" uid="uid://vfjwwvyleggy" path="res://scenes/main/assets/clouds.jpeg" id="1_5dpi3"]
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
 [ext_resource type="PackedScene" uid="uid://bykqtdbrsla4w" path="res://scenes/levels/test_scene.tscn" id="2_whuka"]
 [ext_resource type="Texture2D" uid="uid://cq02ymcxwelxi" path="res://scenes/main/assets/grail.png" id="3_fe45p"]
+[ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -20,6 +22,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Clouds" type="TextureRect" parent="Objects"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -359.0
+offset_top = -138.0
+offset_right = 359.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5dpi3")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="Grail" type="TextureRect" parent="Objects"]
 layout_mode = 1
 anchors_preset = 8
@@ -27,13 +46,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -294.5
-offset_top = -166.5
-offset_right = 310.5
-offset_bottom = 166.5
+offset_left = -73.0
+offset_top = -91.5
+offset_right = 73.0
+offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_fe45p")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -44,11 +65,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -95.0
 offset_top = -117.0
-offset_right = 95.0
-offset_bottom = -91.0
+offset_right = 94.0
+offset_bottom = -98.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.0196078, 0.0196078, 1)
+theme_override_fonts/font = ExtResource("3_pqo8o")
 text = "Journey to the Holy Grail"
 
 [node name="Continue" type="Button" parent="."]
