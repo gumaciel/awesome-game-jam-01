@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1pd3t31o1ga6" path="res://assets/hud/joystick/arrows_base.png" id="1_wywu1"]
 
 [node name="Joystick" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
