@@ -22,6 +22,7 @@ Neste jogo, os jogadores assumem os papéis de um nobre cavaleiro e seu fiel esc
 ### Secundárias:
 - **J**: Tem como finalidade trocar de personagem, tornando pratica a colaboração entre os dois.
 - **K**: Habilita a skill do personagem.
+- **ESC**: Pausa o jogo / ir para as configurações.
 
 Para celular, existem botões para se mover, atacar e trocar de personagem
 
