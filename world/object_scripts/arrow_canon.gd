@@ -9,5 +9,5 @@ func _on_timer_timeout() -> void:
 	var arrom_move = create_tween()
 	arrom_move.tween_property(arrow_instance,"position", target_pos,1)
 	await arrom_move.finished
-	arrow_instance.queue_free()
-	pass # Replace with function body.
+	if arrow_instance != null:
+		arrow_instance.queue_free()

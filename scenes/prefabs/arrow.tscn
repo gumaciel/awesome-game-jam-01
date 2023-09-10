@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://pcb8xb6qds2b"]
+[gd_scene load_steps=3 format=3 uid="uid://pcb8xb6qds2b"]
 
-[ext_resource type="Texture2D" uid="uid://6ugea8h3tobl" path="res://assets/objects/fire_ball_base.tres" id="1_jvx6a"]
+[ext_resource type="Texture2D" uid="uid://8ll1rsq22wki" path="res://assets/objects/arrow.png" id="1_divgl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fks3y"]
+size = Vector2(6, 15)
 
 [node name="Arrow" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_jvx6a")
+texture = ExtResource("1_divgl")
+flip_v = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_fks3y")
