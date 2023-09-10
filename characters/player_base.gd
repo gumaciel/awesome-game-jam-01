@@ -6,6 +6,7 @@ var direction : Vector2
 @export var speed_time : float
 @onready var base_raycasts : Node2D = $Raycasts
 @export var animations : AnimationPlayer
+@export var heavy : bool
 @export var active := true :
 	set(value):
 		set_physics_process(value)
@@ -18,8 +19,19 @@ func _ready():
 	move_time = speed_time
 	raycasts = base_raycasts
 	animation_player = animations
+	is_heavy = heavy
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("colidiu")
+	if body as TileMap:
+		print("game over")
+		return
+	if body.get_parent().name == "Arrow":
+		if heavy:
+			body.get_parent().queue_free()
+			return
+		print("game over")
+	
+
+
 

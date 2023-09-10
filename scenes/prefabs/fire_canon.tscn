@@ -1,18 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://bymr3064c87is"]
+[gd_scene load_steps=4 format=3 uid="uid://bymr3064c87is"]
 
 [ext_resource type="Script" path="res://world/object_scripts/fire_canon.gd" id="1_pcrwq"]
-[ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_pkrj0"]
+[ext_resource type="Texture2D" uid="uid://bqbpxqd3lwnr1" path="res://assets/objects/cannon_base.tres" id="2_demcs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtrcp"]
+size = Vector2(6, 282)
 
 [node name="FireCanon" type="Node2D"]
-position = Vector2(89, 39)
 script = ExtResource("1_pcrwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.66893e-06, 2.05636e-06)
-scale = Vector2(0.140625, 0.125)
-texture = ExtResource("1_pkrj0")
+texture = ExtResource("2_demcs")
 
-[node name="RayFire" type="RayCast2D" parent="."]
-target_position = Vector2(0, 200)
-collide_with_areas = true
-collide_with_bodies = false
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 131)
+shape = SubResource("RectangleShape2D_xtrcp")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
