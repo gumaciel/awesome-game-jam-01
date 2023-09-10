@@ -1,20 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://pcb8xb6qds2b"]
 
-[ext_resource type="Texture2D" uid="uid://8ll1rsq22wki" path="res://assets/objects/arrow.png" id="1_divgl"]
+[ext_resource type="Texture2D" uid="uid://bhw34v04ojt3j" path="res://assets/objects/arrow_base.tres" id="1_2as7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fks3y"]
-size = Vector2(6, 15)
+size = Vector2(6, 16)
 
 [node name="Arrow" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_divgl")
-flip_v = true
+texture = ExtResource("1_2as7e")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_fks3y")

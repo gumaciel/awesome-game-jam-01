@@ -1,13 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqu45akdgiwwe"]
 
 [ext_resource type="Script" path="res://world/object_scripts/arrow_canon.gd" id="1_1hego"]
-[ext_resource type="Texture2D" uid="uid://bqbpxqd3lwnr1" path="res://assets/objects/cannon_base.tres" id="1_vptar"]
+[ext_resource type="Texture2D" uid="uid://dhwfq8bain3r8" path="res://assets/objects/dispenser_base.tres" id="2_l3obq"]
 
 [node name="ArrowCanon" type="Node2D"]
 script = ExtResource("1_1hego")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vptar")
+texture = ExtResource("2_l3obq")
+hframes = 2
+frame = 1
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
