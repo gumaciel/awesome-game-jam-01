@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://irvpfr0tw3cp"
-path="res://.godot/imported/Passos_Castelo_1_.wav-38950352e2399144753c3065616d65a3.sample"
+path="res://.godot/imported/Passos_Castelo_1_.wav-b4a3511151a6483dda7dade588f16e54.sample"
 
 [deps]
 
-source_file="res://assets/sounds/sfx/walking/castle/Passos_Castelo_1_.wav"
-dest_files=["res://.godot/imported/Passos_Castelo_1_.wav-38950352e2399144753c3065616d65a3.sample"]
+source_file="res://assets/sounds/sfx/walking/castle/knight/Passos_Castelo_1_.wav"
+dest_files=["res://.godot/imported/Passos_Castelo_1_.wav-b4a3511151a6483dda7dade588f16e54.sample"]
 
 [params]
 
