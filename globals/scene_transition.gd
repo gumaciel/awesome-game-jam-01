@@ -13,3 +13,9 @@ func change_scene_to_packed(packed_scene : PackedScene) -> void:
 func _change_scene_on_tree() -> void:
 	get_tree().change_scene_to_packed(scene_to_change)
 	scene_to_change = null
+
+func _death_event():
+	_reload()
+
+func _reload():
+	get_tree().reload_current_scene()
