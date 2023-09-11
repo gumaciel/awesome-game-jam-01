@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=13 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_hxbm2"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
 [ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="9_5akqn"]
 [ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="10_fnev7"]
+[ext_resource type="PackedScene" uid="uid://jybt22htpdsg" path="res://scenes/prefabs/box.tscn" id="12_k8mum"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -62,6 +63,9 @@ position = Vector2(135, 38)
 [node name="ArrowCanon" parent="." instance=ExtResource("10_fnev7")]
 position = Vector2(392, 56)
 rotation = 1.5708
+
+[node name="box" parent="." instance=ExtResource("12_k8mum")]
+position = Vector2(152, 136)
 
 [node name="Player2" parent="." instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true

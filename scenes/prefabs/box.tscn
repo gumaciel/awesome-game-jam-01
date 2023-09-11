@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://jybt22htpdsg"]
+
+[ext_resource type="Script" path="res://world/object_scripts/box.gd" id="1_3m5yr"]
+[ext_resource type="Texture2D" uid="uid://c5pkevvh45ajg" path="res://assets/tilesets/castle_tileset.png" id="1_06wed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m47gb"]
+size = Vector2(16, 16)
+
+[node name="Box" type="CharacterBody2D"]
+script = ExtResource("1_3m5yr")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_06wed")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m47gb")
+
+[node name="raycast" type="RayCast2D" parent="."]
