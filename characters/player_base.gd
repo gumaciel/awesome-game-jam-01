@@ -23,14 +23,15 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("game over")
 	if body as TileMap:
-		print("game over")
+		SceneTransition._death_event()
 		return
 	if body.get_parent().name == "Arrow":
 		if heavy:
 			body.get_parent().queue_free()
 			return
-		print("game over")
+	SceneTransition._death_event()
 	
 
 
