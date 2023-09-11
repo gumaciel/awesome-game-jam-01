@@ -13,7 +13,7 @@ var is_touching : bool = false
 @onready var texture : TextureRect = $Texture
 var action_pressing : String
 
-func _process(delta):
+func _process(_delta):
 	if is_touching:
 		var delta_pos = get_local_mouse_position()
 		var actual_action_pressing : String
