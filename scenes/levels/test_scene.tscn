@@ -4,8 +4,8 @@
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
-[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="5_eeddq"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
+[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="5_eeddq"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="6_shbqr"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="7_7678i"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
@@ -49,6 +49,22 @@ script = ExtResource("2_y04gh")
 player_1 = NodePath("../Player1")
 player_2 = NodePath("../Player2")
 
+[node name="Door" parent="." instance=ExtResource("7_7678i")]
+position = Vector2(352, 150)
+
+[node name="Button" parent="." instance=ExtResource("9_5akqn")]
+position = Vector2(361, 105)
+
+[node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
+position = Vector2(89, 38)
+
+[node name="Chest" parent="." instance=ExtResource("8_uqrte")]
+position = Vector2(135, 38)
+
+[node name="ArrowCanon" parent="." instance=ExtResource("10_fnev7")]
+position = Vector2(392, 56)
+rotation = 1.5708
+
 [node name="Player2" parent="." instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true
 position = Vector2(280, 197)
@@ -58,23 +74,7 @@ active = false
 unique_name_in_owner = true
 position = Vector2(200, 197)
 
-[node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
-position = Vector2(89, 38)
-
-[node name="Door" parent="." instance=ExtResource("7_7678i")]
-position = Vector2(352, 150)
-
-[node name="Chest" parent="." instance=ExtResource("8_uqrte")]
-position = Vector2(135, 38)
-
-[node name="Button" parent="." instance=ExtResource("9_5akqn")]
-position = Vector2(361, 105)
-
-[node name="ArrowCanon" parent="." instance=ExtResource("10_fnev7")]
-position = Vector2(392, 56)
-rotation = 1.5708
-
-[connection signal="call_scenario" from="Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Player1" to="Scenario" method="_on_player_1_call_scenario"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]
+[connection signal="call_scenario" from="Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Player1" to="Scenario" method="_on_player_1_call_scenario"]
