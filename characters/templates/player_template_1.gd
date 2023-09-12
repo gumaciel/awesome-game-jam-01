@@ -44,6 +44,10 @@ func _physics_process(_delta: float) -> void:
 		is_moving = false
 		animation_player.pause()
 
+		if walking_sound_pool:
+			walking_sound_pool.play_random_audio()
+			
+
 func get_direction() -> Vector2:
 	var direction = Vector2(
 		Input.get_axis("move_left", "move_right"),
