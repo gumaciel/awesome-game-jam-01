@@ -25,6 +25,8 @@ func _spikes(tile_pos) -> void:
 	self.set_cell(0,tile_pos,2,spikes)
 
 func _bridge(tile_pos,is_heavy) -> void:
+	$DestroyingBridgeAudio.play()
+	
 	if is_heavy:
 		self.set_cell(0,tile_pos,2,hole)
 		SceneTransition._death_event()
