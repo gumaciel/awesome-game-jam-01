@@ -17,6 +17,7 @@ var inputs := {
 func move(dir):
 	var _tween = create_tween()
 	var vector_pos = inputs[dir] * grid_size
+	raycast.target_position = vector_pos
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		_tween.tween_property(self, "position", position + vector_pos * grid_size, 0.2)
