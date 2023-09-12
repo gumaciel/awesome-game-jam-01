@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=13 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_hxbm2"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
+[ext_resource type="AudioStream" uid="uid://d3i4yg6bjn5rc" path="res://assets/sounds/sfx/bridge/Ponte_quebrando_2.wav" id="4_8y3jf"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
 [ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="5_eeddq"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="6_shbqr"]
@@ -42,6 +43,9 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(589843, 65538, 8, 589844, 65538, 8, 589847, 65538, 8, 589848, 65538, 8, 524307, 65538, 7, 524308, 65538, 7, 524311, 65538, 7, 524312, 65538, 7)
 script = ExtResource("2_y04gh")
+
+[node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
+stream = ExtResource("4_8y3jf")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("2_62sbp")]
 player_1 = NodePath("../Player1")

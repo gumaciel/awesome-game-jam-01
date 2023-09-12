@@ -40,6 +40,7 @@ func _change_overlay() -> void:
 	ui_player_2.z_index = z_index_active if player_2.active else z_index_inactive
 
 func _pause() -> void:
+	$PauseAudioStreamPlayer.play()
 	get_tree().paused = !get_tree().paused
 
 	var input_mode := Input.MOUSE_MODE_VISIBLE if get_tree().paused else Input.MOUSE_MODE_HIDDEN

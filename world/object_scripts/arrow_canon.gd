@@ -6,6 +6,9 @@ extends Node2D
 func _on_timer_timeout() -> void:
 	var arrow_instance = arrow.instantiate()
 	self.add_child(arrow_instance)
+	
+	$AudioStreamPlayer2D.play()
+	
 	var arrom_move = create_tween()
 	arrom_move.tween_property(arrow_instance,"position", target_pos,1)
 	await arrom_move.finished

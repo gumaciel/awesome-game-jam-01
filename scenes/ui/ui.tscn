@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=11 format=3 uid="uid://brttmwofxttak"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui_controller.gd" id="1_y5268"]
 [ext_resource type="Texture2D" uid="uid://ctn16cgedk32c" path="res://scenes/ui/assets/spr_swap_skill_normal.png" id="2_ksa3p"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder/placeholder_char_button2.png" id="7_viu5p"]
 [ext_resource type="Texture2D" uid="uid://s8jq7jduiy6k" path="res://scenes/ui/assets/spr_swap_button_normal.png" id="7_yyelt"]
 [ext_resource type="Texture2D" uid="uid://c8epf72ln4di5" path="res://scenes/ui/assets/spr_swap_button_pressed.png" id="8_quc2u"]
+[ext_resource type="AudioStream" uid="uid://be3k5vwy6eppm" path="res://assets/sounds/sfx/pause/Pausa.wav" id="10_p4g21"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -62,3 +63,6 @@ texture = ExtResource("6_cf3wm")
 unique_name_in_owner = true
 position = Vector2(46, 29)
 texture = ExtResource("7_viu5p")
+
+[node name="PauseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_p4g21")
