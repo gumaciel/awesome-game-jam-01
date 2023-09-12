@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d316k4en4222v"]
+[gd_scene load_steps=12 format=3 uid="uid://d316k4en4222v"]
 
 [ext_resource type="Script" path="res://characters/player_base.gd" id="1_fqhkc"]
 [ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_xqc8x"]
+[ext_resource type="PackedScene" uid="uid://1o78yr5cfnti" path="res://scenes/sounds/sound_pool.tscn" id="3_mfev7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v28ut"]
 size = Vector2(18, 19)
@@ -188,5 +189,7 @@ collide_with_areas = true
 libraries = {
 "": SubResource("AnimationLibrary_vxyko")
 }
+
+[node name="WalkingSoundPool" parent="." instance=ExtResource("3_mfev7")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

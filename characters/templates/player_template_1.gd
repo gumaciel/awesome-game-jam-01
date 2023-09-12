@@ -8,6 +8,7 @@ var raycasts : Node2D
 var animation_player : AnimationPlayer
 signal call_scenario(current_pos : Vector2, is_heavy : bool)
 const GRID_SIZE: float = 16.0
+@export var walking_sound_pool : SoundPool
 
 var is_moving: bool = false
 var animation_direction = {
@@ -40,8 +41,13 @@ func _physics_process(_delta: float) -> void:
 		await move_tween.finished
 		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
+		
+		if walking_sound_pool:
+			walking_sound_pool.play_random_audio()
+		
 	if get_direction() == Vector2.ZERO:
 		animation_player.stop()
+
 func get_direction() -> Vector2:
 	var direction = Vector2(
 		Input.get_axis("move_left", "move_right"),
