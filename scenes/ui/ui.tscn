@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scenes/ui/ui_controller.gd" id="1_y5268"]
 [ext_resource type="Texture2D" uid="uid://ctn16cgedk32c" path="res://scenes/ui/assets/spr_swap_skill_normal.png" id="2_ksa3p"]
 [ext_resource type="Texture2D" uid="uid://dhy3i16vneqnu" path="res://scenes/ui/assets/spr_swap_skill_pressed.png" id="3_helaa"]
+[ext_resource type="Texture2D" uid="uid://cdcaga38tfpm3" path="res://scenes/ui/assets/settings.png" id="4_gvyp0"]
 [ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder/placeholder_char_button1.png" id="6_cf3wm"]
 [ext_resource type="PackedScene" uid="uid://b85u4ijqujao4" path="res://scenes/joystick/joystick.tscn" id="6_qyci7"]
-[ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder/placeholder_reload_button.png" id="7_tg6ia"]
 [ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder/placeholder_char_button2.png" id="7_viu5p"]
 [ext_resource type="Texture2D" uid="uid://s8jq7jduiy6k" path="res://scenes/ui/assets/spr_swap_button_normal.png" id="7_yyelt"]
 [ext_resource type="Texture2D" uid="uid://c8epf72ln4di5" path="res://scenes/ui/assets/spr_swap_button_pressed.png" id="8_quc2u"]
@@ -39,8 +39,8 @@ texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
 [node name="SettingsButton" type="TouchScreenButton" parent="MobileButtons"]
-position = Vector2(6, 2)
-texture_normal = ExtResource("7_tg6ia")
+position = Vector2(15, 4)
+texture_normal = ExtResource("4_gvyp0")
 action = "configuration"
 
 [node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]

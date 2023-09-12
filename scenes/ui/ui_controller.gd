@@ -21,10 +21,13 @@ func _ready():
 	_change_overlay()
 	
 func _is_mobile() -> bool:
-	if ProjectSettings.has_setting("application/config/mobile_debug.debug"):
-		return ProjectSettings.get_setting("application/config/mobile_debug.debug")
+	var actual_mobile := OS.get_name() == "Android" or OS.get_name() == "iOS"
 	
-	return OS.get_name() == "Android" or OS.get_name() == "iOS"
+	if not actual_mobile:
+		if ProjectSettings.has_setting("application/config/mobile_debug.debug"):
+			return ProjectSettings.get_setting("application/config/mobile_debug.debug")
+
+	return actual_mobile
 
 func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("alternate"):
