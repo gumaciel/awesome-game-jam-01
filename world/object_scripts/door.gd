@@ -18,7 +18,6 @@ func _on_button_area_entered(area: Area2D) -> void:
 func _on_button_area_exited(area: Area2D) -> void:
 	if area.get_parent() != current_player:
 		return
-	print("saiu")
 	animation.play_backwards("open")
 	current_player = null
 	static_colision.set_deferred("disabled",false)

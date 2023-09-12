@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://1o78yr5cfnti" path="res://scenes/sounds/sound_pool.tscn" id="3_mfev7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v28ut"]
-size = Vector2(18, 19)
+size = Vector2(13.25, 12)
 
 [sub_resource type="Animation" id="Animation_5bx3v"]
 length = 0.001
@@ -160,7 +160,7 @@ collision_mask = 4
 linear_damp = 39.289
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 3.99997)
 shape = SubResource("RectangleShape2D_v28ut")
 
 [node name="Raycasts" type="Node2D" parent="."]

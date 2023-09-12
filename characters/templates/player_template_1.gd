@@ -30,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 			animation_player.play(animation_direction[direction])
 		if colliders.has(direction):
 			is_moving = false
+			animation_player.pause()
 			return
 		var move_tween = create_tween()
 		move_tween.tween_property(
@@ -41,12 +42,7 @@ func _physics_process(_delta: float) -> void:
 		await move_tween.finished
 		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
-		
-		if walking_sound_pool:
-			walking_sound_pool.play_random_audio()
-		
-	if get_direction() == Vector2.ZERO:
-		animation_player.stop()
+		animation_player.pause()
 
 func get_direction() -> Vector2:
 	var direction = Vector2(

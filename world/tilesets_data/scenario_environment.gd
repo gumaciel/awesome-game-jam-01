@@ -17,19 +17,17 @@ func _tiles_event(pos,heavy):
 	if bridges.has(current_tile):
 		_bridge(tile_pos,heavy)
 		return
-	if current_tile == spikes:
-		print("game over")
 
 
 func _spikes(tile_pos) -> void:
-	var timer = get_tree().create_timer(0.5)
+	var timer = get_tree().create_timer(0.3)
 	await timer.timeout
 	self.set_cell(0,tile_pos,2,spikes)
 
 func _bridge(tile_pos,is_heavy) -> void:
 	if is_heavy:
 		self.set_cell(0,tile_pos,2,hole)
-		print("game over")
+		SceneTransition._death_event()
 		return
 	if _verify_tile(1,tile_pos) == crack_tile:
 		self.set_cell(0,tile_pos,2,hole)
