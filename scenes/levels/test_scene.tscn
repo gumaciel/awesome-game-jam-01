@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=13 format=3 uid="uid://bykqtdbrsla4w"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_hxbm2"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
 [ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="9_5akqn"]
 [ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="10_fnev7"]
+[ext_resource type="PackedScene" uid="uid://bhgxcqmvui56" path="res://scenes/prefabs/wood_box.tscn" id="12_ka67x"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -48,7 +49,7 @@ player_1 = NodePath("../Player1")
 player_2 = NodePath("../Player2")
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
-position = Vector2(89, 38)
+position = Vector2(89, 40)
 
 [node name="Door" parent="." instance=ExtResource("7_7678i")]
 position = Vector2(352, 150)
@@ -70,7 +71,10 @@ active = false
 
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
-position = Vector2(200, 197)
+position = Vector2(216, 197)
+
+[node name="WoodBox" parent="." instance=ExtResource("12_ka67x")]
+position = Vector2(184, 200)
 
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]

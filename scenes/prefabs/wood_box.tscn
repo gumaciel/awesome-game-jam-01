@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhgxcqmvui56"]
+
+[ext_resource type="Script" path="res://world/object_scripts/wood_box.gd" id="1_gkro2"]
+[ext_resource type="Texture2D" uid="uid://bk82ayru8eqvi" path="res://assets/objects/wood_box_base.tres" id="1_x0tcr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfenb"]
+size = Vector2(16, 15)
+
+[node name="WoodBox" type="Area2D"]
+position = Vector2(-4, 0)
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_gkro2")
+
+[node name="WoodBoxSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_x0tcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_yfenb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

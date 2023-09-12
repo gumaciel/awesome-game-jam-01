@@ -21,15 +21,17 @@ func _physics_process(_delta: float) -> void:
 	if get_direction() != Vector2.ZERO and not is_moving:
 		is_moving = true
 		var colliders : Array = []
+		var box = null
 		for ray in raycasts.get_children():
 			if ray.is_colliding():
 				colliders.append(ray.target_position.clamp(Vector2(-1,-1),Vector2(1,1)))
 		var direction: Vector2 = get_direction()
+		PlayerManager.current_direction = direction
 		if animation_direction.has(direction):
 			animation_player.play(animation_direction[direction])
 		if colliders.has(direction):
-			is_moving = false
 			animation_player.pause()
+			is_moving = false
 			return
 		var move_tween = create_tween()
 		move_tween.tween_property(
@@ -52,3 +54,7 @@ func get_direction() -> Vector2:
 		return Vector2.ZERO
 	return direction
 
+func _move_box():
+	
+	
+	pass
