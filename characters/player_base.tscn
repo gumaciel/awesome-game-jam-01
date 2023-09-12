@@ -141,6 +141,7 @@ _data = {
 }
 
 [node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations")]
+y_sort_enabled = true
 script = ExtResource("1_fqhkc")
 animations = NodePath("Animations")
 

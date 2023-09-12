@@ -48,8 +48,8 @@ script = ExtResource("2_y04gh")
 stream = ExtResource("4_8y3jf")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("2_62sbp")]
-player_1 = NodePath("../Player1")
-player_2 = NodePath("../Player2")
+player_1 = NodePath("../Node2D/Player1")
+player_2 = NodePath("../Node2D/Player2")
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
 position = Vector2(89, 38)
@@ -67,16 +67,19 @@ position = Vector2(361, 105)
 position = Vector2(392, 56)
 rotation = 1.5708
 
-[node name="Player2" parent="." instance=ExtResource("4_qwccp")]
+[node name="Node2D" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player2" parent="Node2D" instance=ExtResource("4_qwccp")]
 unique_name_in_owner = true
 position = Vector2(280, 197)
 active = false
 
-[node name="Player1" parent="." instance=ExtResource("5_eeddq")]
+[node name="Player1" parent="Node2D" instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
 position = Vector2(200, 197)
 
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]
-[connection signal="call_scenario" from="Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Player1" to="Scenario" method="_on_player_1_call_scenario"]
+[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
