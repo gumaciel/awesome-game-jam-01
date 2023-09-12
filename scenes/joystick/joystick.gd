@@ -15,7 +15,13 @@ var action_pressing : String
 
 @onready var default_position := global_position
 
-func _process(_delta):
+func _ready() -> void:
+	Input.action_release("move_up")
+	Input.action_release("move_left")
+	Input.action_release("move_down")
+	Input.action_release("move_right")
+
+func _process(_delta : float) -> void:
 	if is_touching:
 		var delta_pos = get_local_mouse_position()
 		var actual_action_pressing : String
