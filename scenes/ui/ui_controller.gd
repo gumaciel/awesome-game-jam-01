@@ -21,7 +21,7 @@ func _ready():
 	_change_overlay()
 	
 func _is_mobile() -> bool:
-	var actual_mobile := OS.get_name() == "Android" or OS.get_name() == "iOS"
+	var actual_mobile := OS.get_name() == "Android" or OS.get_name() == "iOS" or OS.get_name() == "Web"
 	
 	if not actual_mobile:
 		if ProjectSettings.has_setting("application/config/mobile_debug.debug"):
