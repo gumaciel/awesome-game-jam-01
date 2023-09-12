@@ -13,6 +13,8 @@ var is_touching : bool = false
 @onready var texture : TextureRect = $Texture
 var action_pressing : String
 
+@onready var default_position := global_position
+
 func _process(_delta):
 	if is_touching:
 		var delta_pos = get_local_mouse_position()
@@ -38,11 +40,23 @@ func _process(_delta):
 		action_pressing = actual_action_pressing
 		Input.action_press(action_pressing)
 
-func _on_texture_rect_gui_input(event):
+func _on_texture_rect_gui_input(event : InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		var touch = event as InputEventScreenTouch
-		
-		is_touching = touch.pressed
-		if not is_touching:
-			texture.texture = arrow_textures.BASE
-			Input.action_release(action_pressing)
+		_move(touch)
+
+
+func _on_click_button_gui_input(event : InputEvent):
+	if event is InputEventScreenTouch:
+		var touch = event as InputEventScreenTouch
+		_move(touch)
+
+
+func _move(touch : InputEventScreenTouch) -> void:
+	is_touching = touch.pressed
+	if not is_touching:
+		texture.texture = arrow_textures.BASE
+		Input.action_release(action_pressing)
+		global_position = default_position
+	else:
+		global_position = get_global_mouse_position()

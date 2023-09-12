@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.png"
 run/main_scene.debug="res://scenes/main/main.tscn"
+config/mobile_debug.debug=false
 
 [autoload]
 

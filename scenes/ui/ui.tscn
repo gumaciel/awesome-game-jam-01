@@ -22,6 +22,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ClickButton" type="Control" parent="MobileButtons"]
+process_mode = 1
+layout_mode = 1
+anchor_left = -0.875
+anchor_top = 2.325
+anchor_right = 6.175
+anchor_bottom = 6.175
+metadata/_edit_use_anchors_ = true
+
 [node name="InteractionButton" type="TouchScreenButton" parent="MobileButtons"]
 position = Vector2(428, 218)
 scale = Vector2(2, 2)
@@ -35,6 +44,7 @@ texture_normal = ExtResource("7_tg6ia")
 action = "configuration"
 
 [node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]
+z_index = 8
 layout_mode = 1
 offset_left = 20.0
 offset_top = 195.0
@@ -66,3 +76,5 @@ texture = ExtResource("7_viu5p")
 
 [node name="PauseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_p4g21")
+
+[connection signal="gui_input" from="MobileButtons/ClickButton" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
