@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl4hgrkdmdu8f"]
+[gd_scene load_steps=7 format=3 uid="uid://dl4hgrkdmdu8f"]
 
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="1_rcrqd"]
+[ext_resource type="Texture2D" uid="uid://bdnt564c4h8lb" path="res://assets/players/knight_death.png" id="2_3pgba"]
 [ext_resource type="Texture2D" uid="uid://dkwnlk4pa3urq" path="res://assets/players/squire_char_Sheet.png" id="2_svx0r"]
 [ext_resource type="AudioStream" uid="uid://2ietrv30gb20" path="res://assets/sounds/sfx/walking/castle/squire/Passos_Castelo_5.wav" id="3_efutw"]
 [ext_resource type="AudioStream" uid="uid://l6ibwko8us3m" path="res://assets/sounds/sfx/walking/castle/squire/Passos_Castelo_6.wav" id="4_8l84n"]
@@ -12,9 +13,15 @@ heavy = true
 walking_sound_pool = NodePath("WalkingSoundPool")
 
 [node name="Texture" parent="." index="0"]
+visible = true
 position = Vector2(0, -8)
 scale = Vector2(1, 1)
 texture = ExtResource("2_svx0r")
+
+[node name="DeathSprite2D" parent="." index="1"]
+visible = false
+position = Vector2(1, -10.5)
+texture = ExtResource("2_3pgba")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="0"]
 stream = ExtResource("3_efutw")
