@@ -49,7 +49,7 @@ func _process(_delta : float) -> void:
 func _on_texture_rect_gui_input(event : InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		var touch = event as InputEventScreenTouch
-		_move(touch)
+		_move(touch, false)
 
 
 func _on_click_button_gui_input(event : InputEvent):
@@ -58,11 +58,13 @@ func _on_click_button_gui_input(event : InputEvent):
 		_move(touch)
 
 
-func _move(touch : InputEventScreenTouch) -> void:
+func _move(touch : InputEventScreenTouch, move : bool = true) -> void:
 	is_touching = touch.pressed
 	if not is_touching:
 		texture.texture = arrow_textures.BASE
 		Input.action_release(action_pressing)
-		global_position = default_position
+		if move: 
+			global_position = default_position
 	else:
-		global_position = get_global_mouse_position()
+		if move:
+			global_position = get_global_mouse_position()

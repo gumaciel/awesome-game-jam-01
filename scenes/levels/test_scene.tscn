@@ -83,4 +83,5 @@ position = Vector2(200, 197)
 [connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 
+[editable path="UI"]
 [editable path="Node2D/Player1"]

@@ -24,13 +24,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ClickButton" type="Control" parent="MobileButtons"]
+[node name="ControlClickable" type="Control" parent="MobileButtons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClickButton" type="Control" parent="MobileButtons/ControlClickable"]
 process_mode = 1
 layout_mode = 1
-anchor_left = -0.875
-anchor_top = 2.325
-anchor_right = 6.175
-anchor_bottom = 6.175
+anchor_left = 1.85
+anchor_top = 2.6
+anchor_right = 6.5
+anchor_bottom = 6.45
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickButton2" type="Control" parent="MobileButtons/ControlClickable"]
+process_mode = 1
+layout_mode = 1
+anchor_left = -1.2
+anchor_top = 1.85
+anchor_right = 2.4
+anchor_bottom = 4.6
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickButton3" type="Control" parent="MobileButtons/ControlClickable"]
+process_mode = 1
+layout_mode = 1
+anchor_left = -2.175
+anchor_top = 2.875
+anchor_right = 0.15
+anchor_bottom = 6.775
 metadata/_edit_use_anchors_ = true
 
 [node name="InteractionButton" type="TouchScreenButton" parent="MobileButtons"]
@@ -97,4 +120,6 @@ texture = ExtResource("11_jldy3")
 [node name="PauseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_p4g21")
 
-[connection signal="gui_input" from="MobileButtons/ClickButton" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton2" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton3" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
