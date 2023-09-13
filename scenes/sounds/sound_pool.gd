@@ -3,7 +3,7 @@ class_name SoundPool
 extends Node2D
 
 func _get_audio_players() -> Array[AudioStreamPlayer2D]:
-	var audio_players : Array[AudioStreamPlayer2D]
+	var audio_players : Array[AudioStreamPlayer2D] = []
 	for child in get_children():
 		if child is AudioStreamPlayer2D:
 			audio_players.append(child)
