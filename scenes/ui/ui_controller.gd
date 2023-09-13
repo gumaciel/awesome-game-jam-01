@@ -42,8 +42,9 @@ func _switch_char() -> void:
 	_change_overlay()
 
 func _change_overlay() -> void:
-	ui_player_1.z_index = z_index_active if player_1.active else z_index_inactive
-	ui_player_2.z_index = z_index_active if player_2.active else z_index_inactive
+#	ui_player_1.z_index = z_index_active if player_1.active else z_index_inactive
+#	ui_player_2.z_index = z_index_active if player_2.active else z_index_inactive
+	pass
 
 func _pause() -> void:
 	$PauseAudioStreamPlayer.play()
