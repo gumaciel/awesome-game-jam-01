@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bk82ayru8eqvi" path="res://assets/objects/wood_box_base.tres" id="1_x0tcr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfenb"]
-size = Vector2(16, 15)
+size = Vector2(16, 16)
 
 [node name="WoodBox" type="Area2D"]
 position = Vector2(-4, 0)
@@ -16,7 +16,6 @@ script = ExtResource("1_gkro2")
 texture = ExtResource("1_x0tcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_yfenb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

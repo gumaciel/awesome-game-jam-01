@@ -49,7 +49,10 @@ player_1 = NodePath("../Player1")
 player_2 = NodePath("../Player2")
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
-position = Vector2(89, 40)
+position = Vector2(104, 101)
+
+[node name="WoodBox" parent="." instance=ExtResource("12_ka67x")]
+position = Vector2(136, 152)
 
 [node name="Door" parent="." instance=ExtResource("7_7678i")]
 position = Vector2(352, 150)
@@ -72,9 +75,6 @@ active = false
 [node name="Player1" parent="." instance=ExtResource("5_eeddq")]
 unique_name_in_owner = true
 position = Vector2(216, 197)
-
-[node name="WoodBox" parent="." instance=ExtResource("12_ka67x")]
-position = Vector2(184, 200)
 
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]

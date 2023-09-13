@@ -44,6 +44,8 @@ func _physics_process(_delta: float) -> void:
 		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
 		animation_player.pause()
+		return
+	PlayerManager.current_direction = get_direction()
 
 func get_direction() -> Vector2:
 	var direction = Vector2(

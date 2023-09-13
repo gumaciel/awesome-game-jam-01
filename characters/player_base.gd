@@ -23,7 +23,6 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("game over")
 	if body as TileMap:
 		SceneTransition._death_event()
 		return

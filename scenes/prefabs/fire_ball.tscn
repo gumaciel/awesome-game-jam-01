@@ -8,6 +8,7 @@ size = Vector2(6, 5)
 [node name="FireBall" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(1.19209e-07, 0.499998)
 texture = ExtResource("1_hrwx2")
 
