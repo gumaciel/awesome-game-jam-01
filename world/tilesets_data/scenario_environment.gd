@@ -29,17 +29,11 @@ func _bridge(tile_pos,is_heavy) -> void:
 	
 	if is_heavy:
 		self.set_cell(0,tile_pos,2,hole)
-		SceneTransition._death_event()
-		return
-	if _verify_tile(1,tile_pos) == crack_tile:
+		GlobalSignals.game_over.emit()
+	elif _verify_tile(1,tile_pos) == crack_tile:
 		self.set_cell(0,tile_pos,2,hole)
-		return
-	if _verify_tile(1,tile_pos) == Vector2i(-1,-1):
+	elif _verify_tile(1,tile_pos) == Vector2i(-1,-1):
 		self.set_cell(1,tile_pos,2,crack_tile)
-		return
-
-		
-
 
 func _verify_tile(layer, pos):
 	return self.get_cell_atlas_coords(layer,pos)
@@ -47,11 +41,7 @@ func _verify_tile(layer, pos):
 
 func _on_player_1_call_scenario(current_pos, is_heavy) -> void:
 	_tiles_event(current_pos,is_heavy)
-	pass # Replace with function body.
-
 
 func _on_player_2_call_scenario(current_pos, is_heavy) -> void:
 	_tiles_event(current_pos,is_heavy)
-	pass # Replace with function body.
-
 
