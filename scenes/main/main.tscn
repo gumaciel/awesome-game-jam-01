@@ -1,12 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://breammdqa7tjk"]
+[gd_scene load_steps=11 format=3 uid="uid://breammdqa7tjk"]
 
 [ext_resource type="Texture2D" uid="uid://vfjwwvyleggy" path="res://scenes/main/assets/clouds.jpeg" id="1_5dpi3"]
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nkfih"]
 [ext_resource type="PackedScene" uid="uid://bykqtdbrsla4w" path="res://scenes/levels/test_scene.tscn" id="2_whuka"]
-[ext_resource type="Texture2D" uid="uid://cq02ymcxwelxi" path="res://scenes/main/assets/grail.png" id="3_fe45p"]
 [ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
 [ext_resource type="AudioStream" uid="uid://dt6u7iogd2b75" path="res://assets/sounds/sfx/start/Comecar_o_jogo.wav" id="7_s4vtm"]
+[ext_resource type="Texture2D" uid="uid://k5jnodkgf0pv" path="res://scenes/main/assets/baú.png" id="8_n5tcp"]
+[ext_resource type="Texture2D" uid="uid://l31jb03wsb64" path="res://scenes/main/assets/graal.png" id="9_7vgts"]
+[ext_resource type="Texture2D" uid="uid://b7eajpm1tdja" path="res://scenes/main/assets/botao pedra-0001.png" id="10_wnugj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73ncp"]
+texture = ExtResource("10_wnugj")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+expand_margin_bottom = 20.0
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -55,9 +64,17 @@ offset_right = 73.0
 offset_bottom = 27.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_fe45p")
+texture = ExtResource("9_7vgts")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Objects"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 155.0
+offset_right = 257.0
+offset_bottom = 195.0
+texture = ExtResource("8_n5tcp")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -83,8 +100,17 @@ anchor_left = 0.429167
 anchor_top = 0.638889
 anchor_right = 0.570833
 anchor_bottom = 0.775926
+offset_left = -7.50017
+offset_top = 24.0
+offset_right = 7.50015
+offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_73ncp")
 text = "CONTINUE"
 script = ExtResource("1_364hj")
 scene_to_transition = ExtResource("2_whuka")
