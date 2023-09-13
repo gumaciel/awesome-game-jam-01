@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qkmg1ejju4ce"
-path="res://.godot/imported/knight.png-4378644e71d2f38c79e17baadce640bc.ctex"
+uid="uid://buk5l3kkjm0la"
+path="res://.godot/imported/player1_squire.png-94ad07cb745ef65b2994c4034aa1dee6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hud/change_char/knight.png"
-dest_files=["res://.godot/imported/knight.png-4378644e71d2f38c79e17baadce640bc.ctex"]
+source_file="res://assets/hud/change_char/player1_squire.png"
+dest_files=["res://.godot/imported/player1_squire.png-94ad07cb745ef65b2994c4034aa1dee6.ctex"]
 
 [params]
 
