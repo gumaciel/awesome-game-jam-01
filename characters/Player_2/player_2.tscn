@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://brp6rwitih73k"]
 
 [ext_resource type="PackedScene" uid="uid://d316k4en4222v" path="res://characters/player_base.tscn" id="1_x5led"]
-[ext_resource type="Texture2D" path="res://assets/players/knight_death.png" id="2_01bm5"]
+[ext_resource type="Texture2D" uid="uid://bdnt564c4h8lb" path="res://assets/players/knight_death.png" id="2_01bm5"]
 [ext_resource type="Texture2D" uid="uid://ckf6k24k24xxp" path="res://assets/players/knight_char_Sheet.png" id="2_myep5"]
 [ext_resource type="AudioStream" uid="uid://irvpfr0tw3cp" path="res://assets/sounds/sfx/walking/castle/knight/Passos_Castelo_1_.wav" id="3_hsdaw"]
 [ext_resource type="AudioStream" uid="uid://ckmwtw0mr4xt5" path="res://assets/sounds/sfx/walking/castle/knight/Passos_Castelo_2.wav" id="4_gcfe2"]

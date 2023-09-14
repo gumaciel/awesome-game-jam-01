@@ -48,9 +48,9 @@ func _physics_process(_delta: float) -> void:
 		return
 	PlayerManager.current_direction = get_direction()
 
-		if walking_sound_pool:
-			walking_sound_pool.play_random_audio()
-			
+	if walking_sound_pool:
+		walking_sound_pool.play_random_audio()
+		
 
 func get_direction() -> Vector2:
 	var direction = Vector2(
