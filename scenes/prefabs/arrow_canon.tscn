@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqu45akdgiwwe"]
+[gd_scene load_steps=4 format=3 uid="uid://cqu45akdgiwwe"]
 
 [ext_resource type="Script" path="res://world/object_scripts/arrow_canon.gd" id="1_1hego"]
-[ext_resource type="Texture2D" uid="uid://dhwfq8bain3r8" path="res://assets/objects/dispenser_base.tres" id="2_l3obq"]
+[ext_resource type="Texture2D" path="res://assets/objects/dispenser_base.tres" id="2_l3obq"]
+[ext_resource type="AudioStream" uid="uid://dfyswqwt1dqub" path="res://assets/sounds/sfx/arrow/Arco_tiro.wav" id="3_0iihk"]
 
 [node name="ArrowCanon" type="Node2D"]
 script = ExtResource("1_1hego")
@@ -16,5 +17,8 @@ autostart = true
 
 [node name="Target" type="Node2D" parent="."]
 position = Vector2(0, 269)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0iihk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
