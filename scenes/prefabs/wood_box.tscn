@@ -18,10 +18,5 @@ texture = ExtResource("1_x0tcr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yfenb")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 9
-collision_mask = 3
-center_of_mass_mode = 1
-
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
