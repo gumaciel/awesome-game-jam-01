@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0yw1hwatwqs1"]
+
+[ext_resource type="Script" path="res://world/object_scripts/level_door.gd" id="1_dvm6c"]
+[ext_resource type="Texture2D" uid="uid://dfg5apwxslren" path="res://assets/objects/door_base.tres" id="1_fvk7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paokg"]
+size = Vector2(32, 20)
+
+[node name="LevelDoor" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_dvm6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fvk7f")
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_paokg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
