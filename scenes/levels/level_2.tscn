@@ -1,6 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://1c4rlmwkqvun"]
+[gd_scene load_steps=14 format=3 uid="uid://1c4rlmwkqvun"]
 
-[ext_resource type="Script" path="res://world/object_scripts/stage_1.gd" id="1_mrvhl"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="2_ge31l"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="3_qvlw1"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="4_llfvn"]
@@ -8,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://brxe1whit1iwl" path="res://assets/sounds/sfx/sword/Espada_hit_1.wav" id="6_dgljr"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="7_rp2db"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="8_kyubv"]
-[ext_resource type="PackedScene" uid="uid://bhk6b4lufoyu2" path="res://scenes/levels/level_4.tscn" id="9_cwljq"]
+[ext_resource type="PackedScene" uid="uid://bj8rnq258d6f" path="res://scenes/levels/level_3.tscn" id="8_spcn2"]
 [ext_resource type="PackedScene" uid="uid://bv5bpmraxydk8" path="res://scenes/prefabs/green_button.tscn" id="10_76kvk"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="11_c3v30"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="12_au01k"]
@@ -28,7 +27,6 @@ offset_right = 240.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mrvhl")
 
 [node name="BackgroundColorRect" parent="." instance=ExtResource("2_ge31l")]
 layout_mode = 1
@@ -58,7 +56,7 @@ player_2 = NodePath("../Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("8_kyubv")]
 position = Vector2(121, 16)
-next_level = ExtResource("9_cwljq")
+next_level = ExtResource("8_spcn2")
 
 [node name="GreenButton" parent="." instance=ExtResource("10_76kvk")]
 position = Vector2(295, 57)

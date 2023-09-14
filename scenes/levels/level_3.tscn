@@ -58,7 +58,6 @@ player_2 = NodePath("../Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("6_ibd01")]
 position = Vector2(121, 16)
-next_level = null
 
 [node name="ArrowCanon" parent="." instance=ExtResource("11_qtjaq")]
 position = Vector2(189, 56)
