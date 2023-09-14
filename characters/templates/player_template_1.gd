@@ -22,15 +22,17 @@ func _physics_process(_delta: float) -> void:
 	if get_direction() != Vector2.ZERO and not is_moving:
 		is_moving = true
 		var colliders : Array = []
+		var box = null
 		for ray in raycasts.get_children():
 			if ray.is_colliding():
 				colliders.append(ray.target_position.clamp(Vector2(-1,-1),Vector2(1,1)))
 		var direction: Vector2 = get_direction()
+		PlayerManager.current_direction = direction
 		if animation_direction.has(direction):
 			animation_player.play(animation_direction[direction])
 		if colliders.has(direction):
-			is_moving = false
 			animation_player.pause()
+			is_moving = false
 			return
 		var move_tween = create_tween()
 		move_tween.tween_property(
@@ -40,13 +42,15 @@ func _physics_process(_delta: float) -> void:
 			move_time
 		)
 		await move_tween.finished
-		emit_signal("call_scenario",self.position,is_heavy)
+		emit_signal("call_scenario",self.global_position,is_heavy)
 		is_moving = false
 		animation_player.pause()
+		return
+	PlayerManager.current_direction = get_direction()
 
-		if walking_sound_pool:
-			walking_sound_pool.play_random_audio()
-			
+	if walking_sound_pool:
+		walking_sound_pool.play_random_audio()
+		
 
 func get_direction() -> Vector2:
 	var direction = Vector2(
@@ -57,3 +61,7 @@ func get_direction() -> Vector2:
 		return Vector2.ZERO
 	return direction
 
+func _move_box():
+	
+	
+	pass

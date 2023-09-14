@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=3 uid="uid://bykqtdbrsla4w"]
+[gd_scene load_steps=14 format=3 uid="uid://bykqtdbrsla4w"]
 
-[ext_resource type="PackedScene" path="res://scenes/ui/background_color_rect.tscn" id="1_hxbm2"]
+[ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_hxbm2"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="1_njrg8"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="2_62sbp"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="2_y04gh"]
 [ext_resource type="AudioStream" uid="uid://d3i4yg6bjn5rc" path="res://assets/sounds/sfx/bridge/Ponte_quebrando_2.wav" id="4_8y3jf"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="4_qwccp"]
-[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="5_eeddq"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="4_qwccp"]
+[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="5_eeddq"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="6_shbqr"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/door.tscn" id="7_7678i"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/button.tscn" id="9_5akqn"]
-[ext_resource type="PackedScene" path="res://scenes/prefabs/arrow_canon.tscn" id="10_fnev7"]
+[ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="7_7678i"]
+[ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="8_uqrte"]
+[ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="9_5akqn"]
+[ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="10_fnev7"]
+[ext_resource type="PackedScene" uid="uid://cb0u33jttrs3u" path="res://scenes/prefabs/wood_box.tscn" id="13_tkx2k"]
 
 [node name="TestScene" type="Control"]
 layout_mode = 3
@@ -52,6 +53,9 @@ player_2 = NodePath("../Node2D/Player2")
 
 [node name="FireCanon" parent="." instance=ExtResource("6_shbqr")]
 position = Vector2(89, 38)
+
+[node name="WoodBox" parent="." instance=ExtResource("13_tkx2k")]
+position = Vector2(152, 168)
 
 [node name="Door" parent="." instance=ExtResource("7_7678i")]
 position = Vector2(352, 150)

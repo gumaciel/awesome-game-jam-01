@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl3ttrlhekoyu"]
+[gd_scene load_steps=5 format=3 uid="uid://dl3ttrlhekoyu"]
 
 [ext_resource type="Texture2D" uid="uid://ctwo1vl6h3sat" path="res://assets/objects/chest_base.tres" id="1_s88v5"]
+[ext_resource type="Script" path="res://world/object_scripts/chest.gd" id="1_y2ht8"]
+[ext_resource type="AudioStream" uid="uid://lch6ibjucdc1" path="res://assets/sounds/sfx/itens/Pegar_item_1.wav" id="3_4y3r3"]
 
-[node name="Chest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hknth"]
+
+[node name="Chest" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_y2ht8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hknth")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_s88v5")
 vframes = 2
+
+[node name="TreasureKey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4y3r3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_2d_entered"]

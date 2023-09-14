@@ -15,9 +15,8 @@ var direction : Vector2
 		active = value
 
 func _ready():
-	print(name)
-	GlobalSignals.game_over.connect(_death)
 	self.active = active
+	GlobalSignals.game_over.connect(_death)
 	move_time = speed_time
 	raycasts = base_raycasts
 	animation_player = animations
@@ -28,7 +27,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body as TileMap:
 		GlobalSignals.game_over.emit()
 		return
-	if body.get_parent().name == "Arrow":
+	if body.collision_layer == 4:
 		if heavy:
 			body.get_parent().queue_free()
 			return
@@ -38,6 +37,5 @@ func _death() -> void:
 	active = false
 	$Animations.play("death")
 	await $Animations.animation_finished
-	print("game over")
 	SceneTransition._death_event()
 

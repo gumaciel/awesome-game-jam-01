@@ -1,13 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://breammdqa7tjk"]
+[gd_scene load_steps=12 format=3 uid="uid://breammdqa7tjk"]
 
 [ext_resource type="Texture2D" uid="uid://vfjwwvyleggy" path="res://scenes/main/assets/clouds.jpeg" id="1_5dpi3"]
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nkfih"]
-[ext_resource type="PackedScene" uid="uid://bykqtdbrsla4w" path="res://scenes/levels/test_scene.tscn" id="2_whuka"]
 [ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
 [ext_resource type="AudioStream" uid="uid://dt6u7iogd2b75" path="res://assets/sounds/sfx/start/Comecar_o_jogo.wav" id="7_s4vtm"]
 [ext_resource type="Texture2D" uid="uid://k5jnodkgf0pv" path="res://scenes/main/assets/baú.png" id="8_n5tcp"]
+[ext_resource type="PackedScene" uid="uid://dlkjm71f2kdxn" path="res://scenes/levels/level_1.tscn" id="8_rxnq0"]
 [ext_resource type="Texture2D" uid="uid://l31jb03wsb64" path="res://scenes/main/assets/graal.png" id="9_7vgts"]
+[ext_resource type="AudioStream" uid="uid://cmbvfhclamwrh" path="res://assets/sounds/musics/Menu.wav" id="10_6bpqi"]
 [ext_resource type="Texture2D" uid="uid://b7eajpm1tdja" path="res://scenes/main/assets/botao pedra-0001.png" id="10_wnugj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73ncp"]
@@ -113,10 +114,14 @@ theme_override_styles/disabled = SubResource("StyleBoxTexture_73ncp")
 theme_override_styles/focus = SubResource("StyleBoxTexture_73ncp")
 text = "CONTINUE"
 script = ExtResource("1_364hj")
-scene_to_transition = ExtResource("2_whuka")
+scene_to_transition = ExtResource("8_rxnq0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Continue"]
 stream = ExtResource("7_s4vtm")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_6bpqi")
+autoplay = true
 
 [connection signal="pressed" from="Continue" to="Continue" method="_on_pressed"]
 [connection signal="finished" from="Continue/AudioStreamPlayer" to="Continue" method="_on_audio_stream_player_finished"]
