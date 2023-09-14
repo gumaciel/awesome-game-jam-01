@@ -22,6 +22,7 @@ func _tiles_event(pos,heavy):
 func _spikes(tile_pos) -> void:
 	var timer = get_tree().create_timer(0.3)
 	await timer.timeout
+	$Spikes.play()
 	self.set_cell(0,tile_pos,2,spikes)
 
 func _bridge(tile_pos,is_heavy) -> void:

@@ -19,3 +19,5 @@ vframes = 2
 
 [node name="TreasureKey" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4y3r3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_2d_entered"]
