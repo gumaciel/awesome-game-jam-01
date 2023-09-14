@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://r8olkkmw02k5"]
+[gd_scene load_steps=16 format=3 uid="uid://r8olkkmw02k5"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_twvvf"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_s8e6w"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="6_wct40"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="7_8vrqp"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="8_ewfn7"]
+[ext_resource type="PackedScene" uid="uid://dixidx1jscs5q" path="res://scenes/levels/level_6.tscn" id="8_lc7hw"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="9_fhtyy"]
 [ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="10_gth1l"]
 [ext_resource type="PackedScene" uid="uid://bv5bpmraxydk8" path="res://scenes/prefabs/green_button.tscn" id="11_lpsgl"]
@@ -57,6 +58,7 @@ player_2 = NodePath("../Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("7_8vrqp")]
 position = Vector2(376, 17)
+next_level = ExtResource("8_lc7hw")
 
 [node name="Door" parent="." instance=ExtResource("8_ewfn7")]
 position = Vector2(112, 166)

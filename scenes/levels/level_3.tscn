@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj8rnq258d6f"]
+[gd_scene load_steps=16 format=3 uid="uid://bj8rnq258d6f"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_f47os"]
 [ext_resource type="Script" path="res://world/object_scripts/stage_1.gd" id="1_j80m2"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://brxe1whit1iwl" path="res://assets/sounds/sfx/sword/Espada_hit_1.wav" id="5_fwcio"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="6_ibd01"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="8_bdl4r"]
+[ext_resource type="PackedScene" uid="uid://bhk6b4lufoyu2" path="res://scenes/levels/level_4.tscn" id="9_hgqlf"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="9_tmsig"]
 [ext_resource type="PackedScene" uid="uid://bv5bpmraxydk8" path="res://scenes/prefabs/green_button.tscn" id="10_rwx8h"]
 [ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="11_qtjaq"]
@@ -58,6 +59,7 @@ player_2 = NodePath("../Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("6_ibd01")]
 position = Vector2(121, 16)
+next_level = ExtResource("9_hgqlf")
 
 [node name="ArrowCanon" parent="." instance=ExtResource("11_qtjaq")]
 position = Vector2(189, 56)
