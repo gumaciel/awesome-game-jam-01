@@ -22,6 +22,7 @@ config/mobile_debug.debug=true
 
 SceneTransition="*res://globals/scene_transition.tscn"
 PlayerManager="*res://globals/player_manager.gd"
+GlobalSignals="*res://globals/global_signals.gd"
 
 [display]
 
