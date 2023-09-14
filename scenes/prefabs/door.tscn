@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://world/object_scripts/door.gd" id="1_il01q"]
 [ext_resource type="Texture2D" uid="uid://qydr30bhjbsh" path="res://assets/objects/gate_base.tres" id="2_2ats6"]
-[ext_resource type="AudioStream" uid="uid://xjt3mtbyf0qd" path="res://assets/sounds/sfx/door/Porta_abrindo.wav" id="3_wagg7"]
-[ext_resource type="AudioStream" uid="uid://pelln4ft7m1q" path="res://assets/sounds/sfx/door/Porta_Fechando.wav" id="4_afpu5"]
+[ext_resource type="AudioStream" uid="uid://bcsgdp3rdjrpu" path="res://assets/sounds/sfx/door/Porta_de_pedra_abrindo.wav" id="3_wgmuk"]
+[ext_resource type="AudioStream" uid="uid://dfl4vg05ywia5" path="res://assets/sounds/sfx/door/Porta_de_pedra_fechando.wav" id="4_if3je"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wryko"]
 size = Vector2(32, 20)
@@ -64,7 +64,7 @@ libraries = {
 }
 
 [node name="AudioOpen" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_wagg7")
+stream = ExtResource("3_wgmuk")
 
 [node name="AudioClose" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_afpu5")
+stream = ExtResource("4_if3je")

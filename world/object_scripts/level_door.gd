@@ -16,8 +16,8 @@ func _on_chest_area_entered(area: Area2D) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
-#	if !unlocked:
-#		return
+	if !unlocked:
+		return
 	if first_player == null:
 		first_player = area.get_parent()
 	if first_player == area.get_parent():
