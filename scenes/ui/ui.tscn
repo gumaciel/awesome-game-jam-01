@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://brttmwofxttak"]
+[gd_scene load_steps=13 format=3 uid="uid://brttmwofxttak"]
 
 [ext_resource type="Script" path="res://scenes/ui/ui_controller.gd" id="1_y5268"]
 [ext_resource type="Texture2D" uid="uid://ctn16cgedk32c" path="res://scenes/ui/assets/spr_swap_skill_normal.png" id="2_ksa3p"]
 [ext_resource type="Texture2D" uid="uid://dhy3i16vneqnu" path="res://scenes/ui/assets/spr_swap_skill_pressed.png" id="3_helaa"]
-[ext_resource type="Texture2D" uid="uid://baj8duhi6ok3i" path="res://assets/hud/placeholder/placeholder_char_button1.png" id="6_cf3wm"]
+[ext_resource type="Texture2D" uid="uid://cdcaga38tfpm3" path="res://scenes/ui/assets/settings.png" id="4_gvyp0"]
 [ext_resource type="PackedScene" uid="uid://b85u4ijqujao4" path="res://scenes/joystick/joystick.tscn" id="6_qyci7"]
-[ext_resource type="Texture2D" uid="uid://b6ogmeqjtq6br" path="res://assets/hud/placeholder/placeholder_reload_button.png" id="7_tg6ia"]
-[ext_resource type="Texture2D" uid="uid://w17ckinb4eh6" path="res://assets/hud/placeholder/placeholder_char_button2.png" id="7_viu5p"]
 [ext_resource type="Texture2D" uid="uid://s8jq7jduiy6k" path="res://scenes/ui/assets/spr_swap_button_normal.png" id="7_yyelt"]
 [ext_resource type="Texture2D" uid="uid://c8epf72ln4di5" path="res://scenes/ui/assets/spr_swap_button_pressed.png" id="8_quc2u"]
+[ext_resource type="Texture2D" uid="uid://qkmg1ejju4ce" path="res://assets/hud/change_char/player2_knight.png" id="9_c7ycq"]
+[ext_resource type="Texture2D" uid="uid://bwjspct75ds2d" path="res://assets/hud/change_char/active_char_banner.png" id="10_7a6c8"]
+[ext_resource type="AudioStream" uid="uid://be3k5vwy6eppm" path="res://assets/sounds/sfx/pause/Pausa.wav" id="10_p4g21"]
+[ext_resource type="Texture2D" uid="uid://buk5l3kkjm0la" path="res://assets/hud/change_char/player1_squire.png" id="11_jldy3"]
+[ext_resource type="Texture2D" uid="uid://ds71u6cg2wsvk" path="res://assets/hud/change_char/innactive_char_banner.png" id="11_u7h02"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -21,6 +24,38 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ControlClickable" type="Control" parent="MobileButtons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ClickButton" type="Control" parent="MobileButtons/ControlClickable"]
+process_mode = 1
+layout_mode = 1
+anchor_left = 1.85
+anchor_top = 2.6
+anchor_right = 6.5
+anchor_bottom = 6.45
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickButton2" type="Control" parent="MobileButtons/ControlClickable"]
+process_mode = 1
+layout_mode = 1
+anchor_left = -1.2
+anchor_top = 1.85
+anchor_right = 2.4
+anchor_bottom = 4.6
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickButton3" type="Control" parent="MobileButtons/ControlClickable"]
+process_mode = 1
+layout_mode = 1
+anchor_left = -2.175
+anchor_top = 2.875
+anchor_right = 0.15
+anchor_bottom = 6.775
+metadata/_edit_use_anchors_ = true
+
 [node name="InteractionButton" type="TouchScreenButton" parent="MobileButtons"]
 position = Vector2(428, 218)
 scale = Vector2(2, 2)
@@ -29,11 +64,12 @@ texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
 [node name="SettingsButton" type="TouchScreenButton" parent="MobileButtons"]
-position = Vector2(6, 2)
-texture_normal = ExtResource("7_tg6ia")
+position = Vector2(15, 4)
+texture_normal = ExtResource("4_gvyp0")
 action = "configuration"
 
 [node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]
+z_index = 8
 layout_mode = 1
 offset_left = 20.0
 offset_top = 195.0
@@ -48,17 +84,42 @@ texture_normal = ExtResource("7_yyelt")
 texture_pressed = ExtResource("8_quc2u")
 action = "alternate"
 
-[node name="Players" type="Node2D" parent="MobileButtons/ChangeChar"]
+[node name="Players" type="Control" parent="MobileButtons/ChangeChar"]
 z_index = -1
-position = Vector2(4, -23)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = -23.0
+offset_right = 4.0
+offset_bottom = -23.0
 scale = Vector2(0.5, 0.5)
 
-[node name="Player1" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
-unique_name_in_owner = true
-position = Vector2(32, 30)
-texture = ExtResource("6_cf3wm")
+[node name="ActiveBanner" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
+z_index = 1
+position = Vector2(25, 32)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("10_7a6c8")
 
-[node name="Player2" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
+[node name="ActivePlayer" type="Sprite2D" parent="MobileButtons/ChangeChar/Players/ActiveBanner"]
 unique_name_in_owner = true
-position = Vector2(46, 29)
-texture = ExtResource("7_viu5p")
+position = Vector2(1.00001, -1.19209e-07)
+scale = Vector2(0.875001, 0.75)
+texture = ExtResource("9_c7ycq")
+
+[node name="InnactiveBanner" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
+position = Vector2(44, 15)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("11_u7h02")
+
+[node name="InnactivePlayer" type="Sprite2D" parent="MobileButtons/ChangeChar/Players/InnactiveBanner"]
+unique_name_in_owner = true
+position = Vector2(1.00001, -1.19209e-07)
+scale = Vector2(0.875001, 0.75)
+texture = ExtResource("11_jldy3")
+
+[node name="PauseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_p4g21")
+
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton2" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
+[connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton3" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]

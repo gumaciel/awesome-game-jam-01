@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bymr3064c87is"]
+[gd_scene load_steps=8 format=3 uid="uid://bymr3064c87is"]
 
 [ext_resource type="Script" path="res://world/object_scripts/fire_canon.gd" id="1_pcrwq"]
 [ext_resource type="Texture2D" uid="uid://bqbpxqd3lwnr1" path="res://assets/objects/cannon_base.tres" id="2_demcs"]
+[ext_resource type="Script" path="res://scenes/sounds/sound_pool.gd" id="3_5rjl4"]
+[ext_resource type="AudioStream" uid="uid://cpnqlycrm8f0i" path="res://assets/sounds/sfx/fire_ball/Bola_de_fogo_1.wav" id="4_d5g8k"]
+[ext_resource type="AudioStream" uid="uid://cfecuytbthlse" path="res://assets/sounds/sfx/fire_ball/Bola_de_fogo_2.wav" id="5_ud3bf"]
+[ext_resource type="AudioStream" uid="uid://cms0l71r55yer" path="res://assets/sounds/sfx/fire_ball/Bola_de_fogo_3.wav" id="6_mgie6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtrcp"]
 size = Vector2(6, 282)
@@ -21,5 +25,17 @@ collision_mask = 9
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 131)
 shape = SubResource("RectangleShape2D_xtrcp")
+
+[node name="SoundPool" type="Node2D" parent="."]
+script = ExtResource("3_5rjl4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SoundPool"]
+stream = ExtResource("4_d5g8k")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="SoundPool"]
+stream = ExtResource("5_ud3bf")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="SoundPool"]
+stream = ExtResource("6_mgie6")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
