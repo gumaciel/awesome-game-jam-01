@@ -24,13 +24,18 @@ func _ready():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body as TileMap:
-		SceneTransition._death_event()
+		GlobalSignals.game_over.emit()
 		return
 	if body.get_parent().name == "Arrow":
 		if heavy:
 			body.get_parent().queue_free()
 			return
+	GlobalSignals.game_over.emit()
+
+func _death() -> void:
+	active = false
+	$Animations.play("death")
+	await $Animations.animation_finished
+	print("game over")
 	SceneTransition._death_event()
-
-
 
