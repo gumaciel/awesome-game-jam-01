@@ -28,3 +28,4 @@ func _on_button_area_exited(area: Area2D) -> void:
 	current_player = null
 	static_colision.set_deferred("disabled",false)
 
+

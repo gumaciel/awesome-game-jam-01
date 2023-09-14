@@ -16,6 +16,7 @@ var direction : Vector2
 
 func _ready():
 	self.active = active
+	GlobalSignals.game_over.connect(_death)
 	move_time = speed_time
 	raycasts = base_raycasts
 	animation_player = animations
