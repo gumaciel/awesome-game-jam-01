@@ -20,11 +20,11 @@ texture = ExtResource("2_svx0r")
 position = Vector2(1, -10.5)
 texture = ExtResource("3_w8eb6")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="0"]
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="0"]
 stream = ExtResource("3_efutw")
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="1"]
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="1"]
 stream = ExtResource("4_8l84n")
 
-[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="2"]
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="WalkingSoundPool" index="2"]
 stream = ExtResource("5_7j64g")
