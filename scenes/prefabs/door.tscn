@@ -65,6 +65,8 @@ libraries = {
 
 [node name="AudioOpen" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_wgmuk")
+volume_db = 10.0
 
 [node name="AudioClose" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_if3je")
+volume_db = 10.0
