@@ -4,7 +4,7 @@ extends Button
 
 func _on_pressed():
 	disabled = true
-	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.play() 
 
-func _on_audio_stream_player_finished():
+func change_scene() -> void:
 	SceneTransition.change_scene_to_packed(scene_to_transition)

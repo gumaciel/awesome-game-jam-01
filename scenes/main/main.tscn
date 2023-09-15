@@ -1,22 +1,265 @@
-[gd_scene load_steps=12 format=3 uid="uid://breammdqa7tjk"]
+[gd_scene load_steps=22 format=3 uid="uid://breammdqa7tjk"]
 
-[ext_resource type="Texture2D" uid="uid://vfjwwvyleggy" path="res://scenes/main/assets/clouds.jpeg" id="1_5dpi3"]
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nkfih"]
+[ext_resource type="Texture2D" uid="uid://budy0xeah5hcd" path="res://scenes/main/assets/release/background.png" id="2_lpibm"]
+[ext_resource type="Texture2D" uid="uid://bskscj65e4c17" path="res://scenes/main/assets/release/Grail.png" id="2_qtnj1"]
+[ext_resource type="Texture2D" uid="uid://b1gky615brgrr" path="res://scenes/main/assets/release/Shine_Grail.png" id="3_kiiqt"]
 [ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
+[ext_resource type="Texture2D" uid="uid://deo37e4pnfbmc" path="res://scenes/main/assets/release/Text.png" id="5_lj0ja"]
+[ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="6_cu2vb"]
+[ext_resource type="Texture2D" uid="uid://b38oglxwy4p4e" path="res://scenes/main/assets/release/buttom.png" id="6_qe5k1"]
+[ext_resource type="Script" path="res://scenes/main/Shine.gd" id="7_8fjx3"]
 [ext_resource type="AudioStream" uid="uid://dt6u7iogd2b75" path="res://assets/sounds/sfx/start/Comecar_o_jogo.wav" id="7_s4vtm"]
-[ext_resource type="Texture2D" uid="uid://k5jnodkgf0pv" path="res://scenes/main/assets/baú.png" id="8_n5tcp"]
 [ext_resource type="PackedScene" uid="uid://dlkjm71f2kdxn" path="res://scenes/levels/level_1.tscn" id="8_rxnq0"]
-[ext_resource type="Texture2D" uid="uid://l31jb03wsb64" path="res://scenes/main/assets/graal.png" id="9_7vgts"]
 [ext_resource type="AudioStream" uid="uid://cmbvfhclamwrh" path="res://assets/sounds/musics/Menu.wav" id="10_6bpqi"]
-[ext_resource type="Texture2D" uid="uid://b7eajpm1tdja" path="res://scenes/main/assets/botao pedra-0001.png" id="10_wnugj"]
+
+[sub_resource type="Curve" id="Curve_rrjc7"]
+min_value = -1.0
+_data = [Vector2(0, -1), 0.0, 2.8, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_oangn"]
+texture_mode = 1
+curve = SubResource("Curve_rrjc7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vb8h8"]
+particle_flag_disable_z = true
+direction = Vector3(10, 0, 0)
+gravity = Vector3(50, 0, 0)
+initial_velocity_max = 40.0
+angular_velocity_max = 2.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+hue_variation_max = 0.09
+hue_variation_curve = SubResource("CurveTexture_oangn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73ncp"]
-texture = ExtResource("10_wnugj")
-expand_margin_left = 10.0
-expand_margin_top = 40.0
-expand_margin_right = 10.0
-expand_margin_bottom = 20.0
+texture = ExtResource("6_qe5k1")
+
+[sub_resource type="Animation" id="Animation_p25y6"]
+resource_name = "continue"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hideable:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objects/Grail:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(167, 75.5), Vector2(-200, 75.5)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hideable/Buttons/Continue")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scrool_speed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50, 1000]
+}
+
+[sub_resource type="Animation" id="Animation_7dstr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hideable:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objects/Grail:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(167, 75.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hideable/Buttons/Continue:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hideable/Buttons/Credits:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hideable/Title:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Objects/Grail:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Hideable/Buttons:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t8enx"]
+resource_name = "load"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scrool_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 50]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hideable/Buttons/Continue:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hideable/Buttons/Credits:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Hideable/Title:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Objects/Grail:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Hideable/Buttons:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0jfgj"]
+_data = {
+"RESET": SubResource("Animation_7dstr"),
+"continue": SubResource("Animation_p25y6"),
+"load": SubResource("Animation_t8enx")
+}
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -26,6 +269,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nkfih")
+scrool_speed = 25
 
 [node name="Objects" type="Control" parent="."]
 layout_mode = 1
@@ -35,24 +279,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Clouds" type="TextureRect" parent="Objects"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -359.0
-offset_top = -138.0
-offset_right = 359.0
-offset_bottom = 138.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_5dpi3")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="Grail" type="TextureRect" parent="Objects"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -60,68 +288,137 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -73.0
-offset_top = -91.5
-offset_right = 73.0
-offset_bottom = 27.5
+offset_top = -59.5
+offset_right = 73.0003
+offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("9_7vgts")
+texture = ExtResource("2_qtnj1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="Objects"]
-layout_mode = 0
-offset_left = 217.0
-offset_top = 155.0
-offset_right = 257.0
-offset_bottom = 195.0
-texture = ExtResource("8_n5tcp")
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Objects/Grail"]
+position = Vector2(74, 45.5)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_vb8h8")
+texture = ExtResource("3_kiiqt")
+lifetime = 0.5
+preprocess = 1.0
 
-[node name="Title" type="Label" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Objects"]
+scroll_offset = Vector2(-0.54, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Objects/ParallaxBackground"]
+motion_mirroring = Vector2(550, 0)
+
+[node name="Clouds" type="TextureRect" parent="Objects/ParallaxBackground/ParallaxLayer"]
+offset_left = -39.0
+offset_right = 511.0
+offset_bottom = 270.0
+texture = ExtResource("2_lpibm")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Hideable" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="TextureRect" parent="Hideable"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -197.0
+offset_top = 16.0
+offset_right = 197.0
+offset_bottom = 56.0
+grow_horizontal = 2
+texture = ExtResource("5_lj0ja")
+
+[node name="Shine" type="TextureRect" parent="Hideable/Title"]
+layout_mode = 0
+offset_left = 277.0
+offset_right = 317.0
+offset_bottom = 46.0
+texture = ExtResource("6_cu2vb")
+script = ExtResource("7_8fjx3")
+
+[node name="Buttons" type="Control" parent="Hideable"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Continue" type="Button" parent="Hideable/Buttons"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -95.0
-offset_top = -117.0
-offset_right = 94.0
-offset_bottom = -98.0
+offset_left = -190.0
+offset_top = 9.0
+offset_right = -100.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0.0196078, 0.0196078, 1)
 theme_override_fonts/font = ExtResource("3_pqo8o")
-text = "Journey to the Holy Grail"
-
-[node name="Continue" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.429167
-anchor_top = 0.638889
-anchor_right = 0.570833
-anchor_bottom = 0.775926
-offset_left = -7.50017
-offset_top = 24.0
-offset_right = 7.50015
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxTexture_73ncp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_73ncp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_73ncp")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_73ncp")
 theme_override_styles/focus = SubResource("StyleBoxTexture_73ncp")
-text = "CONTINUE"
+disabled = true
+text = "Continue"
 script = ExtResource("1_364hj")
 scene_to_transition = ExtResource("8_rxnq0")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Continue"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Hideable/Buttons/Continue"]
+stream = ExtResource("7_s4vtm")
+
+[node name="Credits" type="Button" parent="Hideable/Buttons"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 105.0
+offset_top = 9.0
+offset_right = 190.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pqo8o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_73ncp")
+theme_override_styles/focus = SubResource("StyleBoxTexture_73ncp")
+disabled = true
+text = "Credits"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Hideable/Buttons/Credits"]
 stream = ExtResource("7_s4vtm")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_6bpqi")
 autoplay = true
 
-[connection signal="pressed" from="Continue" to="Continue" method="_on_pressed"]
-[connection signal="finished" from="Continue/AudioStreamPlayer" to="Continue" method="_on_audio_stream_player_finished"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "load"
+libraries = {
+"": SubResource("AnimationLibrary_0jfgj")
+}
+
+[connection signal="pressed" from="Hideable/Buttons/Continue" to="." method="_on_continue_pressed"]
