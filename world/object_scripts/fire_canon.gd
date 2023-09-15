@@ -12,7 +12,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var player = area.get_parent()
 	if area.collision_layer == 8:
 		player = area
-		is_player = false
+		area.set_collision_layer_value(4,false)
 	player.set_physics_process(false)
 	player.set_process(false)
 	player.set_process_unhandled_input(false)
