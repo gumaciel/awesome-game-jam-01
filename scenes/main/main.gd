@@ -10,6 +10,10 @@ func _process(delta):
 
 
 func _on_continue_pressed() -> void:
+	var animation : Animation = $AnimationPlayer.get_animation("continue")
+	var track = animation.find_track("Objects/Grail:position", Animation.TYPE_VALUE)
+	animation.track_set_key_value(track, 0, $Objects/Grail.position)
+
 	_disable_buttons()
 	%Credits/AudioStreamPlayer.play() 
 	$AnimationPlayer.play("continue")

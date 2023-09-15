@@ -177,6 +177,17 @@ tracks/3/keys = {
 "update": 0,
 "values": [50, 1000]
 }
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Objects/Grail")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_t8enx"]
 resource_name = "load"
@@ -269,7 +280,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nkfih")
-scrool_speed = 1000
+scrool_speed = 50
 
 [node name="Objects" type="Control" parent="."]
 layout_mode = 1
@@ -282,20 +293,19 @@ grow_vertical = 2
 [node name="Grail" type="TextureRect" parent="Objects"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -73.0
-offset_top = -59.5
-offset_right = 73.0003
-offset_bottom = 59.5
+anchors_preset = -1
+anchor_left = 0.347916
+anchor_top = 0.27963
+anchor_right = 0.652084
+anchor_bottom = 0.72037
+offset_left = 0.000152588
+offset_right = 0.000152588
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qtnj1")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Objects/Grail"]
 position = Vector2(74, 45.5)
