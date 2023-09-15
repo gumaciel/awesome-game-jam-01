@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/main/continue.gd" id="1_364hj"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nkfih"]
-[ext_resource type="Texture2D" uid="uid://budy0xeah5hcd" path="res://scenes/main/assets/release/background.png" id="2_lpibm"]
 [ext_resource type="Texture2D" uid="uid://bskscj65e4c17" path="res://scenes/main/assets/release/Grail.png" id="2_qtnj1"]
 [ext_resource type="Texture2D" uid="uid://b1gky615brgrr" path="res://scenes/main/assets/release/Shine_Grail.png" id="3_kiiqt"]
 [ext_resource type="FontFile" uid="uid://biey1n1udyjdk" path="res://assets/fonts/Minecraft.ttf" id="3_pqo8o"]
+[ext_resource type="Texture2D" uid="uid://c0wjmh5sn6nvd" path="res://scenes/main/assets/clouds.png" id="4_dpam2"]
 [ext_resource type="Texture2D" uid="uid://deo37e4pnfbmc" path="res://scenes/main/assets/release/Text.png" id="5_lj0ja"]
 [ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="6_cu2vb"]
 [ext_resource type="Texture2D" uid="uid://b38oglxwy4p4e" path="res://scenes/main/assets/release/buttom.png" id="6_qe5k1"]
@@ -36,60 +36,6 @@ hue_variation_curve = SubResource("CurveTexture_oangn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73ncp"]
 texture = ExtResource("6_qe5k1")
-
-[sub_resource type="Animation" id="Animation_p25y6"]
-resource_name = "continue"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hideable:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Objects/Grail:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(167, 75.5), Vector2(-200, 75.5)]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hideable/Buttons/Continue")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"change_scene"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:scrool_speed")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [50, 1000]
-}
 
 [sub_resource type="Animation" id="Animation_7dstr"]
 length = 0.001
@@ -176,6 +122,60 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p25y6"]
+resource_name = "continue"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hideable:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objects/Grail:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(167, 75.5), Vector2(-200, 75.5)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hideable/Buttons/Continue")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scrool_speed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50, 1000]
 }
 
 [sub_resource type="Animation" id="Animation_t8enx"]
@@ -269,7 +269,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nkfih")
-scrool_speed = 25
+scrool_speed = 1000
 
 [node name="Objects" type="Control" parent="."]
 layout_mode = 1
@@ -306,18 +306,13 @@ lifetime = 0.5
 preprocess = 1.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Objects"]
-scroll_offset = Vector2(-0.54, 0)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Objects/ParallaxBackground"]
-motion_mirroring = Vector2(550, 0)
+motion_mirroring = Vector2(1100, 0)
 
-[node name="Clouds" type="TextureRect" parent="Objects/ParallaxBackground/ParallaxLayer"]
-offset_left = -39.0
-offset_right = 511.0
-offset_bottom = 270.0
-texture = ExtResource("2_lpibm")
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+[node name="Clouds" type="Sprite2D" parent="Objects/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("4_dpam2")
+centered = false
 
 [node name="Hideable" type="Control" parent="."]
 layout_mode = 1
