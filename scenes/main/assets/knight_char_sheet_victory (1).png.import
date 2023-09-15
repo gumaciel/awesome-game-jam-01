@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uj3vyxlm11s8"
-path="res://.godot/imported/knight_char_sheet_victory.png-7c5145af90a9d3c4a2f23fdd4fb65fa8.ctex"
+uid="uid://cgdv0kdkm4kgc"
+path="res://.godot/imported/knight_char_sheet_victory (1).png-ed2a9f1884cd0eda871e8a42fb796b1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/main/assets/knight_char_sheet_victory.png"
-dest_files=["res://.godot/imported/knight_char_sheet_victory.png-7c5145af90a9d3c4a2f23fdd4fb65fa8.ctex"]
+source_file="res://scenes/main/assets/knight_char_sheet_victory (1).png"
+dest_files=["res://.godot/imported/knight_char_sheet_victory (1).png-ed2a9f1884cd0eda871e8a42fb796b1d.ctex"]
 
 [params]
 
