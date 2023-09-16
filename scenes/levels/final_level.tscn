@@ -175,6 +175,9 @@ active = false
 unique_name_in_owner = true
 position = Vector2(377, 195)
 
+[node name="Texture" parent="Node2D/Player1" index="0"]
+y_sort_enabled = false
+
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]

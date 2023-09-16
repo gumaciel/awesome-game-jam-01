@@ -52,8 +52,8 @@ layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
-layer_2/z_index = 0
-layer_2/tile_data = PackedInt32Array(458773, 196610, 10)
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(458773, 196610, 10, 327704, 393218, 1)
 script = ExtResource("3_ho8lm")
 
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
@@ -101,6 +101,9 @@ active = false
 [node name="Player1" parent="Node2D" instance=ExtResource("14_h7uin")]
 unique_name_in_owner = true
 position = Vector2(199, 196)
+
+[node name="Texture" parent="Node2D/Player1" index="0"]
+y_sort_enabled = false
 
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]

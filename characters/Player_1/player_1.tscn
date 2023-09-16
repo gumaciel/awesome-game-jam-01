@@ -7,10 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://l6ibwko8us3m" path="res://assets/sounds/sfx/walking/castle/squire/Passos_Castelo_6.wav" id="4_8l84n"]
 [ext_resource type="AudioStream" uid="uid://bwcm8x1glhgsa" path="res://assets/sounds/sfx/walking/castle/squire/Passos_Castelo_4.wav" id="5_7j64g"]
 
-[node name="Squire(Player1)" node_paths=PackedStringArray("walking_sound_pool") instance=ExtResource("1_rcrqd")]
+[node name="Squire(Player1)" instance=ExtResource("1_rcrqd")]
 speed_time = 0.4
 heavy = true
-walking_sound_pool = NodePath("WalkingSoundPool")
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -8)

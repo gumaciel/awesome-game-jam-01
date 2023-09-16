@@ -250,6 +250,7 @@ walking_sound_pool = NodePath("WalkingSoundPool")
 
 [node name="Texture" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 position = Vector2(0, -7.49997)
 scale = Vector2(0.21875, 0.210938)
 texture = ExtResource("1_xqc8x")
