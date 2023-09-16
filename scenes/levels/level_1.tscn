@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dlkjm71f2kdxn"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_27uhe"]
-[ext_resource type="Script" path="res://world/object_scripts/stage.gd" id="1_t5m6k"]
+[ext_resource type="Script" path="res://world/object_scripts/stage_1.gd" id="1_pjvng"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_jfmiu"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="3_nhedo"]
 [ext_resource type="AudioStream" uid="uid://d3i4yg6bjn5rc" path="res://assets/sounds/sfx/bridge/Ponte_quebrando_2.wav" id="4_2t5aw"]
@@ -28,8 +28,7 @@ offset_right = 240.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_t5m6k")
-music_number = 1
+script = ExtResource("1_pjvng")
 
 [node name="BackgroundColorRect" parent="." instance=ExtResource("1_27uhe")]
 layout_mode = 1
@@ -82,6 +81,9 @@ active = false
 [node name="Player1" parent="Node2D" instance=ExtResource("14_6j4dx")]
 unique_name_in_owner = true
 position = Vector2(200, 197)
+
+[node name="Up" parent="Node2D/Player1/Raycasts" index="0"]
+target_position = Vector2(0, -20)
 
 [connection signal="area_entered" from="GreenButton" to="Door" method="_on_button_area_entered"]
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
