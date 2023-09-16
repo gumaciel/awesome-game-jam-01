@@ -7,6 +7,33 @@
 [ext_resource type="FontFile" uid="uid://c6yps1ak18s04" path="res://assets/fonts/Pixeltype.ttf" id="5_0wkje"]
 [ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="5_uqq1j"]
 
+[sub_resource type="Animation" id="Animation_bjgrm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Artist/ArtistUnit:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Artist/ArtistUnit:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
 length = 115.0
@@ -107,7 +134,7 @@ tracks/7/path = NodePath("AspectRatioContainer/LevelDesignUnit:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 55),
+"times": PackedFloat32Array(0, 52),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -119,7 +146,7 @@ tracks/8/path = NodePath("AspectRatioContainer2/GameDesignUnit:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 70),
+"times": PackedFloat32Array(0, 64),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -131,7 +158,7 @@ tracks/9/path = NodePath("AspectRatioContainer/LevelDesignUnit:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(40, 46, 49, 55),
+"times": PackedFloat32Array(40, 44, 48, 52),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 220), Vector2(0, 0), Vector2(0, 0), Vector2(0, -220)]
@@ -143,7 +170,7 @@ tracks/10/path = NodePath("AspectRatioContainer2/GameDesignUnit:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(55, 61, 64, 70),
+"times": PackedFloat32Array(52, 56, 60, 64),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 210), Vector2(0, 0), Vector2(0, 0), Vector2(0, -210)]
@@ -155,7 +182,7 @@ tracks/11/path = NodePath("Program/ProgramUnit:visible")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 85),
+"times": PackedFloat32Array(0, 76),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -167,7 +194,7 @@ tracks/12/path = NodePath("Program/ProgramUnit:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(70, 76, 79, 85),
+"times": PackedFloat32Array(64, 68, 72, 76),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 260), Vector2(0, 0), Vector2(0, 0), Vector2(0, -270)]
@@ -179,7 +206,7 @@ tracks/13/path = NodePath("Sound/SoundUnit:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 100),
+"times": PackedFloat32Array(0, 88),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -191,7 +218,7 @@ tracks/14/path = NodePath("Sound/SoundUnit:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(85, 91, 94, 100),
+"times": PackedFloat32Array(76, 80, 84, 88),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 250), Vector2(0, 0), Vector2(0, 0), Vector2(0, -260)]
@@ -203,7 +230,7 @@ tracks/15/path = NodePath("Artist/ArtistUnit:visible")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 115),
+"times": PackedFloat32Array(0, 100),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -215,37 +242,10 @@ tracks/16/path = NodePath("Artist/ArtistUnit:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(100, 106, 109, 115),
+"times": PackedFloat32Array(88, 92, 96, 100),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 260), Vector2(0, 0), Vector2(0, 0), Vector2(0, -270)]
-}
-
-[sub_resource type="Animation" id="Animation_bjgrm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Artist/ArtistUnit:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Artist/ArtistUnit:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
