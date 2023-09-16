@@ -9,7 +9,7 @@
 
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
-length = 100.0
+length = 115.0
 step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -509,6 +509,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SoundUnit" type="VBoxContainer" parent="Sound"]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Sound/SoundUnit"]
@@ -536,6 +537,57 @@ Matheus Felipe | portfolio (matheusfelipe.art.br)
 -
 [font_size=32]SOUND IMPLEMENTATION[/font_size]
 Gustavo Maciel | GitHub (@gumaciel)
+Fallen Angel | itch.io (@fallen-angel-dev)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Artist" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -102.0
+offset_right = 116.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArtistUnit" type="VBoxContainer" parent="Artist"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Artist/ArtistUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]ARTIST UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="Artist/ArtistUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]CHARACTER ARTIST[/font_size]
+Fallen Angel | itch.io (@fallen-angel-dev)
+-
+[font_size=32]UI ARTISTS[/font_size]
+Lucas Santiago | LinkedIn (lucas-santiago-a754a3150)
+Bolachudo404 | itch.io (@bolachudohey)
+Flavio Sepulveda | itch.io (@hallsey)
+-
+[font_size=32]ANIMATORS[/font_size]
+Bolachudo404 | itch.io (@bolachudohey)
+Fallen Angel | itch.io (@fallen-angel-dev)
+Karla Correa | itch.io (@karlacorrea)
+-
+[font_size=32]ENVIRONMENT ARTISTS[/font_size]
+Bolachudo404 | itch.io (@bolachudohey)
 Fallen Angel | itch.io (@fallen-angel-dev)"
 fit_content = true
 scroll_active = false
