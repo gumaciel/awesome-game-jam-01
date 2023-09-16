@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://brxe1whit1iwl" path="res://assets/sounds/sfx/sword/Espada_hit_1.wav" id="5_togrm"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="6_0mkqo"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="7_whl2w"]
-[ext_resource type="PackedScene" path="res://scenes/levels/grall_room.tscn" id="8_0juw4"]
+[ext_resource type="PackedScene" uid="uid://qtcb3y6wgki0" path="res://scenes/levels/grall_room.tscn" id="8_0juw4"]
 [ext_resource type="PackedScene" uid="uid://cqu45akdgiwwe" path="res://scenes/prefabs/arrow_canon.tscn" id="8_72kp0"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="8_ucu7r"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="9_d3n7b"]
