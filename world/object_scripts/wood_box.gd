@@ -2,7 +2,8 @@ extends Area2D
 
 var current_position : Vector2
 
-
+func _ready() -> void:
+	current_position = self.position
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().name != "Player1":

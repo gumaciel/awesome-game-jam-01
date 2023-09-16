@@ -14,7 +14,10 @@ config/name="Journey to the Holy Grail"
 run/main_scene="res://scenes/main/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
+boot_splash/image="res://scenes/main/assets/release/TEXTO.png"
+boot_splash/fullsize=false
 config/icon="res://icon.png"
+boot_splash/minimum_display_time=1000
 run/main_scene.debug="res://scenes/main/main.tscn"
 config/mobile_debug.debug=true
 

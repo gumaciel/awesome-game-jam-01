@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1gh4aig0rrue"]
+[gd_scene load_steps=8 format=3 uid="uid://d1gh4aig0rrue"]
 
 [ext_resource type="Script" path="res://globals/scene_transition.gd" id="1_rsmv2"]
 [ext_resource type="AudioStream" uid="uid://cg6kasbatq8ng" path="res://assets/sounds/musics/Fase_1.wav" id="2_0se43"]
+[ext_resource type="AudioStream" uid="uid://bkt3tmtjloei6" path="res://assets/sounds/musics/Fase_2.wav" id="3_c2j5g"]
 
 [sub_resource type="Animation" id="Animation_o2r36"]
 length = 0.001
@@ -72,6 +73,8 @@ _data = {
 
 [node name="SceneTransition" type="CanvasLayer"]
 script = ExtResource("1_rsmv2")
+music1 = ExtResource("2_0se43")
+music2 = ExtResource("3_c2j5g")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

@@ -13,6 +13,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.collision_layer == 8:
 		player = area
 		is_player = false
+		area.set_collision_layer_value(4,false)
 	player.set_physics_process(false)
 	player.set_process(false)
 	player.set_process_unhandled_input(false)
@@ -30,5 +31,6 @@ func _shoot(target, is_player):
 	var shot_move = create_tween()
 	shot_move.tween_property(bullet,"position",target.global_position,bullet_time)
 	await shot_move.finished
-	bullet.set_collision_layer_value(3,false)
+	if !is_player:
+		bullet.set_collision_layer_value(3,false)
 	bullet.reparent(target)

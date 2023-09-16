@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cms0l71r55yer" path="res://assets/sounds/sfx/fire_ball/Bola_de_fogo_3.wav" id="6_mgie6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtrcp"]
-size = Vector2(6, 282)
+size = Vector2(6, 357)
 
 [node name="FireCanon" type="Node2D"]
 script = ExtResource("1_pcrwq")
@@ -23,7 +23,7 @@ collision_layer = 0
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 131)
+position = Vector2(0, 168.5)
 shape = SubResource("RectangleShape2D_xtrcp")
 
 [node name="SoundPool" type="Node2D" parent="."]

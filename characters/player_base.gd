@@ -27,7 +27,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body as TileMap:
 		GlobalSignals.game_over.emit()
 		return
-	if body.collision_layer == 4:
+	if body.is_in_group("Arrows"):
 		if heavy:
 			body.get_parent().queue_free()
 			return

@@ -4,6 +4,7 @@ extends Control
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$Objects/Grail/GPUParticles2D.global_position = $Objects/Grail.position + Vector2(49, 50)
 
 func _process(delta):
 	$Objects/ParallaxBackground.scroll_offset.x += delta * scrool_speed

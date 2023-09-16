@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dlkjm71f2kdxn"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_27uhe"]
-[ext_resource type="Script" path="res://world/object_scripts/stage_1.gd" id="1_pjvng"]
+[ext_resource type="Script" path="res://world/object_scripts/stage.gd" id="1_t5m6k"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_jfmiu"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="3_nhedo"]
 [ext_resource type="AudioStream" uid="uid://d3i4yg6bjn5rc" path="res://assets/sounds/sfx/bridge/Ponte_quebrando_2.wav" id="4_2t5aw"]
@@ -28,7 +28,8 @@ offset_right = 240.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pjvng")
+script = ExtResource("1_t5m6k")
+music_number = 1
 
 [node name="BackgroundColorRect" parent="." instance=ExtResource("1_27uhe")]
 layout_mode = 1
