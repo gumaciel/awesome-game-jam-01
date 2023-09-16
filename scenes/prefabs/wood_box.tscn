@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb0u33jttrs3u"]
+[gd_scene load_steps=5 format=3 uid="uid://cb0u33jttrs3u"]
 
 [ext_resource type="Script" path="res://world/object_scripts/wood_box.gd" id="1_gkro2"]
 [ext_resource type="Texture2D" uid="uid://bk82ayru8eqvi" path="res://assets/objects/wood_box_base.tres" id="1_x0tcr"]
+[ext_resource type="AudioStream" uid="uid://d1bfnef641hp1" path="res://assets/sounds/sfx/wood_box/Arrastar_Madeira_1.wav" id="3_lmcb6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfenb"]
 size = Vector2(16, 16)
@@ -17,6 +18,9 @@ texture = ExtResource("1_x0tcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yfenb")
+
+[node name="PushSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lmcb6")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

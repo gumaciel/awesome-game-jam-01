@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bwj8j2g03xdkg"]
+[gd_scene load_steps=17 format=3 uid="uid://ctlu13l84ep3g"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_vdql7"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_ol3j7"]
@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://brxe1whit1iwl" path="res://assets/sounds/sfx/sword/Espada_hit_1.wav" id="5_618r5"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="6_gtxtq"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="7_idigy"]
-[ext_resource type="PackedScene" uid="uid://clfq6vyh00w4u" path="res://scenes/levels/final_level.tscn" id="8_2g43h"]
+[ext_resource type="PackedScene" path="res://scenes/levels/final_level.tscn" id="8_2g43h"]
 [ext_resource type="PackedScene" uid="uid://brjiawffrb0mt" path="res://scenes/prefabs/door.tscn" id="8_kp4ci"]
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="9_bcyjb"]
 [ext_resource type="PackedScene" uid="uid://cb0u33jttrs3u" path="res://scenes/prefabs/wood_box.tscn" id="10_o4hud"]
@@ -109,12 +109,12 @@ position = Vector2(-48, 17)
 
 [node name="Player2" parent="Node2D" instance=ExtResource("15_2v0l3")]
 unique_name_in_owner = true
-position = Vector2(232, 195)
+position = Vector2(232, 196)
 active = false
 
 [node name="Player1" parent="Node2D" instance=ExtResource("16_ep4du")]
 unique_name_in_owner = true
-position = Vector2(264, 195)
+position = Vector2(264, 196)
 
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
