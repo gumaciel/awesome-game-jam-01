@@ -18,7 +18,7 @@ boot_splash/image="res://scenes/main/assets/release/TEXTO.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 boot_splash/minimum_display_time=1000
-run/main_scene.debug="res://scenes/ending/ending.tscn"
+run/main_scene.debug="res://scenes/levels/grall_room.tscn"
 config/mobile_debug.debug=true
 
 [autoload]
