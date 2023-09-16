@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://qtcb3y6wgki0"]
+[gd_scene load_steps=25 format=3 uid="uid://qtcb3y6wgki0"]
 
 [ext_resource type="Script" path="res://scenes/levels/grail_room.gd" id="1_2g2d5"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_5wycx"]
@@ -8,10 +8,11 @@
 [ext_resource type="AudioStream" uid="uid://brxe1whit1iwl" path="res://assets/sounds/sfx/sword/Espada_hit_1.wav" id="5_0ij5y"]
 [ext_resource type="PackedScene" uid="uid://brttmwofxttak" path="res://scenes/ui/ui.tscn" id="6_op2pt"]
 [ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="7_x6jfs"]
-[ext_resource type="Texture2D" uid="uid://dfg5apwxslren" path="res://assets/objects/door_base.tres" id="10_0f2hv"]
 [ext_resource type="Texture2D" uid="uid://ci3pnmow7v125" path="res://scenes/levels/assets/grail.png" id="11_7pvdc"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="11_y6acm"]
 [ext_resource type="Script" path="res://scenes/levels/areas.gd" id="13_er828"]
+[ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="13_n3ufe"]
+[ext_resource type="PackedScene" uid="uid://cgxmimi48jbtx" path="res://scenes/ending/ending.tscn" id="14_mjfge"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="14_smn3p"]
 [ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="15_oh0hb"]
 [ext_resource type="AudioStream" uid="uid://cg4juj4bdkvus" path="res://assets/sounds/sfx/find_grail/Gral.wav" id="15_u2aee"]
@@ -251,6 +252,10 @@ stream = ExtResource("4_virqq")
 [node name="Spikes" type="AudioStreamPlayer2D" parent="Scenario"]
 stream = ExtResource("5_0ij5y")
 
+[node name="LevelDoor" parent="." instance=ExtResource("13_n3ufe")]
+position = Vector2(241, 17)
+next_level = ExtResource("14_mjfge")
+
 [node name="Grail" type="Sprite2D" parent="."]
 visible = false
 y_sort_enabled = true
@@ -290,12 +295,6 @@ visible = true
 [node name="Player1" parent="Node2D" instance=ExtResource("15_oh0hb")]
 unique_name_in_owner = true
 position = Vector2(264, 195)
-
-[node name="DoorBase" type="Sprite2D" parent="."]
-position = Vector2(241, 17)
-texture = ExtResource("10_0f2hv")
-hframes = 2
-frame = 1
 
 [node name="Areas" type="Node2D" parent="."]
 script = ExtResource("13_er828")
