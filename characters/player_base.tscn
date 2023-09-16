@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d316k4en4222v"]
+[gd_scene load_steps=14 format=3 uid="uid://d316k4en4222v"]
 
 [ext_resource type="Script" path="res://characters/player_base.gd" id="1_fqhkc"]
 [ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_xqc8x"]
@@ -56,6 +56,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WinningSprite2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_eh6mp"]
@@ -229,6 +241,46 @@ tracks/0/keys = {
 "values": [8, 9, 10, 11]
 }
 
+[sub_resource type="Animation" id="Animation_scure"]
+resource_name = "win"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DeathSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WinningSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxyko"]
 _data = {
 "RESET": SubResource("Animation_5bx3v"),
@@ -237,7 +289,8 @@ _data = {
 "left": SubResource("Animation_akc7u"),
 "right": SubResource("Animation_7ugm0"),
 "stoped": SubResource("Animation_xvyri"),
-"up": SubResource("Animation_d0tnl")
+"up": SubResource("Animation_d0tnl"),
+"win": SubResource("Animation_scure")
 }
 
 [node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations")]
@@ -254,10 +307,14 @@ hframes = 4
 vframes = 3
 
 [node name="DeathSprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(0, -7.5)
 texture = ExtResource("1_xqc8x")
 flip_h = true
 hframes = 2
+
+[node name="WinningSprite2D" type="Sprite2D" parent="."]
+visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 3.24249e-05)
