@@ -1,0 +1,625 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgxmimi48jbtx"]
+
+[ext_resource type="Script" path="res://scenes/ending/ending.gd" id="1_d513n"]
+[ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_u0cok"]
+[ext_resource type="Texture2D" uid="uid://dudpoansba51n" path="res://scenes/main/assets/release/TEXTO.png" id="2_hu1h8"]
+[ext_resource type="AudioStream" uid="uid://dnxx6utf1pt1c" path="res://assets/sounds/musics/Final_-_Creditos.ogg" id="3_26rg2"]
+[ext_resource type="FontFile" uid="uid://c6yps1ak18s04" path="res://assets/fonts/Pixeltype.ttf" id="5_0wkje"]
+[ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="5_uqq1j"]
+
+[sub_resource type="Animation" id="Animation_bjgrm"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_pr8wy"]
+resource_name = "load"
+length = 99.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto/Texto:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(15, 17.5, 20, 23),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 160), Vector2(0, 0), Vector2(0, 0), Vector2(0, -170)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Congratulations/Congratulations:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5, 10, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 170), Vector2(0, 0), Vector2(0, 0), Vector2(0, -150)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texto/Texto/Shine")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 17.5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [false],
+"method": &"set_process"
+}, {
+"args": [true],
+"method": &"set_process"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("GameMakers2/GameMakers:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(23, 28, 35, 40),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 275), Vector2(0, 0), Vector2(0, 0), Vector2(0, -277)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("GameMakers2/GameMakers:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Congratulations/Congratulations:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Texto/Texto:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AspectRatioContainer/LevelDesignUnit:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AspectRatioContainer2/GameDesignUnit:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 64),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AspectRatioContainer/LevelDesignUnit:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(40, 44, 48, 52),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 220), Vector2(0, 0), Vector2(0, 0), Vector2(0, -220)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AspectRatioContainer2/GameDesignUnit:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(52, 56, 60, 64),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 210), Vector2(0, 0), Vector2(0, 0), Vector2(0, -210)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Program/ProgramUnit:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 76),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Program/ProgramUnit:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(64, 68, 72, 76),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 260), Vector2(0, 0), Vector2(0, 0), Vector2(0, -270)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sound/SoundUnit:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 88),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sound/SoundUnit:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(76, 80, 84, 88),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 250), Vector2(0, 0), Vector2(0, 0), Vector2(0, -260)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Artist/ArtistUnit:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Artist/ArtistUnit:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(88, 92, 95, 99),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 260), Vector2(0, 0), Vector2(0, 0), Vector2(0, -270)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
+_data = {
+"RESET": SubResource("Animation_bjgrm"),
+"load": SubResource("Animation_pr8wy")
+}
+
+[sub_resource type="GDScript" id="GDScript_jm4vu"]
+script/source = "extends TextureRect
+var speed := 1
+
+var forward := false
+
+func _process(delta):
+	if modulate.a <= 0.2:
+		forward = true
+	elif modulate.a >= 1:
+		forward = false
+		
+	if forward:
+		modulate.a += delta * speed
+	else:
+		modulate.a -= delta * speed
+	
+"
+
+[node name="Ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d513n")
+
+[node name="BackgroundColorRect" parent="." instance=ExtResource("1_u0cok")]
+layout_mode = 1
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "load"
+libraries = {
+"": SubResource("AnimationLibrary_6nqxf")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_26rg2")
+autoplay = true
+
+[node name="Congratulations" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -28.0
+offset_right = 201.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 10.0
+
+[node name="Congratulations" type="RichTextLabel" parent="Congratulations"]
+visible = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center]Congratulations, brave adventurer! 
+
+In this mysterious castle, you have unraveled the deepest secrets of history and become the guardian of the [rainbow]Holy Grail[/rainbow], the source of eternal power and wisdom![/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Texto" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -20.0
+offset_right = 206.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texto" type="TextureRect" parent="Texto"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_hu1h8")
+
+[node name="Shine" type="TextureRect" parent="Texto/Texto"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 285.5
+offset_top = -7.99969
+offset_right = 344.5
+offset_bottom = 54.0003
+texture = ExtResource("5_uqq1j")
+stretch_mode = 5
+script = SubResource("GDScript_jm4vu")
+
+[node name="GameMakers2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.0
+offset_top = -132.0
+offset_right = 166.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameMakers" type="VBoxContainer" parent="GameMakers2"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="GameMakers2/GameMakers"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center][shake][u]GAME MAKERS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="GameMakers2/GameMakers"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]GAME PRODUCER/PRODUCT MANAGER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]GAME DESIGN[/font_size]
+Flavio Sepulveda | itch.io (@hallsey)
+Fallen Angel | itch.io (@fallen-angel-dev)
+-
+[font_size=32]WRITERS[/font_size]
+Flavio Sepulveda | itch.io (@hallsey)
+Fallen Angel | itch.io (@fallen-angel-dev)
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]ART DIRECTORS[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+Bolachudo404 | itch.io (@bolachudohey)
+-
+[font_size=32]SOUND DIRECTOR[/font_size]
+Matheus Felipe | portfolio (matheusfelipe.art.br)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -67.0
+offset_right = 160.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelDesignUnit" type="VBoxContainer" parent="AspectRatioContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]Level Design Unit"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]LEAD LEVEL DESIGNER[/font_size]
+
+Fallen Angel | itch.io (@fallen-angel-dev)
+-
+[font_size=32]LEVEL DESIGNERS[/font_size]
+
+Gustavo Maciel | GitHub (@gumaciel)
+Flavio Sepulveda | itch.io (@hallsey)
+Karla Correa | itch.io (@karlacorrea)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -62.0
+offset_right = 168.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameDesignUnit" type="VBoxContainer" parent="AspectRatioContainer2"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="AspectRatioContainer2/GameDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]GAME DESIGN UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="AspectRatioContainer2/GameDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]LEAD GAME DESIGNER[/font_size]
+
+ Flavio Sepulveda | itch.io (@hallsey)
+-
+[font_size=32]GAME DESIGNERS[/font_size]
+
+Fallen Angel | itch.io (@fallen-angel-dev)
+Gustavo Maciel | GitHub (@gumaciel)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Program" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -117.0
+offset_right = 132.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgramUnit" type="VBoxContainer" parent="Program"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Program/ProgramUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]PROGRAM UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="Program/ProgramUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]LEAD GAME PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]GAME PROGRAMMERS[/font_size]
+Fallen Angel | itch.io (@fallen-angel-dev)
+Karla Correa | itch.io (@karlacorrea)
+Gustavo Maciel | GitHub (@gumaciel)
+Marcos Sousa | GitHub (@YakumaKuramy)
+-
+[font_size=32]LEAD UI PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]SOUND PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+Karla Correa | itch.io (@karlacorrea)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Sound" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -102.0
+offset_right = 116.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SoundUnit" type="VBoxContainer" parent="Sound"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Sound/SoundUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]SOUND UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="Sound/SoundUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]AUDIO DIRECTOR[/font_size]
+Matheus Felipe | portfolio (matheusfelipe.art.br)
+-
+[font_size=32]MUSIC BY[/font_size]
+Matheus Felipe | portfolio (matheusfelipe.art.br)
+-
+[font_size=32]SOUND DESIGNER[/font_size]
+Matheus Felipe | portfolio (matheusfelipe.art.br)
+-
+[font_size=32]SOUND IMPLEMENTATION[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+Fallen Angel | itch.io (@fallen-angel-dev)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Artist" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -122.0
+offset_right = 133.5
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ArtistUnit" type="VBoxContainer" parent="Artist"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Artist/ArtistUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]ARTIST UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="Artist/ArtistUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]CHARACTER ARTIST[/font_size]
+Fallen Angel | itch.io (@fallen-angel-dev)
+-
+[font_size=32]UI ARTISTS[/font_size]
+Lucas Santiago | LinkedIn (lucas-santiago-a754a3150)
+Bolachudo404 | itch.io (@bolachudohey)
+Flavio Sepulveda | itch.io (@hallsey)
+-
+[font_size=32]ANIMATORS[/font_size]
+Bolachudo404 | itch.io (@bolachudohey)
+Fallen Angel | itch.io (@fallen-angel-dev)
+Karla Correa | itch.io (@karlacorrea)
+-
+[font_size=32]ENVIRONMENT ARTISTS[/font_size]
+Bolachudo404 | itch.io (@bolachudohey)
+Fallen Angel | itch.io (@fallen-angel-dev)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
