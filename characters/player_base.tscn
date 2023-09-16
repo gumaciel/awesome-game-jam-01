@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://d316k4en4222v"]
+[gd_scene load_steps=16 format=3 uid="uid://d316k4en4222v"]
 
 [ext_resource type="Script" path="res://characters/player_base.gd" id="1_fqhkc"]
 [ext_resource type="Texture2D" uid="uid://cq316r75le2" path="res://icon.svg" id="1_xqc8x"]
 [ext_resource type="PackedScene" uid="uid://1o78yr5cfnti" path="res://scenes/sounds/sound_pool.tscn" id="3_mfev7"]
+[ext_resource type="AudioStream" uid="uid://bwplad06nxq2" path="res://assets/sounds/sfx/death/Death.wav" id="4_rcvvh"]
+[ext_resource type="AudioStream" uid="uid://cxnwk2hdge1hx" path="res://assets/sounds/sfx/shield/Escudo_hit_2.wav" id="5_q6s05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v28ut"]
 size = Vector2(13.25, 12)
@@ -293,13 +295,15 @@ _data = {
 "win": SubResource("Animation_scure")
 }
 
-[node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations")]
+[node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations", "walking_sound_pool")]
 y_sort_enabled = true
 script = ExtResource("1_fqhkc")
 animations = NodePath("Animations")
+walking_sound_pool = NodePath("WalkingSoundPool")
 
 [node name="Texture" type="Sprite2D" parent="."]
 visible = false
+y_sort_enabled = true
 position = Vector2(0, -7.49997)
 scale = Vector2(0.21875, 0.210938)
 texture = ExtResource("1_xqc8x")
@@ -354,5 +358,11 @@ libraries = {
 }
 
 [node name="WalkingSoundPool" parent="." instance=ExtResource("3_mfev7")]
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rcvvh")
+
+[node name="ShieldSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q6s05")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
