@@ -12,7 +12,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GameMakers:visible")
+tracks/0/path = NodePath("GameMakers2/GameMakers:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +24,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GameMakers:position")
+tracks/1/path = NodePath("GameMakers2/GameMakers:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -33,6 +33,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(74, 3)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texto/Texto:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33.5, 275)]
+}
 
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
@@ -40,7 +52,7 @@ length = 99.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Texto:position")
+tracks/0/path = NodePath("Texto/Texto:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +64,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Congratulations:position")
+tracks/1/path = NodePath("Congratulations/Congratulations:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -64,7 +76,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Texto/Shine")
+tracks/2/path = NodePath("Texto/Texto/Shine")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -81,7 +93,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GameMakers:position")
+tracks/3/path = NodePath("GameMakers2/GameMakers:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -93,7 +105,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GameMakers:visible")
+tracks/4/path = NodePath("GameMakers2/GameMakers:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -151,7 +163,32 @@ libraries = {
 stream = ExtResource("3_26rg2")
 autoplay = true
 
-[node name="Texto" type="TextureRect" parent="."]
+[node name="Congratulations" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -28.0
+offset_right = 201.5
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 10.0
+
+[node name="Congratulations" type="RichTextLabel" parent="Congratulations"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center]Congratulations, brave adventurer! 
+
+In this mysterious castle, you have unraveled the deepest secrets of history and become the guardian of the [rainbow]Holy Grail[/rainbow], the source of eternal power and wisdom![/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Texto" type="AspectRatioContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -159,14 +196,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -206.5
-offset_top = -207.0
+offset_top = -20.0
 offset_right = 206.5
-offset_bottom = -166.999
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Texto" type="TextureRect" parent="Texto"]
+layout_mode = 2
 texture = ExtResource("2_hu1h8")
 
-[node name="Shine" type="TextureRect" parent="Texto"]
+[node name="Shine" type="TextureRect" parent="Texto/Texto"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 285.5
@@ -177,28 +217,7 @@ texture = ExtResource("5_uqq1j")
 stretch_mode = 5
 script = SubResource("GDScript_jm4vu")
 
-[node name="Congratulations" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.5
-offset_top = -193.0
-offset_right = 164.5
-offset_bottom = -143.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("5_0wkje")
-bbcode_enabled = true
-text = "[center]Congratulations, brave adventurer! 
-
-In this mysterious castle, you have unraveled the deepest secrets of history and become the guardian of the [rainbow]Holy Grail[/rainbow], the source of eternal power and wisdom![/center]"
-fit_content = true
-scroll_active = false
-
-[node name="GameMakers" type="VBoxContainer" parent="."]
+[node name="GameMakers2" type="AspectRatioContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -213,7 +232,11 @@ offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="RichTextLabel" parent="GameMakers"]
+[node name="GameMakers" type="VBoxContainer" parent="GameMakers2"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="GameMakers2/GameMakers"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 theme_override_font_sizes/normal_font_size = 48
@@ -223,7 +246,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Body" type="RichTextLabel" parent="GameMakers"]
+[node name="Body" type="RichTextLabel" parent="GameMakers2/GameMakers"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
@@ -249,7 +272,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="GameDesignUnit" type="VBoxContainer" parent="."]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -257,55 +280,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -117.0
-offset_top = 145.0
-offset_right = 117.0
-offset_bottom = 239.0
+offset_left = -160.0
+offset_top = -67.0
+offset_right = 160.0
+offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Title" type="RichTextLabel" parent="GameDesignUnit"]
+[node name="LevelDesignUnit" type="VBoxContainer" parent="AspectRatioContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("5_0wkje")
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[center][shake][u]GAME DESIGN UNIT"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
 
-[node name="Body" type="RichTextLabel" parent="GameDesignUnit"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("5_0wkje")
-bbcode_enabled = true
-text = "[center]LEAD GAME DESIGNER
-
- Flavio Sepulveda | itch.io (@hallsey)
--
-GAME DESIGNERS
-
-Fallen Angel | itch.io (@fallen-angel-dev)
-Gustavo Maciel | GitHub (@gumaciel)"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="LevelDesignUnit" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = 138.0
-offset_right = 120.0
-offset_bottom = 262.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Title" type="RichTextLabel" parent="LevelDesignUnit"]
+[node name="Title" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 theme_override_font_sizes/normal_font_size = 64
@@ -315,7 +300,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Body" type="RichTextLabel" parent="LevelDesignUnit"]
+[node name="Body" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
@@ -328,6 +313,50 @@ LEVEL DESIGNERS
 Gustavo Maciel | GitHub (@gumaciel)
 Flavio Sepulveda | itch.io (@hallsey)
 Karla Correa | itch.io (@karlacorrea)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -62.0
+offset_right = 168.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameDesignUnit" type="VBoxContainer" parent="AspectRatioContainer2"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="AspectRatioContainer2/GameDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]GAME DESIGN UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="AspectRatioContainer2/GameDesignUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center]LEAD GAME DESIGNER
+
+ Flavio Sepulveda | itch.io (@hallsey)
+-
+GAME DESIGNERS
+
+Fallen Angel | itch.io (@fallen-angel-dev)
+Gustavo Maciel | GitHub (@gumaciel)"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
