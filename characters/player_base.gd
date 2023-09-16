@@ -30,11 +30,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Arrows"):
 		if heavy:
 			body.get_parent().queue_free()
+			$ShieldSound.play()
 			return
 	GlobalSignals.game_over.emit()
 
 func _death() -> void:
 	active = false
+	$DeathSound.play()
 	$Animations.play("death")
 	await $Animations.animation_finished
 	SceneTransition._death_event()
