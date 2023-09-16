@@ -289,8 +289,8 @@ Flavio Sepulveda | itch.io (@hallsey)
 Fallen Angel | itch.io (@fallen-angel-dev)
 -
 [font_size=32]WRITERS[/font_size]
-Fallen Angel | itch.io (@fallen-angel-dev)
 Flavio Sepulveda | itch.io (@hallsey)
+Fallen Angel | itch.io (@fallen-angel-dev)
 Gustavo Maciel | GitHub (@gumaciel)
 -
 [font_size=32]ART DIRECTORS[/font_size]
@@ -334,11 +334,11 @@ autowrap_mode = 0
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
-text = "[center]LEAD LEVEL DESIGNER
+text = "[center][font_size=32]LEAD LEVEL DESIGNER[/font_size]
 
 Fallen Angel | itch.io (@fallen-angel-dev)
 -
-LEVEL DESIGNERS
+[font_size=32]LEVEL DESIGNERS[/font_size]
 
 Gustavo Maciel | GitHub (@gumaciel)
 Flavio Sepulveda | itch.io (@hallsey)
@@ -378,14 +378,64 @@ autowrap_mode = 0
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
-text = "[center]LEAD GAME DESIGNER
+text = "[center][font_size=32]LEAD GAME DESIGNER[/font_size]
 
  Flavio Sepulveda | itch.io (@hallsey)
 -
-GAME DESIGNERS
+[font_size=32]GAME DESIGNERS[/font_size]
 
 Fallen Angel | itch.io (@fallen-angel-dev)
 Gustavo Maciel | GitHub (@gumaciel)"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Program" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -62.0
+offset_right = 168.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgramUnit" type="VBoxContainer" parent="Program"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Program/ProgramUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][shake][u]PROGRAM UNIT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Body" type="RichTextLabel" parent="Program/ProgramUnit"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center][font_size=32]LEAD GAME PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]GAME PROGRAMMERS[/font_size]
+Fallen Angel | itch.io (@fallen-angel-dev)
+Karla Correa | itch.io (@karlacorrea)
+Gustavo Maciel | GitHub (@gumaciel)
+Marcos Sousa | GitHub (@YakumaKuramy)
+-
+[font_size=32]LEAD UI PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+-
+[font_size=32]SOUND PROGRAMMER[/font_size]
+Gustavo Maciel | GitHub (@gumaciel)
+Karla Correa | itch.io (@karlacorrea)"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
