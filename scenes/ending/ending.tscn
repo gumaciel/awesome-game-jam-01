@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cgxmimi48jbtx"]
+[gd_scene load_steps=10 format=3 uid="uid://cgxmimi48jbtx"]
 
 [ext_resource type="Script" path="res://scenes/ending/ending.gd" id="1_d513n"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_u0cok"]
@@ -6,33 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dnxx6utf1pt1c" path="res://assets/sounds/musics/Final_-_Creditos.ogg" id="3_26rg2"]
 [ext_resource type="FontFile" uid="uid://c6yps1ak18s04" path="res://assets/fonts/Pixeltype.ttf" id="5_0wkje"]
 [ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="5_uqq1j"]
-
-[sub_resource type="Animation" id="Animation_5im24"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sound/SoundUnit:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sound/SoundUnit:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
@@ -221,12 +194,11 @@ tracks/14/keys = {
 "times": PackedFloat32Array(85, 91, 94, 100),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+"values": [Vector2(0, 250), Vector2(0, 0), Vector2(0, 0), Vector2(0, -260)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
 _data = {
-"RESET": SubResource("Animation_5im24"),
 "load": SubResource("Animation_pr8wy")
 }
 
@@ -537,7 +509,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SoundUnit" type="VBoxContainer" parent="Sound"]
-visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Sound/SoundUnit"]
