@@ -212,7 +212,6 @@ grow_vertical = 2
 ratio = 10.0
 
 [node name="Congratulations" type="RichTextLabel" parent="Congratulations"]
-visible = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
@@ -237,7 +236,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Texto" type="TextureRect" parent="Texto"]
-visible = false
 layout_mode = 2
 texture = ExtResource("2_hu1h8")
 
@@ -267,7 +265,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameMakers" type="VBoxContainer" parent="GameMakers2"]
-visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="GameMakers2/GameMakers"]
@@ -321,7 +318,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LevelDesignUnit" type="VBoxContainer" parent="AspectRatioContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
