@@ -502,9 +502,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -116.0
-offset_top = -107.0
+offset_top = -102.0
 offset_right = 116.0
-offset_bottom = 107.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -525,9 +525,8 @@ autowrap_mode = 0
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
-text = "[center][font_size=32]AUDIO DIRECTORS[/font_size]
+text = "[center][font_size=32]AUDIO DIRECTOR[/font_size]
 Matheus Felipe | portfolio (matheusfelipe.art.br)
-Gustavo Maciel | GitHub (@gumaciel)
 -
 [font_size=32]MUSIC BY[/font_size]
 Matheus Felipe | portfolio (matheusfelipe.art.br)
