@@ -36,6 +36,7 @@ func _input(event : InputEvent) -> void:
 		_pause()
 
 func _switch_char() -> void:
+	$SwitchCharAudioStreamPlayer.play()
 	player_1.active = not player_1.active
 	player_2.active = not player_2.active
 

@@ -32,31 +32,32 @@ offset_bottom = 40.0
 [node name="ClickButton" type="Control" parent="MobileButtons/ControlClickable"]
 process_mode = 1
 layout_mode = 1
-anchor_left = 1.85
-anchor_top = 2.6
-anchor_right = 6.5
-anchor_bottom = 6.45
+anchor_left = 2.175
+anchor_top = 2.625
+anchor_right = 6.825
+anchor_bottom = 6.475
 metadata/_edit_use_anchors_ = true
 
 [node name="ClickButton2" type="Control" parent="MobileButtons/ControlClickable"]
 process_mode = 1
 layout_mode = 1
-anchor_left = -1.2
-anchor_top = 1.85
-anchor_right = 2.4
-anchor_bottom = 4.6
+anchor_left = -1.175
+anchor_top = 1.375
+anchor_right = 2.425
+anchor_bottom = 4.125
 metadata/_edit_use_anchors_ = true
 
 [node name="ClickButton3" type="Control" parent="MobileButtons/ControlClickable"]
 process_mode = 1
 layout_mode = 1
-anchor_left = -2.175
-anchor_top = 2.875
-anchor_right = 0.15
-anchor_bottom = 6.775
+anchor_left = -2.55
+anchor_top = 2.9
+anchor_right = -0.225
+anchor_bottom = 6.8
 metadata/_edit_use_anchors_ = true
 
 [node name="InteractionButton" type="TouchScreenButton" parent="MobileButtons"]
+visible = false
 position = Vector2(428, 218)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("2_ksa3p")
@@ -64,21 +65,22 @@ texture_pressed = ExtResource("3_helaa")
 action = "interaction"
 
 [node name="SettingsButton" type="TouchScreenButton" parent="MobileButtons"]
-position = Vector2(15, 4)
+position = Vector2(14, 5)
+scale = Vector2(1.25, 1.25)
 texture_normal = ExtResource("4_gvyp0")
 action = "configuration"
 
 [node name="Joystick" parent="MobileButtons" instance=ExtResource("6_qyci7")]
 z_index = 8
 layout_mode = 1
-offset_left = 20.0
-offset_top = 195.0
-offset_right = 20.0
-offset_bottom = 195.0
+offset_left = 19.0
+offset_top = 196.0
+offset_right = 19.0
+offset_bottom = 196.0
 
 [node name="ChangeChar" type="TouchScreenButton" parent="MobileButtons"]
 z_index = 5
-position = Vector2(409, 48)
+position = Vector2(405, 65)
 scale = Vector2(2, 2)
 texture_normal = ExtResource("7_yyelt")
 texture_pressed = ExtResource("8_quc2u")
@@ -88,16 +90,16 @@ action = "alternate"
 z_index = -1
 layout_mode = 3
 anchors_preset = 0
-offset_left = 4.0
-offset_top = -23.0
-offset_right = 4.0
-offset_bottom = -23.0
+offset_left = 5.0
+offset_top = -31.5
+offset_right = 5.0
+offset_bottom = -31.5
 scale = Vector2(0.5, 0.5)
 
 [node name="ActiveBanner" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
 z_index = 1
-position = Vector2(25, 32)
-scale = Vector2(1.69, 1.69)
+position = Vector2(18, 41.98)
+scale = Vector2(2, 1.969)
 texture = ExtResource("10_7a6c8")
 
 [node name="ActivePlayer" type="Sprite2D" parent="MobileButtons/ChangeChar/Players/ActiveBanner"]
@@ -107,8 +109,8 @@ scale = Vector2(0.875001, 0.75)
 texture = ExtResource("9_c7ycq")
 
 [node name="InnactiveBanner" type="Sprite2D" parent="MobileButtons/ChangeChar/Players"]
-position = Vector2(44, 15)
-scale = Vector2(1.69, 1.69)
+position = Vector2(42.48, 20)
+scale = Vector2(2, 2)
 texture = ExtResource("11_u7h02")
 
 [node name="InnactivePlayer" type="Sprite2D" parent="MobileButtons/ChangeChar/Players/InnactiveBanner"]
@@ -118,6 +120,9 @@ scale = Vector2(0.875001, 0.75)
 texture = ExtResource("11_jldy3")
 
 [node name="PauseAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_p4g21")
+
+[node name="SwitchCharAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_p4g21")
 
 [connection signal="gui_input" from="MobileButtons/ControlClickable/ClickButton" to="MobileButtons/Joystick" method="_on_click_button_gui_input"]
