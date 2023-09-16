@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgxmimi48jbtx"]
+[gd_scene load_steps=11 format=3 uid="uid://cgxmimi48jbtx"]
 
 [ext_resource type="Script" path="res://scenes/ending/ending.gd" id="1_d513n"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_u0cok"]
@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://dnxx6utf1pt1c" path="res://assets/sounds/musics/Final_-_Creditos.ogg" id="3_26rg2"]
 [ext_resource type="FontFile" uid="uid://c6yps1ak18s04" path="res://assets/fonts/Pixeltype.ttf" id="5_0wkje"]
 [ext_resource type="Texture2D" uid="uid://cvxso3oph40vl" path="res://scenes/main/assets/release/Shine_text.png" id="5_uqq1j"]
+
+[sub_resource type="Animation" id="Animation_5im24"]
+length = 0.001
 
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
@@ -134,7 +137,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(40, 46, 49, 55),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 210), Vector2(0, 0), Vector2(0, 0), Vector2(0, -210)]
+"values": [Vector2(0, 220), Vector2(0, 0), Vector2(0, 0), Vector2(0, -220)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
@@ -148,9 +151,34 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(0, 210), Vector2(0, 0), Vector2(0, 0), Vector2(0, -210)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Program/ProgramUnit:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Program/ProgramUnit:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(70, 76, 79, 85),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 260), Vector2(0, 0), Vector2(0, 0), Vector2(0, -270)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
 _data = {
+"RESET": SubResource("Animation_5im24"),
 "load": SubResource("Animation_pr8wy")
 }
 
@@ -212,6 +240,7 @@ grow_vertical = 2
 ratio = 10.0
 
 [node name="Congratulations" type="RichTextLabel" parent="Congratulations"]
+visible = false
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("5_0wkje")
 bbcode_enabled = true
@@ -236,6 +265,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Texto" type="TextureRect" parent="Texto"]
+visible = false
 layout_mode = 2
 texture = ExtResource("2_hu1h8")
 
@@ -265,6 +295,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameMakers" type="VBoxContainer" parent="GameMakers2"]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="GameMakers2/GameMakers"]
@@ -318,6 +349,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="LevelDesignUnit" type="VBoxContainer" parent="AspectRatioContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="AspectRatioContainer/LevelDesignUnit"]
@@ -362,6 +394,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameDesignUnit" type="VBoxContainer" parent="AspectRatioContainer2"]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="AspectRatioContainer2/GameDesignUnit"]
@@ -397,14 +430,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = -62.0
-offset_right = 168.0
-offset_bottom = 62.0
+offset_left = -132.0
+offset_top = -117.0
+offset_right = 132.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ProgramUnit" type="VBoxContainer" parent="Program"]
+visible = false
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Program/ProgramUnit"]
