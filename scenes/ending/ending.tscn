@@ -1,4 +1,16 @@
-[gd_scene format=3 uid="uid://cgxmimi48jbtx"]
+[gd_scene load_steps=6 format=3 uid="uid://cgxmimi48jbtx"]
+
+[ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_u0cok"]
+[ext_resource type="Texture2D" uid="uid://dudpoansba51n" path="res://scenes/main/assets/release/TEXTO.png" id="2_hu1h8"]
+[ext_resource type="AudioStream" uid="uid://dnxx6utf1pt1c" path="res://assets/sounds/musics/Final_-_Creditos.ogg" id="3_26rg2"]
+
+[sub_resource type="Animation" id="Animation_pr8wy"]
+resource_name = "load"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
+_data = {
+"load": SubResource("Animation_pr8wy")
+}
 
 [node name="Ending" type="Control"]
 layout_mode = 3
@@ -7,3 +19,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BackgroundColorRect" parent="." instance=ExtResource("1_u0cok")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Texto" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = 140.0
+offset_right = 206.5
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hu1h8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "load"
+libraries = {
+"": SubResource("AnimationLibrary_6nqxf")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_26rg2")
+autoplay = true
