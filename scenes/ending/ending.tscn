@@ -1,14 +1,69 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgxmimi48jbtx"]
+[gd_scene load_steps=9 format=3 uid="uid://cgxmimi48jbtx"]
 
+[ext_resource type="Script" path="res://scenes/ending/ending.gd" id="1_d513n"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_u0cok"]
 [ext_resource type="Texture2D" uid="uid://dudpoansba51n" path="res://scenes/main/assets/release/TEXTO.png" id="2_hu1h8"]
 [ext_resource type="AudioStream" uid="uid://dnxx6utf1pt1c" path="res://assets/sounds/musics/Final_-_Creditos.ogg" id="3_26rg2"]
+[ext_resource type="FontFile" uid="uid://c6yps1ak18s04" path="res://assets/fonts/Pixeltype.ttf" id="5_0wkje"]
 
 [sub_resource type="Animation" id="Animation_pr8wy"]
 resource_name = "load"
+length = 99.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(33, 0), Vector2(33, -320)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qetc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(38, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6nqxf"]
 _data = {
+"RESET": SubResource("Animation_qetc3"),
 "load": SubResource("Animation_pr8wy")
 }
 
@@ -19,30 +74,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d513n")
 
 [node name="BackgroundColorRect" parent="." instance=ExtResource("1_u0cok")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-color = Color(0, 0, 0, 1)
-
-[node name="Texto" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -206.5
-offset_top = 140.0
-offset_right = 206.5
-offset_bottom = 180.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_hu1h8")
+color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "load"
@@ -53,3 +89,56 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_26rg2")
 autoplay = true
+
+[node name="Texto" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -207.0
+offset_top = -135.0
+offset_right = 206.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hu1h8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -135.0
+offset_right = 95.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_0wkje")
+theme_override_font_sizes/font_size = 16
+text = "Congratulations, brave adventurer! 
+
+In this mysterious castle, you have unraveled the deepest secrets of history and become the guardian of the Holy Grail, the source of eternal power and wisdom!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 348.0
+offset_right = 382.0
+offset_bottom = 398.0
+theme_override_fonts/normal_font = ExtResource("5_0wkje")
+bbcode_enabled = true
+text = "[center]Congratulations, brave adventurer! 
+
+In this mysterious castle, you have unraveled the deepest secrets of history and become the guardian of the [rainbow]Holy Grail[/rainbow], the source of eternal power and wisdom![/center]"
+fit_content = true
+scroll_active = false
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
