@@ -242,10 +242,11 @@ _data = {
 "up": SubResource("Animation_d0tnl")
 }
 
-[node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations")]
+[node name="PlayerBase" type="Node2D" node_paths=PackedStringArray("animations", "walking_sound_pool")]
 y_sort_enabled = true
 script = ExtResource("1_fqhkc")
 animations = NodePath("Animations")
+walking_sound_pool = NodePath("WalkingSoundPool")
 
 [node name="Texture" type="Sprite2D" parent="."]
 visible = false
