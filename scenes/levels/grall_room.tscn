@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://qtcb3y6wgki0"]
+[gd_scene load_steps=24 format=3 uid="uid://qtcb3y6wgki0"]
 
+[ext_resource type="Script" path="res://scenes/levels/grail_room.gd" id="1_2g2d5"]
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_5wycx"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_sq1y2"]
 [ext_resource type="Script" path="res://world/tilesets_data/scenario_environment.gd" id="3_uu7di"]
@@ -10,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dfg5apwxslren" path="res://assets/objects/door_base.tres" id="10_0f2hv"]
 [ext_resource type="Texture2D" uid="uid://ci3pnmow7v125" path="res://scenes/levels/assets/grail.png" id="11_7pvdc"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="11_y6acm"]
+[ext_resource type="Script" path="res://scenes/levels/areas.gd" id="13_er828"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="14_smn3p"]
 [ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="15_oh0hb"]
+[ext_resource type="AudioStream" uid="uid://cg4juj4bdkvus" path="res://assets/sounds/sfx/find_grail/Gral.wav" id="15_u2aee"]
 
 [sub_resource type="Gradient" id="Gradient_sgr1s"]
 offsets = PackedFloat32Array(0.00740741, 0.488889, 1)
@@ -33,7 +36,178 @@ scale_max = 0.3
 color_ramp = SubResource("GradientTexture1D_ywnat")
 hue_variation_max = 1.0
 
-[node name="Level5" type="Control"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q86u2"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4a6w"]
+size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_45wws"]
+resource_name = "win"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WinAudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chest")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"_on_area_2d_entered"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/Player1/Animations")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["win", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/Player2/Animations")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["win", -1, 1.0, false],
+"method": &"play"
+}]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grail:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grail:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(240, 110), Vector2(240, 94)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finish"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_puukh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("WinAudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grail:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grail:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 110)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gjrgt"]
+_data = {
+"RESET": SubResource("Animation_puukh"),
+"win": SubResource("Animation_45wws")
+}
+
+[node name="GrailRoom" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +220,7 @@ offset_right = 240.0
 offset_bottom = 135.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2g2d5")
 
 [node name="BackgroundColorRect" parent="." instance=ExtResource("1_5wycx")]
 layout_mode = 1
@@ -77,23 +252,28 @@ stream = ExtResource("4_virqq")
 stream = ExtResource("5_0ij5y")
 
 [node name="Grail" type="Sprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 position = Vector2(240, 110)
 texture = ExtResource("11_7pvdc")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Grail"]
+z_index = 5
 position = Vector2(0, -11)
 emitting = false
 amount = 5
 process_material = SubResource("ParticleProcessMaterial_0rpmi")
 texture = ExtResource("7_x6jfs")
 
+[node name="Chest" parent="." instance=ExtResource("11_y6acm")]
+position = Vector2(240, 110)
+
+[node name="CollisionShape2D" parent="Chest" index="0"]
+disabled = true
+
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_op2pt")]
 player_1 = NodePath("../Node2D/Player1")
 player_2 = NodePath("../Node2D/Player2")
-
-[node name="Chest" parent="." instance=ExtResource("11_y6acm")]
-position = Vector2(488, 133)
 
 [node name="Node2D" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -101,8 +281,11 @@ position = Vector2(-16, 18)
 
 [node name="Player2" parent="Node2D" instance=ExtResource("14_smn3p")]
 unique_name_in_owner = true
-position = Vector2(232, 195)
+position = Vector2(248, 195)
 active = false
+
+[node name="DeathSprite2D" parent="Node2D/Player2" index="1"]
+visible = true
 
 [node name="Player1" parent="Node2D" instance=ExtResource("15_oh0hb")]
 unique_name_in_owner = true
@@ -114,8 +297,42 @@ texture = ExtResource("10_0f2hv")
 hframes = 2
 frame = 1
 
+[node name="Areas" type="Node2D" parent="."]
+script = ExtResource("13_er828")
+
+[node name="WinningArea2D1" type="Area2D" parent="Areas"]
+position = Vector2(225, 129)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/WinningArea2D1"]
+position = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_q86u2")
+
+[node name="WinningArea2D2" type="Area2D" parent="Areas"]
+position = Vector2(241, 129)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/WinningArea2D2"]
+position = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_a4a6w")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gjrgt")
+}
+
+[node name="WinAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_u2aee")
+
 [connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
+[connection signal="complete" from="Areas" to="." method="_on_areas_complete"]
+[connection signal="area_entered" from="Areas/WinningArea2D1" to="Areas" method="_on_winning_area_2d_area_entered"]
+[connection signal="area_exited" from="Areas/WinningArea2D1" to="Areas" method="_on_winning_area_2d_area_exited"]
+[connection signal="area_entered" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_entered"]
+[connection signal="area_exited" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_exited"]
 
+[editable path="Chest"]
 [editable path="UI"]
+[editable path="Node2D/Player2"]
 [editable path="Node2D/Player1"]
