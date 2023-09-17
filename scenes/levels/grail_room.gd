@@ -28,5 +28,5 @@ func finish() -> void:
 	player_2.get_node("Texture").visible = true
 	player_1.get_node("WinningSprite2D").visible = false
 	player_2.get_node("WinningSprite2D").visible = false
-	$LevelDoor._on_chest_area_entered(null)
+	$Scenario/LevelDoor._on_chest_area_entered(null)
 	player_active.active = true
