@@ -18,11 +18,12 @@ func _change_scene_on_tree() -> void:
 
 func play_music(music):
 	$LevelMusic.stop()
-	if music == 1:
-		$LevelMusic.stream = music1
-	if music == 2:
-		$LevelMusic.stream = music2
-	$LevelMusic.play()
+	if music != 0:
+		if music == 1:
+			$LevelMusic.stream = music1
+		if music == 2:
+			$LevelMusic.stream = music2
+		$LevelMusic.play()
 
 func _death_event():
 	_reload()

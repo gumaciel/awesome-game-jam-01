@@ -18,7 +18,6 @@ boot_splash/image="res://scenes/main/assets/release/TEXTO.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 boot_splash/minimum_display_time=1000
-run/main_scene.debug="res://scenes/levels/grall_room.tscn"
 config/mobile_debug.debug=true
 
 [autoload]
@@ -31,13 +30,12 @@ GlobalSignals="*res://globals/global_signals.gd"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/mode=4
+window/size/mode=3
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=4
-window/size/mode.debug=0
 
 [filesystem]
 
