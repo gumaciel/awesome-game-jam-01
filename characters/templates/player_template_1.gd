@@ -48,6 +48,10 @@ func _physics_process(_delta: float) -> void:
 		if walking_sound_pool:
 			walking_sound_pool.play_random_audio()
 		return
+	
+	if Input.is_action_just_pressed("reload"):
+		get_tree().reload_current_scene()
+	
 	PlayerManager.current_direction = get_direction()
 
 

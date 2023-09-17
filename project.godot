@@ -18,7 +18,6 @@ boot_splash/image="res://scenes/main/assets/release/TEXTO.png"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 boot_splash/minimum_display_time=1000
-run/main_scene.debug="res://scenes/levels/grall_room.tscn"
 config/mobile_debug.debug=true
 
 [autoload]
@@ -31,13 +30,12 @@ GlobalSignals="*res://globals/global_signals.gd"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/mode=4
+window/size/mode=3
 window/size/window_width_override=960
 window/size/window_height_override=540
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/handheld/orientation=4
-window/size/mode.debug=0
 
 [filesystem]
 
@@ -79,6 +77,11 @@ configuration={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"echo":false,"script":null)
+]
+}
+reload={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"echo":false,"script":null)
 ]
 }
 

@@ -5,6 +5,9 @@ var player_active : PlayerBase
 @onready var player_2 := %Player2
 var finishable := true
 
+func _ready():
+	SceneTransition.play_music(0)
+
 func _on_areas_complete() -> void:
 	if finishable:
 		$AnimationPlayer.play("win")

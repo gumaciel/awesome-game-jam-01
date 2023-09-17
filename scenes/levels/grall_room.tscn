@@ -13,8 +13,8 @@
 [ext_resource type="Script" path="res://scenes/levels/areas.gd" id="13_er828"]
 [ext_resource type="PackedScene" uid="uid://b0yw1hwatwqs1" path="res://scenes/prefabs/level_door.tscn" id="13_n3ufe"]
 [ext_resource type="PackedScene" uid="uid://cgxmimi48jbtx" path="res://scenes/ending/ending.tscn" id="14_mjfge"]
-[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/player_2/player_2.tscn" id="14_smn3p"]
-[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/player_1/player_1.tscn" id="15_oh0hb"]
+[ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="14_smn3p"]
+[ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="15_oh0hb"]
 [ext_resource type="AudioStream" uid="uid://cg4juj4bdkvus" path="res://assets/sounds/sfx/find_grail/Gral.wav" id="15_u2aee"]
 
 [sub_resource type="Gradient" id="Gradient_sgr1s"]
@@ -42,6 +42,57 @@ size = Vector2(4, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a4a6w"]
 size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_puukh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("WinAudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grail:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grail:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(240, 110)]
+}
 
 [sub_resource type="Animation" id="Animation_45wws"]
 resource_name = "win"
@@ -149,57 +200,6 @@ tracks/7/keys = {
 "args": [],
 "method": &"finish"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_puukh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = false
-tracks/0/path = NodePath("WinAudioStreamPlayer:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Grail:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Grail:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(240, 110)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gjrgt"]

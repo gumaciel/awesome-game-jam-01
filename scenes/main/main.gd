@@ -22,3 +22,8 @@ func _on_continue_pressed() -> void:
 func _disable_buttons() -> void:
 	%Continue.disabled = true
 	%Credits.disabled = true
+
+
+func _on_credits_pressed() -> void:
+	SceneTransition.change_scene_to_packed(load("res://scenes/ending/ending.tscn"))
+
