@@ -64,11 +64,13 @@ stream = ExtResource("5_618r5")
 y_sort_enabled = true
 
 [node name="Player2" parent="Scenario/Node2D" instance=ExtResource("15_2v0l3")]
+z_index = 1
 position = Vector2(184, 197)
 active = false
 
 [node name="Player1" parent="Scenario/Node2D" instance=ExtResource("16_ep4du")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(216, 197)
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_gtxtq")]

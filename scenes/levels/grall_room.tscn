@@ -257,6 +257,7 @@ y_sort_enabled = true
 
 [node name="Player2" parent="Scenario/Node2D" instance=ExtResource("14_smn3p")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(215, 213)
 active = false
 
@@ -265,6 +266,7 @@ visible = true
 
 [node name="Player1" parent="Scenario/Node2D" instance=ExtResource("15_oh0hb")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(264, 213)
 
 [node name="Texture" parent="Scenario/Node2D/Player1" index="0"]

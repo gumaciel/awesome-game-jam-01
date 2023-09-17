@@ -67,11 +67,13 @@ y_sort_enabled = true
 
 [node name="Player2" parent="Scenario/Node2D" instance=ExtResource("13_dkfvy")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(151, 213)
 active = false
 
 [node name="Player1" parent="Scenario/Node2D" instance=ExtResource("14_h7uin")]
 unique_name_in_owner = true
+z_index = 1
 position = Vector2(120, 213)
 
 [node name="Texture" parent="Scenario/Node2D/Player1" index="0"]
