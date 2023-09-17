@@ -51,6 +51,9 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(917522, 65538, 9, 917524, 65538, 9, 720908, 393218, 1, 720911, 393218, 1)
 script = ExtResource("4_llfvn")
 
+[node name="Door" parent="Scenario" instance=ExtResource("11_c3v30")]
+position = Vector2(121, 182)
+
 [node name="Node2D" type="Node2D" parent="Scenario"]
 y_sort_enabled = true
 
@@ -83,15 +86,12 @@ next_level = ExtResource("8_spcn2")
 [node name="GreenButton" parent="." instance=ExtResource("10_76kvk")]
 position = Vector2(295, 57)
 
-[node name="Door" parent="." instance=ExtResource("11_c3v30")]
-position = Vector2(121, 182)
-
 [node name="Chest" parent="." instance=ExtResource("12_au01k")]
 position = Vector2(248, 56)
 
 [connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
-[connection signal="area_entered" from="GreenButton" to="Door" method="_on_button_area_entered"]
+[connection signal="area_entered" from="GreenButton" to="Scenario/Door" method="_on_button_area_entered"]
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 
 [editable path="Scenario/Node2D/Player1"]
