@@ -412,3 +412,4 @@ libraries = {
 }
 
 [connection signal="pressed" from="Hideable/Buttons/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Hideable/Buttons/Credits" to="." method="_on_credits_pressed"]
