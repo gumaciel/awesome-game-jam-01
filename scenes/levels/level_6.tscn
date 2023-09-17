@@ -54,9 +54,21 @@ stream = ExtResource("4_78chn")
 [node name="Spikes" type="AudioStreamPlayer2D" parent="Scenario"]
 stream = ExtResource("5_80mxl")
 
+[node name="Node2D" type="Node2D" parent="Scenario"]
+y_sort_enabled = true
+
+[node name="Player2" parent="Scenario/Node2D" instance=ExtResource("13_c8ssf")]
+unique_name_in_owner = true
+position = Vector2(104, 197)
+active = false
+
+[node name="Player1" parent="Scenario/Node2D" instance=ExtResource("14_7n1eh")]
+unique_name_in_owner = true
+position = Vector2(136, 197)
+
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_b42u2")]
-player_1 = NodePath("../Node2D/Player1")
-player_2 = NodePath("../Node2D/Player2")
+player_1 = NodePath("../Scenario/Node2D/Player1")
+player_2 = NodePath("../Scenario/Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("7_qqxjo")]
 position = Vector2(376, 17)
@@ -93,25 +105,12 @@ position = Vector2(104, 72)
 position = Vector2(264, 72)
 rotation = 1.5708
 
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-95, 17)
-
-[node name="Player2" parent="Node2D" instance=ExtResource("13_c8ssf")]
-unique_name_in_owner = true
-position = Vector2(229, 196)
-active = false
-
-[node name="Player1" parent="Node2D" instance=ExtResource("14_7n1eh")]
-unique_name_in_owner = true
-position = Vector2(199, 196)
-
+[connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]
 [connection signal="area_entered" from="GreenButton" to="Door2" method="_on_button_area_entered"]
-[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 
+[editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]
-[editable path="Node2D/Player1"]

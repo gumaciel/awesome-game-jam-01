@@ -138,7 +138,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Node2D/Player1/Animations")
+tracks/3/path = NodePath("Scenario/Node2D/Player1/Animations")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -152,7 +152,7 @@ tracks/3/keys = {
 tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Node2D/Player2/Animations")
+tracks/4/path = NodePath("Scenario/Node2D/Player2/Animations")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -252,6 +252,24 @@ stream = ExtResource("4_virqq")
 [node name="Spikes" type="AudioStreamPlayer2D" parent="Scenario"]
 stream = ExtResource("5_0ij5y")
 
+[node name="Node2D" type="Node2D" parent="Scenario"]
+y_sort_enabled = true
+
+[node name="Player2" parent="Scenario/Node2D" instance=ExtResource("14_smn3p")]
+unique_name_in_owner = true
+position = Vector2(215, 213)
+active = false
+
+[node name="DeathSprite2D" parent="Scenario/Node2D/Player2" index="1"]
+visible = true
+
+[node name="Player1" parent="Scenario/Node2D" instance=ExtResource("15_oh0hb")]
+unique_name_in_owner = true
+position = Vector2(264, 213)
+
+[node name="Texture" parent="Scenario/Node2D/Player1" index="0"]
+y_sort_enabled = false
+
 [node name="LevelDoor" parent="." instance=ExtResource("13_n3ufe")]
 position = Vector2(241, 17)
 next_level = ExtResource("14_mjfge")
@@ -277,27 +295,8 @@ position = Vector2(240, 110)
 disabled = true
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_op2pt")]
-player_1 = NodePath("../Node2D/Player1")
-player_2 = NodePath("../Node2D/Player2")
-
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-16, 18)
-
-[node name="Player2" parent="Node2D" instance=ExtResource("14_smn3p")]
-unique_name_in_owner = true
-position = Vector2(248, 195)
-active = false
-
-[node name="DeathSprite2D" parent="Node2D/Player2" index="1"]
-visible = true
-
-[node name="Player1" parent="Node2D" instance=ExtResource("15_oh0hb")]
-unique_name_in_owner = true
-position = Vector2(280, 195)
-
-[node name="Texture" parent="Node2D/Player1" index="0"]
-y_sort_enabled = false
+player_1 = NodePath("../Scenario/Node2D/Player1")
+player_2 = NodePath("../Scenario/Node2D/Player2")
 
 [node name="Areas" type="Node2D" parent="."]
 script = ExtResource("13_er828")
@@ -326,15 +325,15 @@ libraries = {
 [node name="WinAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_u2aee")
 
-[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 [connection signal="complete" from="Areas" to="." method="_on_areas_complete"]
 [connection signal="area_entered" from="Areas/WinningArea2D1" to="Areas" method="_on_winning_area_2d_area_entered"]
 [connection signal="area_exited" from="Areas/WinningArea2D1" to="Areas" method="_on_winning_area_2d_area_exited"]
 [connection signal="area_entered" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_entered"]
 [connection signal="area_exited" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_exited"]
 
+[editable path="Scenario/Node2D/Player2"]
+[editable path="Scenario/Node2D/Player1"]
 [editable path="Chest"]
 [editable path="UI"]
-[editable path="Node2D/Player2"]
-[editable path="Node2D/Player1"]
