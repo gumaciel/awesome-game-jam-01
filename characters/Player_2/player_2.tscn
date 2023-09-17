@@ -12,6 +12,7 @@
 speed_time = 0.2
 
 [node name="Texture" parent="." index="0"]
+visible = true
 position = Vector2(0, -11)
 scale = Vector2(1, 1)
 texture = ExtResource("2_myep5")
