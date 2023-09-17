@@ -42,7 +42,7 @@ func _physics_process(_delta: float) -> void:
 			move_time
 		)
 		await move_tween.finished
-		emit_signal("call_scenario",self.global_position,is_heavy)
+		emit_signal("call_scenario",self.position,is_heavy)
 		is_moving = false
 		animation_player.pause()
 		if walking_sound_pool:

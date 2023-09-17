@@ -52,58 +52,57 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(655369, 65538, 9, 851992, 393218, 1, 720920, 393218, 1, 851973, 393218, 1, 720901, 393218, 1)
 script = ExtResource("3_3u0dx")
 
+[node name="Door" parent="Scenario" instance=ExtResource("8_bdl4r")]
+position = Vector2(112, 182)
+
+[node name="ArrowCanon" parent="Scenario" instance=ExtResource("11_qtjaq")]
+position = Vector2(189, 56)
+rotation = -1.5708
+
+[node name="ArrowCanon2" parent="Scenario" instance=ExtResource("11_qtjaq")]
+position = Vector2(189, 136)
+rotation = -1.5708
+
+[node name="ArrowCanon3" parent="Scenario" instance=ExtResource("11_qtjaq")]
+position = Vector2(280, 217)
+rotation = -1.5708
+
+[node name="GreenButton" parent="Scenario" instance=ExtResource("10_rwx8h")]
+position = Vector2(360, 137)
+
+[node name="Chest" parent="Scenario" instance=ExtResource("9_tmsig")]
+position = Vector2(360, 54)
+
+[node name="LevelDoor" parent="Scenario" instance=ExtResource("6_ibd01")]
+position = Vector2(121, 16)
+next_level = ExtResource("9_hgqlf")
+
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
 stream = ExtResource("4_iaegs")
 
 [node name="Spikes" type="AudioStreamPlayer2D" parent="Scenario"]
 stream = ExtResource("5_fwcio")
 
-[node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("5_72hom")]
-player_1 = NodePath("../Node2D/Player1")
-player_2 = NodePath("../Node2D/Player2")
-
-[node name="LevelDoor" parent="." instance=ExtResource("6_ibd01")]
-position = Vector2(121, 16)
-next_level = ExtResource("9_hgqlf")
-
-[node name="ArrowCanon" parent="." instance=ExtResource("11_qtjaq")]
-position = Vector2(189, 56)
-rotation = -1.5708
-
-[node name="ArrowCanon2" parent="." instance=ExtResource("11_qtjaq")]
-position = Vector2(189, 136)
-rotation = -1.5708
-
-[node name="ArrowCanon3" parent="." instance=ExtResource("11_qtjaq")]
-position = Vector2(280, 217)
-rotation = -1.5708
-
-[node name="GreenButton" parent="." instance=ExtResource("10_rwx8h")]
-position = Vector2(360, 137)
-
-[node name="Door" parent="." instance=ExtResource("8_bdl4r")]
-position = Vector2(112, 182)
-
-[node name="Chest" parent="." instance=ExtResource("9_tmsig")]
-position = Vector2(360, 54)
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="Scenario"]
 y_sort_enabled = true
-position = Vector2(-48, 16)
 
-[node name="Player2" parent="Node2D" instance=ExtResource("12_d2hyj")]
+[node name="Player2" parent="Scenario/Node2D" instance=ExtResource("12_d2hyj")]
 unique_name_in_owner = true
-position = Vector2(280, 197)
+position = Vector2(248, 197)
 active = false
 
-[node name="Player1" parent="Node2D" instance=ExtResource("13_vvimm")]
+[node name="Player1" parent="Scenario/Node2D" instance=ExtResource("13_vvimm")]
 unique_name_in_owner = true
-position = Vector2(392, 197)
+position = Vector2(360, 197)
 
-[connection signal="area_entered" from="GreenButton" to="Door" method="_on_button_area_entered"]
-[connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
-[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
+[node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("5_72hom")]
+player_1 = NodePath("../Scenario/Node2D/Player1")
+player_2 = NodePath("../Scenario/Node2D/Player2")
 
+[connection signal="area_entered" from="Scenario/GreenButton" to="Scenario/Door" method="_on_button_area_entered"]
+[connection signal="area_entered" from="Scenario/Chest" to="Scenario/LevelDoor" method="_on_chest_area_entered"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
+
+[editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]
-[editable path="Node2D/Player1"]
