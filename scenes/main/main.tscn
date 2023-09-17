@@ -265,7 +265,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nkfih")
-scrool_speed = 50
+scrool_speed = 35
 
 [node name="Objects" type="Control" parent="."]
 layout_mode = 1
@@ -278,16 +278,19 @@ grow_vertical = 2
 [node name="Grail" type="TextureRect" parent="Objects"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.397917
-anchor_top = 0.253704
-anchor_right = 0.602083
-anchor_bottom = 0.746296
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -66.5
+offset_right = 49.0
+offset_bottom = 66.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_qtnj1")
 stretch_mode = 3
-metadata/_edit_use_anchors_ = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Objects/Grail"]
 position = Vector2(49, 50)
