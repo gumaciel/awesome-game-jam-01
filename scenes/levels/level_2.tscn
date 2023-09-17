@@ -54,6 +54,16 @@ script = ExtResource("4_llfvn")
 [node name="Door" parent="Scenario" instance=ExtResource("11_c3v30")]
 position = Vector2(121, 182)
 
+[node name="LevelDoor" parent="Scenario" instance=ExtResource("8_kyubv")]
+position = Vector2(121, 16)
+next_level = ExtResource("8_spcn2")
+
+[node name="GreenButton" parent="Scenario" instance=ExtResource("10_76kvk")]
+position = Vector2(295, 57)
+
+[node name="Chest" parent="Scenario" instance=ExtResource("12_au01k")]
+position = Vector2(248, 56)
+
 [node name="Node2D" type="Node2D" parent="Scenario"]
 y_sort_enabled = true
 
@@ -79,20 +89,10 @@ stream = ExtResource("6_dgljr")
 player_1 = NodePath("../Scenario/Node2D/Player1")
 player_2 = NodePath("../Scenario/Node2D/Player2")
 
-[node name="LevelDoor" parent="." instance=ExtResource("8_kyubv")]
-position = Vector2(121, 16)
-next_level = ExtResource("8_spcn2")
-
-[node name="GreenButton" parent="." instance=ExtResource("10_76kvk")]
-position = Vector2(295, 57)
-
-[node name="Chest" parent="." instance=ExtResource("12_au01k")]
-position = Vector2(248, 56)
-
+[connection signal="area_entered" from="Scenario/GreenButton" to="Scenario/Door" method="_on_button_area_entered"]
+[connection signal="area_entered" from="Scenario/Chest" to="Scenario/LevelDoor" method="_on_chest_area_entered"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
-[connection signal="area_entered" from="GreenButton" to="Scenario/Door" method="_on_button_area_entered"]
-[connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 
 [editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]

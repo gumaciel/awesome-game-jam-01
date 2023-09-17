@@ -54,6 +54,37 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(65545, 393218, 1, 65541, 393218, 1, 327691, 393218, 1, 196619, 393218, 1, 65547, 393218, 1, 65552, 393218, 1, 196624, 393218, 1, 327696, 393218, 1, 720920, 393218, 1, 524312, 393218, 1, 327704, 393218, 1, 65560, 393218, 1)
 script = ExtResource("3_nhedo")
 
+[node name="LevelDoor" parent="Scenario" instance=ExtResource("7_pjced")]
+position = Vector2(222, 16)
+next_level = ExtResource("9_nb1ag")
+
+[node name="GreenButton" parent="Scenario" instance=ExtResource("10_ufr8c")]
+position = Vector2(344, 88)
+
+[node name="Door" parent="Scenario" instance=ExtResource("9_hslik")]
+position = Vector2(112, 118)
+
+[node name="Chest" parent="Scenario" instance=ExtResource("10_781sr")]
+position = Vector2(120, 56)
+
+[node name="Node2D" type="Node2D" parent="Scenario"]
+y_sort_enabled = true
+
+[node name="Player2" parent="Scenario/Node2D" instance=ExtResource("13_xqswb")]
+unique_name_in_owner = true
+position = Vector2(280, 197)
+active = false
+
+[node name="Player1" parent="Scenario/Node2D" instance=ExtResource("14_6j4dx")]
+unique_name_in_owner = true
+position = Vector2(200, 197)
+
+[node name="Texture" parent="Scenario/Node2D/Player1" index="0"]
+y_sort_enabled = false
+
+[node name="Up" parent="Scenario/Node2D/Player1/Raycasts" index="0"]
+target_position = Vector2(0, -20)
+
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
 stream = ExtResource("4_2t5aw")
 
@@ -61,45 +92,13 @@ stream = ExtResource("4_2t5aw")
 stream = ExtResource("5_483n6")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_61wt5")]
-player_1 = NodePath("../Node2D/Player1")
-player_2 = NodePath("../Node2D/Player2")
+player_1 = NodePath("../Scenario/Node2D/Player1")
+player_2 = NodePath("../Scenario/Node2D/Player2")
 
-[node name="LevelDoor" parent="." instance=ExtResource("7_pjced")]
-position = Vector2(222, 16)
-next_level = ExtResource("9_nb1ag")
+[connection signal="area_entered" from="Scenario/GreenButton" to="Scenario/Door" method="_on_button_area_entered"]
+[connection signal="area_entered" from="Scenario/Chest" to="Scenario/LevelDoor" method="_on_chest_area_entered"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 
-[node name="GreenButton" parent="." instance=ExtResource("10_ufr8c")]
-position = Vector2(344, 88)
-
-[node name="Door" parent="." instance=ExtResource("9_hslik")]
-position = Vector2(112, 118)
-
-[node name="Chest" parent="." instance=ExtResource("10_781sr")]
-position = Vector2(120, 56)
-
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, 16)
-
-[node name="Player2" parent="Node2D" instance=ExtResource("13_xqswb")]
-unique_name_in_owner = true
-position = Vector2(280, 197)
-active = false
-
-[node name="Player1" parent="Node2D" instance=ExtResource("14_6j4dx")]
-unique_name_in_owner = true
-position = Vector2(200, 197)
-
-[node name="Texture" parent="Node2D/Player1" index="0"]
-y_sort_enabled = false
-
-[node name="Up" parent="Node2D/Player1/Raycasts" index="0"]
-target_position = Vector2(0, -20)
-
-[connection signal="area_entered" from="GreenButton" to="Door" method="_on_button_area_entered"]
-[connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
-[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
-
+[editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]
-[editable path="Node2D/Player1"]
