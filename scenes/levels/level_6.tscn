@@ -48,6 +48,41 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(720912, 2, 10, 786448, 2, 10, 851984, 2, 10, 917520, 2, 10, 655377, 65538, 9, 655380, 65538, 9, 655381, 65538, 9, 655382, 65538, 9, 655383, 65538, 9, 655384, 65538, 9, 655376, 2, 9, 327704, 65538, 9, 327701, 65538, 9, 65555, 393218, 1, 131091, 393218, 2, 65548, 393218, 1, 131084, 393218, 2, 65553, 393218, 1, 131089, 393218, 2, 65550, 393218, 1, 131086, 393218, 2, 65541, 393218, 1, 131077, 393218, 2, 65544, 393218, 1, 131080, 393218, 2, 393240, 393218, 1, 458776, 393218, 2, 393237, 393218, 1, 458773, 393218, 2)
 script = ExtResource("3_uxd61")
 
+[node name="LevelDoor" parent="Scenario" instance=ExtResource("7_qqxjo")]
+position = Vector2(376, 17)
+next_level = ExtResource("8_n6cue")
+
+[node name="Door" parent="Scenario" instance=ExtResource("8_5cvno")]
+position = Vector2(368, 102)
+
+[node name="Door2" parent="Scenario" instance=ExtResource("8_5cvno")]
+position = Vector2(304, 182)
+
+[node name="FireCanon" parent="Scenario" instance=ExtResource("9_7tr86")]
+position = Vector2(183, 37)
+
+[node name="FireCanon2" parent="Scenario" instance=ExtResource("9_7tr86")]
+position = Vector2(327, 37)
+
+[node name="WoodBox" parent="Scenario" instance=ExtResource("10_k3lf7")]
+position = Vector2(168, 201)
+
+[node name="WoodBox2" parent="Scenario" instance=ExtResource("10_k3lf7")]
+position = Vector2(311, 216)
+
+[node name="Chest" parent="Scenario" instance=ExtResource("9_k48vx")]
+position = Vector2(361, 151)
+
+[node name="Button" parent="Scenario" instance=ExtResource("10_nmx0d")]
+position = Vector2(360, 72)
+
+[node name="GreenButton" parent="Scenario" instance=ExtResource("11_e2fqp")]
+position = Vector2(104, 72)
+
+[node name="ArrowCanon" parent="Scenario" instance=ExtResource("12_jou4u")]
+position = Vector2(264, 72)
+rotation = 1.5708
+
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
 stream = ExtResource("4_78chn")
 
@@ -59,60 +94,23 @@ y_sort_enabled = true
 
 [node name="Player2" parent="Scenario/Node2D" instance=ExtResource("13_c8ssf")]
 unique_name_in_owner = true
-z_index = 1
 position = Vector2(104, 197)
 active = false
 
 [node name="Player1" parent="Scenario/Node2D" instance=ExtResource("14_7n1eh")]
 unique_name_in_owner = true
-z_index = 1
 position = Vector2(136, 197)
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_b42u2")]
 player_1 = NodePath("../Scenario/Node2D/Player1")
 player_2 = NodePath("../Scenario/Node2D/Player2")
 
-[node name="LevelDoor" parent="." instance=ExtResource("7_qqxjo")]
-position = Vector2(376, 17)
-next_level = ExtResource("8_n6cue")
-
-[node name="Door" parent="." instance=ExtResource("8_5cvno")]
-position = Vector2(368, 102)
-
-[node name="Door2" parent="." instance=ExtResource("8_5cvno")]
-position = Vector2(304, 182)
-
-[node name="FireCanon" parent="." instance=ExtResource("9_7tr86")]
-position = Vector2(183, 37)
-
-[node name="FireCanon2" parent="." instance=ExtResource("9_7tr86")]
-position = Vector2(327, 37)
-
-[node name="WoodBox" parent="." instance=ExtResource("10_k3lf7")]
-position = Vector2(168, 201)
-
-[node name="WoodBox2" parent="." instance=ExtResource("10_k3lf7")]
-position = Vector2(311, 216)
-
-[node name="Chest" parent="." instance=ExtResource("9_k48vx")]
-position = Vector2(361, 151)
-
-[node name="Button" parent="." instance=ExtResource("10_nmx0d")]
-position = Vector2(360, 72)
-
-[node name="GreenButton" parent="." instance=ExtResource("11_e2fqp")]
-position = Vector2(104, 72)
-
-[node name="ArrowCanon" parent="." instance=ExtResource("12_jou4u")]
-position = Vector2(264, 72)
-rotation = 1.5708
-
+[connection signal="area_entered" from="Scenario/Chest" to="Scenario/LevelDoor" method="_on_chest_area_entered"]
+[connection signal="area_entered" from="Scenario/Button" to="Scenario/Door" method="_on_button_area_entered"]
+[connection signal="area_exited" from="Scenario/Button" to="Scenario/Door" method="_on_button_area_exited"]
+[connection signal="area_entered" from="Scenario/GreenButton" to="Scenario/Door2" method="_on_button_area_entered"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
-[connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
-[connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
-[connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]
-[connection signal="area_entered" from="GreenButton" to="Door2" method="_on_button_area_entered"]
 
 [editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]

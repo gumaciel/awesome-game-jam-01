@@ -60,7 +60,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
+tracks/1/path = NodePath("Scenario/Grail/GPUParticles2D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -72,7 +72,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Grail:visible")
+tracks/2/path = NodePath("Scenario/Grail:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -84,7 +84,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Grail:position")
+tracks/3/path = NodePath("Scenario/Grail:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -112,7 +112,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Grail/GPUParticles2D:emitting")
+tracks/1/path = NodePath("Scenario/Grail/GPUParticles2D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -124,7 +124,7 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Chest")
+tracks/2/path = NodePath("Scenario/Chest")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -166,7 +166,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Grail:visible")
+tracks/5/path = NodePath("Scenario/Grail:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -178,7 +178,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Grail:position")
+tracks/6/path = NodePath("Scenario/Grail:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -246,6 +246,30 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(917514, 65538, 9, 589836, 393218, 1, 524298, 393218, 1, 393225, 393218, 1, 262154, 393218, 1, 196620, 393218, 1, 196625, 393218, 1, 262163, 393218, 1, 393236, 393218, 1, 524307, 393218, 1, 589841, 393218, 1)
 script = ExtResource("3_uu7di")
 
+[node name="LevelDoor" parent="Scenario" instance=ExtResource("13_n3ufe")]
+position = Vector2(241, 17)
+next_level = ExtResource("14_mjfge")
+
+[node name="Grail" type="Sprite2D" parent="Scenario"]
+visible = false
+y_sort_enabled = true
+position = Vector2(240, 110)
+texture = ExtResource("11_7pvdc")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Scenario/Grail"]
+z_index = 5
+position = Vector2(0, -11)
+emitting = false
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_0rpmi")
+texture = ExtResource("7_x6jfs")
+
+[node name="Chest" parent="Scenario" instance=ExtResource("11_y6acm")]
+position = Vector2(240, 110)
+
+[node name="CollisionShape2D" parent="Scenario/Chest" index="0"]
+disabled = true
+
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
 stream = ExtResource("4_virqq")
 
@@ -271,30 +295,6 @@ position = Vector2(264, 213)
 
 [node name="Texture" parent="Scenario/Node2D/Player1" index="0"]
 y_sort_enabled = false
-
-[node name="LevelDoor" parent="." instance=ExtResource("13_n3ufe")]
-position = Vector2(241, 17)
-next_level = ExtResource("14_mjfge")
-
-[node name="Grail" type="Sprite2D" parent="."]
-visible = false
-y_sort_enabled = true
-position = Vector2(240, 110)
-texture = ExtResource("11_7pvdc")
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Grail"]
-z_index = 5
-position = Vector2(0, -11)
-emitting = false
-amount = 5
-process_material = SubResource("ParticleProcessMaterial_0rpmi")
-texture = ExtResource("7_x6jfs")
-
-[node name="Chest" parent="." instance=ExtResource("11_y6acm")]
-position = Vector2(240, 110)
-
-[node name="CollisionShape2D" parent="Chest" index="0"]
-disabled = true
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("6_op2pt")]
 player_1 = NodePath("../Scenario/Node2D/Player1")
@@ -335,7 +335,7 @@ stream = ExtResource("15_u2aee")
 [connection signal="area_entered" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_entered"]
 [connection signal="area_exited" from="Areas/WinningArea2D2" to="Areas" method="_on_winning_area_2d_area_exited"]
 
+[editable path="Scenario/Chest"]
 [editable path="Scenario/Node2D/Player2"]
 [editable path="Scenario/Node2D/Player1"]
-[editable path="Chest"]
 [editable path="UI"]
