@@ -45,6 +45,18 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(589843, 65538, 8, 589844, 65538, 8, 589847, 65538, 8, 589848, 65538, 8, 524307, 65538, 7, 524308, 65538, 7, 524311, 65538, 7, 524312, 65538, 7, 65552, 393218, 1, 131088, 393218, 2, 65560, 393218, 1, 131096, 393218, 2, 65556, 393218, 1, 131092, 393218, 2, 917509, 65538, 11, 917510, 65538, 11, 917511, 65538, 11, 917512, 65538, 11, 917513, 65538, 11, 917514, 65538, 11, 917515, 65538, 11, 917516, 65538, 11, 917517, 65538, 11, 917518, 65538, 11, 917519, 65538, 11, 917520, 65538, 11, 917521, 65538, 11, 917522, 65538, 11, 917523, 65538, 11, 917524, 65538, 11, 917525, 65538, 11, 917526, 65538, 11, 917527, 65538, 11, 917528, 65538, 11, 983045, 65538, 12, 983046, 65538, 12)
 script = ExtResource("3_i8o75")
 
+[node name="Node2D" type="Node2D" parent="Scenario"]
+y_sort_enabled = true
+
+[node name="Player2" parent="Scenario/Node2D" instance=ExtResource("11_w26yo")]
+unique_name_in_owner = true
+position = Vector2(280, 197)
+active = false
+
+[node name="Player1" parent="Scenario/Node2D" instance=ExtResource("12_vxxo2")]
+unique_name_in_owner = true
+position = Vector2(200, 197)
+
 [node name="DestroyingBridgeAudio" type="AudioStreamPlayer" parent="Scenario"]
 stream = ExtResource("4_6tac3")
 
@@ -52,8 +64,8 @@ stream = ExtResource("4_6tac3")
 stream = ExtResource("5_4oe3g")
 
 [node name="UI" parent="." node_paths=PackedStringArray("player_1", "player_2") instance=ExtResource("5_yr4l7")]
-player_1 = NodePath("../Node2D/Player1")
-player_2 = NodePath("../Node2D/Player2")
+player_1 = NodePath("../Scenario/Node2D/Player1")
+player_2 = NodePath("../Scenario/Node2D/Player2")
 
 [node name="LevelDoor" parent="." instance=ExtResource("6_7w4st")]
 position = Vector2(105, 16)
@@ -72,23 +84,11 @@ position = Vector2(361, 105)
 position = Vector2(392, 56)
 rotation = 1.5708
 
-[node name="Node2D" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Player2" parent="Node2D" instance=ExtResource("11_w26yo")]
-unique_name_in_owner = true
-position = Vector2(280, 197)
-active = false
-
-[node name="Player1" parent="Node2D" instance=ExtResource("12_vxxo2")]
-unique_name_in_owner = true
-position = Vector2(200, 197)
-
+[connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
+[connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 [connection signal="area_entered" from="Chest" to="LevelDoor" method="_on_chest_area_entered"]
 [connection signal="area_entered" from="Button" to="Door" method="_on_button_area_entered"]
 [connection signal="area_exited" from="Button" to="Door" method="_on_button_area_exited"]
-[connection signal="call_scenario" from="Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
-[connection signal="call_scenario" from="Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
 
+[editable path="Scenario/Node2D/Player1"]
 [editable path="UI"]
-[editable path="Node2D/Player1"]
