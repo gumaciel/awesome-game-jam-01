@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctlu13l84ep3g"]
+[gd_scene load_steps=16 format=3 uid="uid://ctlu13l84ep3g"]
 
 [ext_resource type="PackedScene" uid="uid://f6wy82a2mq8" path="res://scenes/ui/background_color_rect.tscn" id="1_vdql7"]
 [ext_resource type="TileSet" uid="uid://bmljjvxwi5lcm" path="res://world/tilesets_data/test_tileset.tres" id="2_ol3j7"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bymr3064c87is" path="res://scenes/prefabs/fire_canon.tscn" id="9_bcyjb"]
 [ext_resource type="PackedScene" uid="uid://cb0u33jttrs3u" path="res://scenes/prefabs/wood_box.tscn" id="10_o4hud"]
 [ext_resource type="PackedScene" uid="uid://dl3ttrlhekoyu" path="res://scenes/prefabs/chest.tscn" id="11_ejcny"]
-[ext_resource type="PackedScene" uid="uid://c1vpo374p7liy" path="res://scenes/prefabs/button.tscn" id="12_0pbei"]
 [ext_resource type="PackedScene" uid="uid://bv5bpmraxydk8" path="res://scenes/prefabs/green_button.tscn" id="13_2ssnt"]
 [ext_resource type="PackedScene" uid="uid://brp6rwitih73k" path="res://characters/Player_2/player_2.tscn" id="15_2v0l3"]
 [ext_resource type="PackedScene" uid="uid://dl4hgrkdmdu8f" path="res://characters/Player_1/player_1.tscn" id="16_ep4du"]
@@ -58,9 +57,6 @@ script = ExtResource("3_bgqke")
 position = Vector2(320, 17)
 next_level = ExtResource("8_2g43h")
 
-[node name="Door" parent="Scenario" instance=ExtResource("8_kp4ci")]
-position = Vector2(453, 206)
-
 [node name="Door2" parent="Scenario" instance=ExtResource("8_kp4ci")]
 position = Vector2(128, 166)
 
@@ -76,7 +72,7 @@ rotation = -3.14159
 position = Vector2(248, 37)
 
 [node name="WoodBox" parent="Scenario" instance=ExtResource("10_o4hud")]
-position = Vector2(128, 200)
+position = Vector2(121, 200)
 
 [node name="WoodBox3" parent="Scenario" instance=ExtResource("10_o4hud")]
 position = Vector2(217, 135)
@@ -86,9 +82,6 @@ position = Vector2(120, 56)
 
 [node name="Chest" parent="Scenario" instance=ExtResource("11_ejcny")]
 position = Vector2(328, 119)
-
-[node name="Button" parent="Scenario" instance=ExtResource("12_0pbei")]
-position = Vector2(469, 80)
 
 [node name="GreenButton" parent="Scenario" instance=ExtResource("13_2ssnt")]
 position = Vector2(360, 200)
@@ -115,8 +108,6 @@ player_1 = NodePath("../Scenario/Node2D/Player1")
 player_2 = NodePath("../Scenario/Node2D/Player2")
 
 [connection signal="area_entered" from="Scenario/Chest" to="Scenario/LevelDoor" method="_on_chest_area_entered"]
-[connection signal="area_entered" from="Scenario/Button" to="Scenario/Door" method="_on_button_area_entered"]
-[connection signal="area_exited" from="Scenario/Button" to="Scenario/Door" method="_on_button_area_exited"]
 [connection signal="area_entered" from="Scenario/GreenButton" to="Scenario/Door2" method="_on_button_area_entered"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player2" to="Scenario" method="_on_player_2_call_scenario"]
 [connection signal="call_scenario" from="Scenario/Node2D/Player1" to="Scenario" method="_on_player_1_call_scenario"]
