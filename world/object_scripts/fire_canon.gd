@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var fire_ball = preload("res://scenes/prefabs/spider_bullet.tscn")
-@export var bullet_speed : float = 20
+@export var bullet_speed : float = 50
 var can_shot = true
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
