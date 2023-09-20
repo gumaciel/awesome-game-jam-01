@@ -10,7 +10,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(1.19209e-07, 0.499998)
 texture = ExtResource("1_armrf")
 
