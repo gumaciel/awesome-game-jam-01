@@ -18,43 +18,45 @@ var animation_direction = {
 	Vector2.RIGHT : "right",
 	Vector2.ZERO : "stoped"
 }
+
+var current_direction := Vector2.ZERO
+
 func _physics_process(_delta: float) -> void:
-	if get_direction() != Vector2.ZERO and not is_moving:
-		is_moving = true
-		var colliders : Array = []
-		var box = null
-		for ray in raycasts.get_children():
-			if ray.is_colliding():
-				colliders.append(ray.target_position.clamp(Vector2(-1,-1),Vector2(1,1)))
-		var direction: Vector2 = get_direction()
-		PlayerManager.current_direction = direction
-		if animation_direction.has(direction):
-			animation_player.play(animation_direction[direction])
-		if colliders.has(direction):
-			animation_player.pause()
+	if not is_moving:
+		PlayerManager.current_direction = get_direction()
+		current_direction = PlayerManager.current_direction
+
+		if current_direction != Vector2.ZERO:
+			is_moving = true
+			var colliders : Array = []
+			var box = null
+			for ray in raycasts.get_children():
+				if ray.is_colliding():
+					colliders.append(ray.target_position.clamp(Vector2(-1,-1),Vector2(1,1)))
+			var direction: Vector2 = current_direction
+			if animation_direction.has(direction):
+				animation_player.play(animation_direction[direction])
+			if colliders.has(direction):
+				animation_player.pause()
+				is_moving = false
+				return
+			var move_tween = create_tween()
+			move_tween.tween_property(
+				self, 
+				"position", 
+				position + direction * GRID_SIZE, 
+				move_time
+			)
+			await move_tween.finished
+			emit_signal("call_scenario",self.position,is_heavy)
 			is_moving = false
+			animation_player.pause()
+			if walking_sound_pool:
+				walking_sound_pool.play_random_audio()
 			return
-		var move_tween = create_tween()
-		move_tween.tween_property(
-			self, 
-			"position", 
-			position + direction * GRID_SIZE, 
-			move_time
-		)
-		await move_tween.finished
-		emit_signal("call_scenario",self.position,is_heavy)
-		is_moving = false
-		animation_player.pause()
-		if walking_sound_pool:
-			walking_sound_pool.play_random_audio()
-		return
-	
-	if Input.is_action_just_pressed("reload"):
-		get_tree().reload_current_scene()
-	
-	PlayerManager.current_direction = get_direction()
-
-
+		
+		if Input.is_action_just_pressed("reload"):
+			get_tree().reload_current_scene()
 		
 
 func get_direction() -> Vector2:
@@ -62,6 +64,7 @@ func get_direction() -> Vector2:
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up","move_down")
 		)
+
 	if !animation_direction.has(direction):
 		return Vector2.ZERO
 	return direction

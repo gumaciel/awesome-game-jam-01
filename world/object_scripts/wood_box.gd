@@ -17,10 +17,11 @@ func _ready() -> void:
 	current_position = self.position
 
 func _on_area_entered(area: Area2D) -> void:
-	var player_current_direction := PlayerManager.current_direction
 	var colliding := false
 	if area.get_parent().name != "Player1":
 		return
+		
+	var player_current_direction := (area.get_parent() as PlayerBase).current_direction
 	for ray in ray_casts.get_children():
 		if ray.is_colliding():
 			var collider_name := ray.name
